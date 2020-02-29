@@ -1,7 +1,7 @@
 ---
 title: Tuple extension methods in C#7
 date: "2018-12-13T00:00:00.000Z"
-description: Working with tuples and extensions in C#7
+description: How to use tuples as the main input argument of an extension method in C#?
 tags: [".net", "c#"]
 featuredImage: /assets/featured/dot-net-hex.jpg
 ---
