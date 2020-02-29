@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   siteMetadata: {
@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        //trackingId: "ADD YOUR TRACKING ID HERE",
+        trackingId: "UA-11297782-5",
       },
     },
     "gatsby-plugin-feed",
@@ -69,7 +69,7 @@ module.exports = {
         background_color: "#ffffff",
         theme_color: "#663399",
         display: "minimal-ui",
-        icon: "content/assets/gatsby-icon.png",
+        icon: "content/assets/favicon.png",
       },
     },
     "gatsby-plugin-react-helmet",
@@ -85,11 +85,11 @@ module.exports = {
         alias: {
           "@assets": `${__dirname}/content/assets`, // path.resolve(__dirname, "content/assets") // todo: can probably be removed because can't import in .md
         },
-        extensions: []
-      }
-    }
+        extensions: [],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // "gatsby-plugin-offline",
   ],
-}
+};
