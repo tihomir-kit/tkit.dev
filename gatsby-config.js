@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require("path");
 
 module.exports = {
   siteMetadata: {
@@ -7,8 +7,7 @@ module.exports = {
       name: "Tihomir Kit",
       summary: "who lives and works in Dublin building useful things.",
     },
-    description:
-      "to understand what recursion is, you must first understand recursion",
+    description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {
       twitter: "pootzko",
@@ -57,7 +56,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        //trackingId: "ADD YOUR TRACKING ID HERE",
+        trackingId: "UA-11297782-5",
       },
     },
     "gatsby-plugin-feed",
@@ -70,7 +69,7 @@ module.exports = {
         background_color: "#ffffff",
         theme_color: "#663399",
         display: "minimal-ui",
-        icon: "content/assets/gatsby-icon.png",
+        icon: "content/assets/favicon.png",
       },
     },
     "gatsby-plugin-react-helmet",
@@ -93,4 +92,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // "gatsby-plugin-offline",
   ],
-}
+};
