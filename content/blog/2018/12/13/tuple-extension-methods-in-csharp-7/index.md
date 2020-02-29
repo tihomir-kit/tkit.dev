@@ -3,18 +3,8 @@ title: Tuple extension methods in C#7
 date: "2018-12-13T00:00:00.000Z"
 description: Working with tuples and extensions in C#7
 tags: [".net", "c#"]
-featuredImage: gatsby-icon.png
+featuredImage: /assets/featured/dot-net-hex.jpg
 ---
-
-![.Net](@assets/profile-pic.jpg)
-![.Net](./assets/profile-pic.jpg)
-![.Net](/assets/profile-pic.jpg)
-![.Net](assets/profile-pic.jpg)
-![.Net](../../../../../profile-pic.jpg)
-
-<!-- ![.Net](./gatsby-icon.png) -->
-![.Net](../../../../../assets/profile-pic.jpg)
-![.Net](../../../../../assets/headers/dot-net-hex.jpg)
 
 Tuples allow us to package more than one value as the return type of a method. This is very handy when we don’t want to create an additional data transfer object just to return an extra piece of data together with the main value/object we want to return.
 

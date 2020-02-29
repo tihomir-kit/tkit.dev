@@ -5,7 +5,7 @@ module.exports = {
     title: "tkit.dev",
     author: {
       name: "Tihomir Kit",
-      summary: "who lives and works in San Francisco building useful things.",
+      summary: "who lives and works in Dublin building useful things.",
     },
     description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
@@ -32,6 +32,7 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          `gatsby-remark-relative-images`,
           {
             resolve: "gatsby-remark-images",
             options: {
