@@ -3,6 +3,7 @@ title: Tuple extension methods in C#7
 date: "2018-12-13T00:00:00.000Z"
 description: Working with tuples and extensions in C#7
 tags: [".net", "c#"]
+featuredImage: gatsby-icon.png
 ---
 
 ![.Net](@assets/profile-pic.jpg)
@@ -11,6 +12,7 @@ tags: [".net", "c#"]
 ![.Net](assets/profile-pic.jpg)
 ![.Net](../../../../../profile-pic.jpg)
 
+<!-- ![.Net](./gatsby-icon.png) -->
 ![.Net](../../../../../assets/profile-pic.jpg)
 ![.Net](../../../../../assets/headers/dot-net-hex.jpg)
 
