@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path")
 
 module.exports = {
   siteMetadata: {
@@ -7,7 +7,8 @@ module.exports = {
       name: "Tihomir Kit",
       summary: "who lives and works in Dublin building useful things.",
     },
-    description: "to understand what recursion is, you must first understand recursion",
+    description:
+      "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {
       twitter: "pootzko",
@@ -85,9 +86,9 @@ module.exports = {
         alias: {
           "@assets": `${__dirname}/content/assets`, // path.resolve(__dirname, "content/assets") // todo: can probably be removed because can't import in .md
         },
-        extensions: []
-      }
-    }
+        extensions: [],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // "gatsby-plugin-offline",
