@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
-import { Disqus, CommentCount } from "gatsby-plugin-disqus";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
@@ -12,12 +11,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
-
-  let disqusConfig = {
-    url: location.url,
-    identifier: post.id,
-    title: post.title,
-  };
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -78,8 +71,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-      {/* <CommentCount config={disqusConfig} placeholder={"..."} /> */}
-      <Disqus config={disqusConfig} />
     </Layout>
   );
 };
