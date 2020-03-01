@@ -12,14 +12,21 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
+  function featuredImage() {
+    // TODO: Extract to component
+    if (!post.frontmatter.featuredImage) {
+      return "";
+    }
+
+    return <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />;
+  }
+
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <article>
         <header>
-          <div>
-            <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
-          </div>
+          <div>{featuredImage()}</div>
           <h1
             style={{
               marginTop: rhythm(1),
