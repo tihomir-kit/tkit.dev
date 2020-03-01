@@ -17,6 +17,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <article>
         <header>
+          <div>
+            <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
+          </div>
           <h1
             style={{
               marginTop: rhythm(1),
@@ -24,9 +27,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             }}>
             {post.frontmatter.title}
           </h1>
-          <div>
-            <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
-          </div>
           <p
             style={{
               ...scale(-1 / 5),
