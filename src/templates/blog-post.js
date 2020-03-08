@@ -52,7 +52,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div class="post-footer">{commentsLink()}</div>
+        <div className="post-footer">{commentsLink()}</div>
         <hr
           style={{
             marginBottom: rhythm(1),

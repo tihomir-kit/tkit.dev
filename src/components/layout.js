@@ -56,7 +56,8 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+        Copyleft © {new Date().getFullYear()}, all wrongs reserved. Built with{" "}
+        <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted on <a href="https://www.netlify.com/">Netlify</a>.
       </footer>
     </div>
   );
