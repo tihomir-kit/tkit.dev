@@ -25,10 +25,10 @@ const Bio = () => {
         siteMetadata {
           author {
             name
-            summary
           }
           social {
             twitter
+            github
           }
         }
       }
@@ -56,8 +56,9 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong> {author.summary}{" "}
-        <a href={`https://twitter.com/${social.twitter}`}>You should follow him on Twitter</a>
+        Written by <strong>{author.name}</strong>, a senior software engineer at{" "}
+        <a href="https://www.dovetail.ie/">Dovetail</a>. <br />
+        🖖 Stay curious. <a href={`https://github.com/${social.github}`}>@GitHub</a>
       </p>
     </div>
   );

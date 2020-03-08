@@ -5,12 +5,12 @@ module.exports = {
     title: "tkit.dev",
     author: {
       name: "Tihomir Kit",
-      summary: "who lives and works in Dublin building useful things.",
     },
     description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {
       twitter: "pootzko",
+      github: "pootzko",
     },
   },
   plugins: [
@@ -36,7 +36,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 590,
+              maxWidth: 630,
             },
           },
           {
