@@ -3,7 +3,7 @@ title: Creating and consuming JWT tokens in .Net WebAPI
 date: "2018-04-08T00:00:00.000Z"
 description: How to create and consume (read) JWT tokens in .Net WebAPI?
 featuredImage: /assets/featured/jwt.png
-githubComments: https://github.com/pootzko/tkit.dev/issues/3
+commentsUrl: https://github.com/pootzko/tkit.dev/issues/3
 tags: [".net", "c#", "identity", "jwt", "owin", "security", "token"]
 seoKeywords: [".net", "c#", "jwt", "owin", "security", "token", "bearer", "tutorial", "guide", "identity", "user"]
 ---

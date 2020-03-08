@@ -12,6 +12,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
 
+  function commentsLink() {
+    if (!post.frontmatter.commentsUrl) {
+      return "";
+    }
+
+    return <a href={post.frontmatter.commentsUrl}>Comment on GitHub</a>;
+  }
+
   function featuredImage() {
     // TODO: Extract to component
     if (!post.frontmatter.featuredImage) {
@@ -44,6 +52,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div class="post-footer">{commentsLink()}</div>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -99,6 +108,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        commentsUrl
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 630) {
