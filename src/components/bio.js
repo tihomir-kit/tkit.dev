@@ -56,8 +56,8 @@ const Bio = () => {
         }}
       />
       <p>
-        Written by <strong>{author.name}</strong>, a senior software engineer at{" "}
-        <a href="https://www.dovetail.ie/">Dovetail</a>. <br />
+        Written by <strong>{author.name}</strong>, a senior software engineer{" "}
+        <a href="https://www.dovetail.ie/">@Dovetail</a>. <br />
         🖖 Stay curious. <a href={`https://github.com/${social.github}`}>@GitHub</a>
       </p>
     </div>
