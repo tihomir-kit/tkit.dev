@@ -12,7 +12,7 @@ Tuples allow us to package more than one value as the return type of a method. T
 
 A perfect example in my opinion of when this is useful is when we want to return a partial (paged/filtered) collection of entities from the database and at the same time return the total amount of entities that are in the db. The code snippet below does that for database user entities.
 
-After fetching a part of records from the db table, and fetching the total count, I often build what I call a generic PagedCollection object which contains the collection of filtered objects, total count of records in the database, the page count which gets calculated based on the filter params (page size) passed from the client-side and I also like to add the currently requested page number into the mix. This way I have everything I need to bind this “page of data” with a grid component on the client-side.
+After fetching a part of records from the db table, and fetching the total count, I often build what I call a generic `PagedCollection` object which contains the collection of filtered objects, total count of records in the database, the page count which gets calculated based on the filter params (page size) passed from the client-side and I also like to add the currently requested page number into the mix. This way I have everything I need to bind this “page of data” with a grid component on the client-side.
 
 ```cs
 // Extension method definition

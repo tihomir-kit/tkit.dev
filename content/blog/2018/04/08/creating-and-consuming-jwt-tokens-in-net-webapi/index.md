@@ -12,7 +12,7 @@ In this post I'll explain how to create and consume the [JWT tokens](https://jwt
 
 Why use JWT anyway? Well JWT is nice because the payload part of the token (usually containing user data such as email, username or user roles) is only encoded and can be read on the client-side very easily (good auth libraries such as [Satellizer](https://github.com/sahat/satellizer) for AngularJS or [ng2-ui-auth](https://github.com/ronzeidman/ng2-ui-auth) for Angular 2+ will take care of that for you out of the box). This saves you an additional round-trip to the server which you would otherwise have to do to "load up the current user" into your SPA app.
 
-Let's get started. The first thing we're going to need is this small extension class which we'll need both in token generation and in the middleware setup. It contains two simple string extension methods which allow us to create _SigningCredentials_ and the _SymmetricSecurityKey_ from a _jwtSecret_ key (which should be a long string of random characters).
+Let's get started. The first thing we're going to need is this small extension class which we'll need both in token generation and in the middleware setup. It contains two simple string extension methods which allow us to create `SigningCredentials` and the `SymmetricSecurityKey` from a `jwtSecret` key (which should be a long string of random characters).
 
 ```cs
 public static class SecurityExtensions
@@ -32,11 +32,11 @@ public static class SecurityExtensions
 }
 ```
 
-Now let's move on the the most important part, the class which actually creates the token - _JwtTokenProvider_. You would typically use this provider from your _AccountController_ in actions such as _Login_ or _SocialAuth_ after you've successfully authenticated the user. In you Login action simply swap the old code which you might have which generates the default bearer token, and return the newly created JWT token instead (only if the user has been successfully authenticated of course!).
+Now let's move on the the most important part, the class which actually creates the token - `JwtTokenProvider`. You would typically use this provider from your `AccountController` in actions such as `Login` or `SocialAuth` after you've successfully authenticated the user. In your `Login` action, simply swap the old code which you might have that generates the default bearer token, and return the newly created JWT token instead (only if the user has been successfully authenticated of course!).
 
-The client-side will then need to properly store the token and use it in each request that requires authentication (the typical way of handling this is by setting the token as the value of the _Authorization_ header for each request via some sort of request interceptor).
+The client-side will then need to properly store the token and use it in each request that requires authentication (the typical way of handling this is by setting the token as the value of the `Authorization` header for each request via some sort of request interceptor).
 
-Also, if you're using dependency injection, you'll have to add the _IJwtTokenProvider_ interface yourself. To simplify the post and to concentrate on the most important bits to JWT token creation, I left that part out on purpose. If you're not using DI, simply instantiate the provider class and create the token.
+Also, if you're using dependency injection, you'll have to add the `IJwtTokenProvider` interface yourself. To simplify the post and to concentrate on the most important bits to JWT token creation, I left that part out on purpose. If you're not using DI, simply instantiate the provider class and create the token.
 
 ```cs
 public class JwtTokenProvider
@@ -98,7 +98,7 @@ public class JwtTokenProvider
 }
 ```
 
-Also, here is the simple _UserModel_ that was used in the _JwtTokenProvider_. Feel free to extend it to your needs.
+Also, here is the simple `UserModel` that was used in the `JwtTokenProvider`. Feel free to extend it to your needs.
 
 ```cs
 public class UserModel
@@ -125,7 +125,7 @@ public class UserModel
 }
 ```
 
-Now, to glue this all together and to enable the WebAPI to read (decrypt and decode) the tokens on each request, we need to tell the middleware how to do it. You can add this piece of code to your Startup.cs or even better, extract this code into a separate method inside *App_Start/AuthConfig.cs* and then just call it from the _Startup.cs_.
+Now, to glue all of this together and to enable the WebAPI to read (decrypt and decode) the tokens on each request, we need to tell the middleware how to do it. You can add this piece of code to your _Startup.cs_ or even better, extract this code into a separate method inside `App_Start`/`AuthConfig.cs` and then just call it from the _Startup.cs_.
 
 ```cs
 // The app variable is of Owin.IAppBuilder type
@@ -143,8 +143,8 @@ app.UseJwtBearerAuthentication(new JwtBearerAuthenticationOptions
 });
 ```
 
-After this, all the _[Authorize]_ attributes you had previously should continue working as before when you were still using the default bearer token. You should also be able to access the current user using for example _HttpContext.Current.User.Identity_ from within your controller actions.
+After this, all the `[Authorize]` attributes you had previously should continue working as before when you were still using the default bearer token. You should also be able to access the current user using for example `HttpContext.Current.User.Identity` from within your controller actions.
 
-In one of the upcoming posts I'll demonstrate a neat technique to share the current user context vertically between all your app layers (such as the business layer and/or repository) - something that you can't do using the _HttpContext_ because you don't really want to have all the "web" dll's in your lower layers, they should stay clean and agnostic.
+In one of the upcoming posts I'll demonstrate a neat technique to share the current user context vertically between all your app layers (such as the business layer and/or repository) - something that you can't do using the `HttpContext` because you don't really want to have all the "web" dll's in your lower layers, they should stay clean and agnostic.
 
 <!-- If you have any questions or comments, leave them below. Thnx! -->

@@ -18,7 +18,7 @@ The two examples in the demo explain the most basic things you might want to do 
 
 I used the *US/Pacific* timezone (which is UTC-8h) in sample code. All screenshots display current variable values so it’s easy to follow what’s going on with various date objects as they get converted back and forth.
 
-The first example creates a UTC DateTimeKind DateTime object and converts it to local *US/Pacific* time and the second example converts the local *US/Pacific* object of *Unspecified* DateTimeKind to UTC. Notice how time in both examples gets shifted by 8h but in opposite directions.
+The first example creates a UTC `DateTimeKind` DateTime object and converts it to local *US/Pacific* time and the second example converts the local *US/Pacific* object of *Unspecified* `DateTimeKind` to UTC. Notice how time in both examples gets shifted by 8h but in opposite directions.
 
 ![NodaTime full circle](nodatime-full-circle.png)
 
