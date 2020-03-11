@@ -321,5 +321,10 @@ public static void AddSwaggerServices(this IServiceCollection services)
 }
 ```
 
+Also, if you want to use any combination of complex objects, primitive query params and path params, you can do that.
+This solution is not exclusive to a single complex object query param. For example you could add another filter
+object to the `FilterUsers` example, an extra query param such as `[FromQuery]int forGroupId` and some extra path
+param in your route definition (i.e. `[HttpGet("filter/{whatever}")]`) and that would work fine.
+
 If you have a better way of doing this, or have any significant improvements or potential edge-case
 fixes which I haven't thought of, please leave a comment.. Thnx!
