@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { rhythm, scale } from "../utils/typography";
+import { rhythm, scale, typOptions } from "../utils/typography";
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -24,14 +24,13 @@ const Layout = ({ location, title, children }) => {
           to={"/"}></Link>
         <span
           style={{
-            color: "#070619",
             "font-weight": "normal",
           }}>
           TKIT
         </span>
         <span
           style={{
-            color: "#D01A44",
+            color: typOptions.colors.accent,
           }}>
           _
         </span>
@@ -39,7 +38,7 @@ const Layout = ({ location, title, children }) => {
           style={{
             transform: "rotate(-90deg)",
             display: "inline-block",
-            color: "#bcb5c5",
+            color: typOptions.colors.light,
             "font-weight": "normal",
             "font-size": "20px",
             "padding-left": "22px",

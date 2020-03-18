@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { rhythm, scale } from "../utils/typography";
+import { rhythm, scale, typOptions } from "../utils/typography";
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark;
@@ -48,7 +48,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               display: "block",
               marginBottom: rhythm(1.5),
             }}>
-            {post.frontmatter.date}
+            <small style={{ color: typOptions.colors.light }}>{post.frontmatter.date}</small>
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />

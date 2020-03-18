@@ -1,4 +1,7 @@
 // SEE: https://kyleamathews.github.io/typography.js/
+// SAMPLES:
+// https://github.com/KyleAMathews/typography.js/blob/master/packages/typography-theme-st-annes/src/index.js
+// https://github.com/KyleAMathews/typography.js/blob/master/packages/typography-theme-wordpress-2016/src/index.js
 
 import Typography from "typography";
 
@@ -18,10 +21,25 @@ const typography = new Typography({
       styles: ["400", "400i", "700", "700i"],
     },
   ],
+  colors: {
+    body: "#070619",
+    light: "#bcb5c5",
+    main: "#2f2c54",
+    accent: "#e61747",
+    extra1: "#5f0f36",
+    extra2: "#9a113b",
+    extra3: "#d01a44",
+  },
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
-    a: {
-      color: "#e61747",
+    body: {
+      color: options.colors.body,
+    },
+    "a, a:hover, a:active": {
       textDecoration: "none",
+      color: options.colors.body,
+    },
+    "section a, footer a": {
+      color: options.colors.accent,
       // fontWeight: "bold",
     },
   }),
@@ -33,4 +51,5 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 export default typography;
-export const { scale, rhythm, options } = typography;
+export const { scale, rhythm } = typography;
+export const typOptions = typography.options;
