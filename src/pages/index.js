@@ -33,6 +33,9 @@ const BlogIndex = ({ data, location }) => {
             </header>
             <section>
               <p
+                style={{
+                  marginBottom: rhythm(1.75),
+                }}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}

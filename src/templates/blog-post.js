@@ -35,18 +35,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <article>
         <header>
           <div>{featuredImage()}</div>
-          <h1
+          <h2
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
             }}>
             {post.frontmatter.title}
-          </h1>
+          </h2>
           <p
             style={{
               ...scale(-1 / 5),
               display: "block",
-              marginBottom: rhythm(1),
+              marginBottom: rhythm(1.5),
             }}>
             {post.frontmatter.date}
           </p>
@@ -111,7 +111,7 @@ export const pageQuery = graphql`
         commentsUrl
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 630) {
+            fluid(maxWidth: 780) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -21,9 +21,32 @@ const Layout = ({ location, title, children }) => {
             textDecoration: "none",
             color: "inherit",
           }}
-          to={"/"}>
-          {title}
-        </Link>
+          to={"/"}></Link>
+        <span
+          style={{
+            color: "#070619",
+            "font-weight": "normal",
+          }}>
+          TKIT
+        </span>
+        <span
+          style={{
+            color: "#D01A44",
+          }}>
+          _
+        </span>
+        <span
+          style={{
+            transform: "rotate(-90deg)",
+            display: "inline-block",
+            color: "#bcb5c5",
+            "font-weight": "normal",
+            "font-size": "20px",
+            "padding-left": "22px",
+            "margin-left": "-14px",
+          }}>
+          dev
+        </span>
       </h1>
     );
   } else {
@@ -45,12 +68,13 @@ const Layout = ({ location, title, children }) => {
       </h3>
     );
   }
+
   return (
     <div
       style={{
         marginLeft: "auto",
         marginRight: "auto",
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(26),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}>
       <header>{header}</header>

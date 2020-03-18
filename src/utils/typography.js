@@ -1,17 +1,31 @@
+// SEE: https://kyleamathews.github.io/typography.js/
+
 import Typography from "typography";
-import Wordpress2016 from "typography-theme-wordpress-2016";
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: "none",
+const typography = new Typography({
+  headerFontFamily: ["Montserrat"],
+  headerWeight: 500,
+  bodyFontFamily: ["Lato"],
+  baseFontSize: "18px",
+  baseLineHeight: 1.75,
+  googleFonts: [
+    {
+      name: "Montserrat",
+      styles: ["300", "400", "500"],
     },
-  };
-};
-
-delete Wordpress2016.googleFonts;
-
-const typography = new Typography(Wordpress2016);
+    {
+      name: "Lato",
+      styles: ["400", "400i", "700", "700i"],
+    },
+  ],
+  overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
+    a: {
+      color: "#e61747",
+      textDecoration: "none",
+      // fontWeight: "bold",
+    },
+  }),
+});
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== "production") {
@@ -19,5 +33,4 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 export default typography;
-export const rhythm = typography.rhythm;
-export const scale = typography.scale;
+export const { scale, rhythm, options } = typography;

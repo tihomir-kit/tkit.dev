@@ -3,17 +3,25 @@
 // Default overrides
 
 .gatsby-highlight {
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 1.75rem;
 }
 
 .line-numbers {
   .line-numbers-rows {
     border: none;
-    padding: 12px 14px;
+    padding: 13px 14px;
   }
 }
 
 .post-footer {
   margin-bottom: 24px;
 }
+
+$dark: #070619;
+$light: #bcb5c5;
+$main: #2f2c54;
+$accent: #9a113b;
+$alt: #5f0f36;
+$accent1: #e61747;
+$accent2: #d01a44;
