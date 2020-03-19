@@ -42,7 +42,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-responsive-iframe",
             options: {
-              wrapperStyle: "margin-bottom: 1.0725rem", // TODO: maybe resolve this through typograpy file
+              wrapperStyle: "margin-bottom: 1.0725rem", // TODO: maybe resolve this through typography file
             },
           },
           {
@@ -69,7 +69,7 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Tihomir Kit dev blog",
-        short_name: "tkit.dev",
+        short_name: "TKIT_dev",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#663399",

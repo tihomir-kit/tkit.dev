@@ -2,9 +2,31 @@
 
 // Default overrides
 
+$grey: #070619;
+$light: #bcb5c5;
+$main: #2f2c54;
+$accent: #e61747;
+$extra1: #5f0f36;
+$extra2: #9a113b;
+$extra3: #d01a44;
+
+$harmonizedCodeBackground: #f4f3f5;
+
 .gatsby-highlight {
   font-size: 13px;
   margin-bottom: 1.75rem;
+
+  pre {
+    background: $harmonizedCodeBackground;
+  }
+
+  .line-numbers-rows {
+    color: $light;
+  }
+}
+
+.language-text {
+  background: $harmonizedCodeBackground;
 }
 
 .line-numbers {
@@ -13,11 +35,3 @@
     padding: 13px 14px;
   }
 }
-
-$grey: #070619;
-$light: #bcb5c5;
-$main: #2f2c54;
-$accent: #e61747;
-$extra1: #5f0f36;
-$extra2: #9a113b;
-$extra3: #d01a44;
