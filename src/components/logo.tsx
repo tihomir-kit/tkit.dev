@@ -8,7 +8,8 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { rhythm, scale, typOptions } from "../utils/typography";
+import { scale } from "../utils/typography";
+import colors from "../utils/colors";
 
 // const Logo: React.FC = ({ post: any }) => {
 const Logo = () => {
@@ -27,25 +28,25 @@ const Logo = () => {
         to={"/"}></Link>
       <span
         style={{
-          "font-weight": "normal",
+          fontWeight: "normal",
         }}>
         TKIT
       </span>
       <span
         style={{
-          color: typOptions.colors.accent,
+          color: colors.accent,
         }}>
         _
       </span>
       <span
         style={{
+          color: colors.light,
           transform: "rotate(-90deg)",
           display: "inline-block",
-          color: typOptions.colors.light,
-          "font-weight": "normal",
-          "font-size": "20px",
-          "padding-left": "22px",
-          "margin-left": "-14px",
+          fontWeight: "normal",
+          fontSize: "20px",
+          paddingLeft: "22px",
+          marginLeft: "-14px",
         }}>
         dev
       </span>

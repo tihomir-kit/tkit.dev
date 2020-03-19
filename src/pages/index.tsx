@@ -4,7 +4,8 @@ import { Link, graphql } from "gatsby";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { rhythm, typOptions } from "../utils/typography";
+import { rhythm } from "../utils/typography";
+import colors from "../utils/colors";
 
 import "./styles.scss";
 
@@ -29,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
                   {title}
                 </Link>
               </h3>
-              <small style={{ color: typOptions.colors.light }}>{node.frontmatter.date}</small>
+              <small style={{ color: colors.light }}>{node.frontmatter.date}</small>
             </header>
             <section>
               <p
