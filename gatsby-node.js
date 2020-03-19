@@ -62,3 +62,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   fmImagesToRelative(node);
 };
+
+// SEE: https://github.com/gatsbyjs/gatsby/issues/4357#issuecomment-445458658
+exports.onCreateWebpackConfig = function({ actions }) {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
+  });
+};

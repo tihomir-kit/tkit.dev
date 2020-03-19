@@ -1,9 +1,10 @@
 import React from "react";
 
-import { rhythm } from "../utils/typography";
+import { rhythm, scale } from "@/utils";
 import Logo from "./logo";
 
-const Layout = ({ location, title, children }) => {
+// TODO: use a type instead of any
+const Layout = ({ location, title, children }: any) => {
   return (
     <div
       style={{
@@ -16,7 +17,10 @@ const Layout = ({ location, title, children }) => {
         <Logo />
       </header>
       <main>{children}</main>
-      <footer>
+      <footer
+        style={{
+          ...scale(-1 / 3),
+        }}>
         Copyleft © {new Date().getFullYear()}, all wrongs reserved. Built with{" "}
         <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted on <a href="https://www.netlify.com/">Netlify</a>.
       </footer>

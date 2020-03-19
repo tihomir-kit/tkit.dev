@@ -2,14 +2,12 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import Bio from "../components/bio";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import { Layout, SEO, Bio } from "@/components";
 
-import { rhythm, scale } from "../utils/typography";
-import colors from "../utils/colors";
+import { rhythm, scale, colors } from "@/utils";
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+// TODO: use a type instead of any
+const BlogPostTemplate = ({ data, pageContext, location }: any) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
@@ -49,12 +47,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               ...scale(-1 / 5),
               display: "block",
               marginBottom: rhythm(1.5),
+              letterSpacing: rhythm(0.0625),
+              textTransform: "uppercase",
             }}>
             <small style={{ color: colors.light }}>{post.frontmatter.date}</small>
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="post-footer">{commentsLink()}</div>
+        <footer>{commentsLink()}</footer>
         <hr
           style={{
             marginBottom: rhythm(1),

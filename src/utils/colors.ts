@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   body: "#070619",
   light: "#bcb5c5",
   main: "#2f2c54",
@@ -7,5 +7,3 @@ const colors = {
   extra2: "#9a113b",
   extra3: "#d01a44",
 };
-
-export default colors;

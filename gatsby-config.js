@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: "tkit.dev",
+    title: "TKIT_dev",
     author: {
       name: "Tihomir Kit",
     },
@@ -42,7 +42,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-responsive-iframe",
             options: {
-              wrapperStyle: "margin-bottom: 1.0725rem",
+              wrapperStyle: "margin-bottom: 1.0725rem", // TODO: maybe resolve this through typograpy file
             },
           },
           {
@@ -88,7 +88,7 @@ module.exports = {
       resolve: "gatsby-plugin-alias-imports",
       options: {
         alias: {
-          "@assets": `${__dirname}/content/assets`, // path.resolve(__dirname, "content/assets") // todo: can probably be removed because can't import in .md
+          "@assets": `${__dirname}/content/assets`,
         },
         extensions: [],
       },

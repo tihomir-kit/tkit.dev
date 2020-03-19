@@ -1,10 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import { Layout, SEO } from "@/components";
 
-const NotFoundPage = ({ data, location }) => {
+// TODO: use a type instead of any
+const NotFoundPage = ({ data, location }: any) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (

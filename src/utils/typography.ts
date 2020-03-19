@@ -1,10 +1,12 @@
 // SEE: https://kyleamathews.github.io/typography.js/
+
 // SAMPLES:
 // https://github.com/KyleAMathews/typography.js/blob/master/packages/typography-theme-st-annes/src/index.js
 // https://github.com/KyleAMathews/typography.js/blob/master/packages/typography-theme-wordpress-2016/src/index.js
 
 import Typography, { TypographyOptions } from "typography";
-import colors from "./colors";
+
+import { colors } from "./colors";
 
 const typography = new Typography({
   headerFontFamily: ["Montserrat"],
@@ -15,7 +17,7 @@ const typography = new Typography({
   googleFonts: [
     {
       name: "Montserrat",
-      styles: ["300", "400", "500"],
+      styles: ["300", "400", "500"], // TODO: remove unnecessary extras
     },
     {
       name: "Lato",

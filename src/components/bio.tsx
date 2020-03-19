@@ -6,10 +6,10 @@
  */
 
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
+import { useStaticQuery, graphql } from "gatsby";
 
-import { rhythm } from "../utils/typography";
+import { rhythm } from "@/utils";
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
