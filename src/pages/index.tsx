@@ -1,14 +1,13 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
-import Bio from "../components/bio";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import { rhythm } from "../utils/typography";
+import { Layout, SEO, Bio } from "@/components";
+import { rhythm, colors } from "@/utils";
 
 import "./styles.scss";
 
-const BlogIndex = ({ data, location }) => {
+// TODO: use a type instead of any
+const BlogIndex = ({ data, location }: any) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
@@ -16,7 +15,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="Tihomir Kit - Dev blog" />
       <Bio />
-      {posts.map(({ node }) => {
+      {posts.map(({ node }: any) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
@@ -29,10 +28,13 @@ const BlogIndex = ({ data, location }) => {
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
+              <small style={{ color: colors.light }}>{node.frontmatter.date}</small>
             </header>
             <section>
               <p
+                style={{
+                  marginBottom: rhythm(1.75),
+                }}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}

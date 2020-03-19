@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/eslint-recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "react/prop-types": "off",
+    "no-unused-vars": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    // SEE: https://github.com/pootzko/docuflow/tree/master/DocuFlow.WebApp#eslint-no-unused-vars-bug
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [2, { "args": "none" }]
+      }
+    }
+  ]
+}

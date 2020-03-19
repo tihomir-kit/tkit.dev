@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   siteMetadata: {
-    title: "tkit.dev",
+    title: "TKIT_dev",
     author: {
       name: "Tihomir Kit",
     },
@@ -36,13 +36,13 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 630,
+              maxWidth: 780,
             },
           },
           {
             resolve: "gatsby-remark-responsive-iframe",
             options: {
-              wrapperStyle: "margin-bottom: 1.0725rem",
+              wrapperStyle: "margin-bottom: 1.0725rem", // TODO: maybe resolve this through typography file
             },
           },
           {
@@ -69,7 +69,7 @@ module.exports = {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Tihomir Kit dev blog",
-        short_name: "tkit.dev",
+        short_name: "TKIT_dev",
         start_url: "/",
         background_color: "#ffffff",
         theme_color: "#663399",
@@ -88,11 +88,12 @@ module.exports = {
       resolve: "gatsby-plugin-alias-imports",
       options: {
         alias: {
-          "@assets": `${__dirname}/content/assets`, // path.resolve(__dirname, "content/assets") // todo: can probably be removed because can't import in .md
+          "@assets": `${__dirname}/content/assets`,
         },
         extensions: [],
       },
     },
+    "gatsby-plugin-typescript",
     "gatsby-plugin-sass",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

@@ -5,7 +5,7 @@ const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const blogPost = path.resolve("./src/templates/blog-post.js");
+  const blogPost = path.resolve("./src/templates/blog-post.tsx");
   const result = await graphql(
     `
       {
@@ -61,4 +61,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 
   fmImagesToRelative(node);
+};
+
+// SEE: https://github.com/gatsbyjs/gatsby/issues/4357#issuecomment-445458658
+exports.onCreateWebpackConfig = function({ actions }) {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
+  });
 };

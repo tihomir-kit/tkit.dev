@@ -2,12 +2,12 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import Bio from "../components/bio";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import { rhythm, scale } from "../utils/typography";
+import { Layout, SEO, Bio } from "@/components";
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+import { rhythm, scale, colors } from "@/utils";
+
+// TODO: use a type instead of any
+const BlogPostTemplate = ({ data, pageContext, location }: any) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
@@ -35,24 +35,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <article>
         <header>
           <div>{featuredImage()}</div>
-          <h1
+          <h2
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
             }}>
             {post.frontmatter.title}
-          </h1>
+          </h2>
           <p
             style={{
               ...scale(-1 / 5),
               display: "block",
-              marginBottom: rhythm(1),
+              marginBottom: rhythm(1.5),
+              letterSpacing: rhythm(0.0625),
+              textTransform: "uppercase",
             }}>
-            {post.frontmatter.date}
+            <small style={{ color: colors.light }}>{post.frontmatter.date}</small>
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <div className="post-footer">{commentsLink()}</div>
+        <footer>{commentsLink()}</footer>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -111,7 +113,7 @@ export const pageQuery = graphql`
         commentsUrl
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 630) {
+            fluid(maxWidth: 780) {
               ...GatsbyImageSharpFluid
             }
           }
