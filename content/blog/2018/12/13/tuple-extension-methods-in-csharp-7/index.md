@@ -38,4 +38,4 @@ public async Task<PagedCollection<User>> FilterUsersAsync(FilterParameters filte
 }
 ```
 
-In the past, although it’s not really a best practice, I would use C# out params for this specific case of getting the entity count at the same time as the collection itself and in my opinion tuples make this a bit cleaner and nicer. Another benefit of this is that tuples can be used with async methods, where out parameters can’t.
+In the past, although it’s not really a best practice, I would use C# `out` params for this specific case of getting the entity count at the same time as the collection itself and in my opinion tuples make this a bit cleaner and nicer. Another benefit of this is that tuples can be used with `async` methods, where `out` parameters can’t.

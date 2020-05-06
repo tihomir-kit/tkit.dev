@@ -10,7 +10,7 @@ seoKeywords: ["database", "influxdb"]
 
 In this short post I’ll explain how to write a `WHERE LIKE` clause in InfluxDB. The syntax is slightly different from what you would use in standard SQL. There is no `LIKE` clause per se and instead syntax resembles pattern matching with an equality or negation operator.
 
-Bellow are two very simple examples. The first one returns all the records where SensorName starts with abcd and the second one returns all the records where `SensorName` doesn’t start with "abcd".
+Bellow are two very simple examples. The first one returns all the records where `SensorName` starts with abcd and the second one returns all the records where `SensorName` doesn’t start with "abcd".
 
 ```sql
 SELECT * FROM "sensor" WHERE SensorName =~ /abcd*/ AND time > now() - 5m

@@ -125,7 +125,7 @@ public class UserModel
 }
 ```
 
-Now, to glue all of this together and to enable the WebAPI to read (decrypt and decode) the tokens on each request, we need to tell the middleware how to do it. You can add this piece of code to your _Startup.cs_ or even better, extract this code into a separate method inside `App_Start`/`AuthConfig.cs` and then just call it from the _Startup.cs_.
+Now, to glue all of this together and to enable the WebAPI to read (decrypt and decode) the tokens on each request, we need to tell the middleware how to do it. You can add this piece of code to your _Startup.cs_ or even better, extract this code into a separate method inside _App_Start/AuthConfig.cs_ and then just call it from the _Startup.cs_.
 
 ```cs
 // The app variable is of Owin.IAppBuilder type
