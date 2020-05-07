@@ -50,6 +50,6 @@ GROUP BY *                                           -- copies all tags
 
 I really hope this helps and saves you some time. If you have any questions, feel free to leave a comment.
 
-#FastNotFastButMaybeFaster
+&#35;FastNotFastButMaybeFaster
 
 Cheers!
