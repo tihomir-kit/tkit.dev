@@ -46,6 +46,6 @@ using(var adapter = new DataAccessAdapter())
 }
 ```
 
-I envisioned this as a short [series of blog posts](/2017/10/23/llblgen-pro-tips/) focusing on fetching and filtering concepts which you'll find yourself using every day with LLBLGen. In the following posts we'll cover a couple of different filtering techniques depending on what you need to filter your entity collections by.
+I envisioned this as a short [series of blog posts](/2017/10/23/llblgen-pro-basics/) focusing on fetching and filtering concepts which you'll find yourself using every day with LLBLGen. In the following posts we'll cover a couple of different filtering techniques depending on what you need to filter your entity collections by.
 
 Hope you found the post helpful. If you have any questions, drop a comment bellow. Cheers!

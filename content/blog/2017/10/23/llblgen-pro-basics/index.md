@@ -1,7 +1,7 @@
 ---
-title: LLBLGen Pro ORM tips
+title: LLBLGen Pro ORM basics
 date: "2017-10-23T00:00:00.000Z"
-description: A list of useful to know things about using LLBLGen Pro ORM
+description: A list of useful to know things about how to use LLBLGen Pro ORM
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/14
 tags: [".net", "c#", "database", "llblgen", "orm"]

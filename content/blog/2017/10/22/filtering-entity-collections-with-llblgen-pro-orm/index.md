@@ -9,7 +9,7 @@ tags: [".net", "c#", "database", "llblgen", "orm"]
 
 In the [previous post](/2017/10/22/fetching-nested-entities-with-llblgen-pro-orm/), we covered the topic of fetching nested entities (prefetching) and in this one we'll go over filtering entity collections. When talking about databases, filtering is one of the most commonly used operations. In LLBLGen, filtering means using [predicate buckets](https://www.llblgen.com/documentation/5.3/LLBLGen%20Pro%20RTF/Using%20the%20generated%20code/Filtering%20and%20Sorting/gencode_filteringbasics.htm).
 
-We'll re-use the same DB schema throughout the whole [LLBLGen series](/2017/10/23/llblgen-pro-tips/) (made using [QuickDBD](https://www.quickdatabasediagrams.com/)):
+We'll re-use the same DB schema throughout the whole [LLBLGen series](/2017/10/23/llblgen-pro-basics/) (made using [QuickDBD](https://www.quickdatabasediagrams.com/)):
 
 ![SQL Schema](sql-schema.jpg)
 

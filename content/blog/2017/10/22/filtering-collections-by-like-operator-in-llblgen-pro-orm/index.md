@@ -7,7 +7,7 @@ commentsUrl: https://github.com/pootzko/tkit.dev/issues/13
 tags: [".net", "c#", "database", "llblgen", "orm"]
 ---
 
-This will be a simple one. It's another useful way of filtering entity collections in LLBLGen Pro. If you don't know anything about filtering, predicate expressions or buckets in LLBLGen, check out some of the [other posts](/2017/10/23/llblgen-pro-tips/) from the series.
+This will be a simple one. It's another useful way of filtering entity collections in LLBLGen Pro. If you don't know anything about filtering, predicate expressions or buckets in LLBLGen, check out some of the [other posts](/2017/10/23/llblgen-pro-basics/) from the series.
 
 What the LIKE operator enables us to do in SQL is it allows us to filter collections by partial string matches which is a quite common action if you have any search input fields in your app. For example if we wanted to find all the products that have the word "blue" in their name we would use the LIKE operator. The way to do it in LLBLGen would be to use the [FieldLikePredicate](https://www.llblgen.com/Documentation/5.3/ReferenceManuals/LLBLGenProRTF/html/12BEFA44.htm):
 
