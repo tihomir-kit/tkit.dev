@@ -1,7 +1,7 @@
 ---
 title: Filtering collections by LIKE operator in LLBLGen Pro ORM
 date: "2017-10-22T00:00:00.000Z"
-description: How to filter record collections by a LIKE operator in LLBLGen Pro ORM?
+description: How to filter record collections by the LIKE operator in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/13
 tags: [".net", "c#", "database", "llblgen", "orm"]
