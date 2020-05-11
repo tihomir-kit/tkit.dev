@@ -29,7 +29,7 @@ private loadData(shortcode: string): void {
 }
 ```
 
-It contains a call to a service function which in turn returns a promise. That promise returns a successResponse and that's what we're about to mock. What we want to test is a situation where a $http request didn't fail, but it didn't return any data either. In that case, we might want to display a toast message and skip refreshing the local cache.
+It contains a call to a service function which in turn returns a promise. That promise returns a successResponse and that's what we're about to mock. What we want to test is a situation where a `$http` request didn't fail, but it didn't return any data either. In that case, we might want to display a toast message and skip refreshing the local cache.
 
 The following Jasmine test explains the code in-line. Two crucial parts are creation of the promise and how to resolve it and forcing the angular digest cycle with `$rootScope.$apply()`. The `$apply()` is needed because we're invoking the promise from the Jasmine side, which is sort of "from the outside" and AngularJS will not be aware of that the event occurred so we need to let it know manually (the promise resolution wasn't triggered by AngularJS itself internally).
 
