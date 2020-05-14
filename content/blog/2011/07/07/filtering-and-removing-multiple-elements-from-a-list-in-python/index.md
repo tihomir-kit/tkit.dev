@@ -1,10 +1,10 @@
 ---
-title: Removing multiple elements from a list in Python
+title: Filtering and removing multiple elements from a list in Python
 date: "2011-09-11T00:00:00.000Z"
 description: How to remove multiple elements from a list in Python and not break the list while doing so?
 featuredImage: /assets/featured/python.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/24
-tags: ["elements", "list", "python", "removal"]
+tags: ["elements", "list", "python", "removal", "mutation"]
 ---
 
 Let's say you need to filter a Python list and remove all elements that match a given criteria. If you wanted to remove a single element, you could just use `del list[i]` ([example](http://docs.python.org/py3k/tutorial/datastructures.html#the-del-statement)). But if you wanted to remove multiple elements this might be a problem since you would be modifying and iterating over the list at the same time (keeping track of list indexes can become very confusing, very fast).
