@@ -13,7 +13,7 @@ Well, this guy named [meverett](https://github.com/meverett) recently made a few
 
 I find the admin dashboard that comes with InfluxDB a bit too simplistic and buggy and was actually thinking about how useful it would be if only there was a proper management app for Influx. Well, the InfluxDB Studio does more than the web admin dashboard and works great. And it made me really happy! :D
 
-This is how it looks:
+Here is how it looks:
 
 ![SQL Schema](influxdb-studio.png)
 
