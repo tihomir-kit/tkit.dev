@@ -1,6 +1,6 @@
 ---
 title: Detecting no-Internet / user-offline in Angular
-date: "2016-01-16T00:00:00.000Z"
+date: "2016-01-19T00:00:00.000Z"
 description: How to detect that the user lost the internet connection in AngularJS?
 featuredImage: /assets/featured/angular-cogs.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/28
