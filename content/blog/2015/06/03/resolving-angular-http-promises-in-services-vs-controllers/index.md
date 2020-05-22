@@ -37,7 +37,7 @@ Now you're probably wondering - what about the error callbacks? I could think of
 - Back-end model validation (I decided to go with [422](http://stackoverflow.com/a/3291292/413785) for this)
 
 
-To make my life easier, for the first three I decided to go with an [http-interceptor-service](http://cmikavac.net/2015/09/27/handling-webapi-exceptions-with-angular-http-interceptor/) which is in charge of handling WebAPI exceptions. This way I don't have to rewrite the same error callback code for every $http request. It's nice, centralized and provides enough flexibility (assuming you're taking good care of your WebAPI and return proper http statuses).
+To make my life easier, for the first three I decided to go with an [http-interceptor-service](/2015/09/27/handling-webapi-exceptions-with-angular-http-interceptor/) which is in charge of handling WebAPI exceptions. This way I don't have to rewrite the same error callback code for every $http request. It's nice, centralized and provides enough flexibility (assuming you're taking good care of your WebAPI and return proper http statuses).
 
 As for the last, fourth case, I created a couple of directives that wrap html input elements (text, textarea, dropdown..), WebAPI model state and validation messages (which have the format of [foundation abide](http://foundation.zurb.com/docs/components/abide.html)). For this to work, model state is needed inside a controller and since $http treats 422 status code as an error so far this was the only situation where I had to resolve the `error` callbacks inside controllers. In this case the http interceptor simply skips any 422 it encounters and it can then be taken care of elsewhere. I will explain this in more detail in my next-next post. Pinky swear. ;)
 

@@ -99,7 +99,7 @@ namespace MyApp.Web
 
 ```
 
-You can also use something like [ValidationFilter](http://cmikavac.net/2015/09/27/handling-nets-model-state-with-validationfilter-attribute/) to take care of invalid model states in an easy way (by replying with a 422). After you have all your desired/needed exception handlers in place, it's time to setup the client side. You can easily intercept every HTTP request and act upon responses from the server with an http request interceptor that looks like this:
+You can also use something like [ValidationFilter](/2015/09/27/handling-nets-model-state-with-validationfilter-attribute/) to take care of invalid model states in an easy way (by replying with a 422). After you have all your desired/needed exception handlers in place, it's time to setup the client side. You can easily intercept every HTTP request and act upon responses from the server with an http request interceptor that looks like this:
 
 ```js
 // http-request-interceptor.factory.js
