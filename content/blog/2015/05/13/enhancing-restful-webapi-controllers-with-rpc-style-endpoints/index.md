@@ -1,6 +1,6 @@
 ---
 title: Enhancing RESTful WebAPI controllers with RPC style endpoints
-date: "2015-06-03T00:00:00.000Z"
+date: "2015-05-13T00:00:00.000Z"
 description: How to add extra endpoints to WebAPI controllers besides the standard ones that don't have explicit routes?
 featuredImage: /assets/featured/dot-net-vs.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/36
