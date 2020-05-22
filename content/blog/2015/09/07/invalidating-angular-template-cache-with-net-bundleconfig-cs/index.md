@@ -85,4 +85,4 @@ function MyAppRun($cookies, $templateCache) {
 }
 ```
 
-_NOTE: I use [lodash](https://lodash.com/docs) in every project so if you're not using it, you might have to write your own code to replace `_.find()` and `_.contains()`_
+*NOTE: I use [lodash](https://lodash.com/docs) in every project so if you're not using it, you might have to write your own code to replace `_.find()` and `_.contains()`*.
