@@ -1,6 +1,6 @@
 ---
 title: Dynamically resolving function shared arguments in JavaScript
-date: "2015-04-05T00:00:00.000Z"
+date: "2014-07-19T00:00:00.000Z"
 description: How to dynamically pass an arbitrary amount of function arguments to a JS function if we don't know in advance how many we'll have to pass?
 featuredImage: /assets/featured/javascript.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/39
