@@ -1,6 +1,6 @@
 ---
 title: Returning value from fragment into parent activity on Android
-date: "2015-04-05T00:00:00.000Z"
+date: "2014-02-20T00:00:00.000Z"
 description: How to pass a value from a fragment back into the parent activity that initialized it in the first place?
 featuredImage: /assets/featured/android.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/40
