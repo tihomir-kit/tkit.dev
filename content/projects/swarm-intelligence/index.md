@@ -1,9 +1,12 @@
 ---
-title: QuickDBD
-date: March, 2017
-tags: [".net, angularjs, c#, javascript"]
+title: Swarm Intelligence
+date: 2012
+tags: ["canvas", "html5", "javascript"]
 ---
 
-Normally I would only put private projects to this section of the site, but I'm quite proud of this one.. :)
-
-Quick Database Diagrams (<a href="https://www.quickdatabasediagrams.com/">QuickDBD</a>) is a simple online tool to quickly draw database diagrams by typing. It is an internal project we've been working on in <a href="https://dovetail.ie/">Dovetail Technologies Ltd</a> where I am currently working on as a lead dev.
+HTML5 Canvas particle animation. Animated particles follow each other using one of three currently implemented algorithms:
+<ul>
+	<li><strong>swarm</strong> – each particle targets a random particle from the swarm and follows it for next 5000-10000 canvas refresh cycles. after that, it randomly finds a new one and follows it for next 5000-10000 refresh cycles and so on</li>
+	<li><strong>tail</strong> – each particle targets a different random particle on each canvas refresh cycle and follows it for a single refresh cycle after which it targets a new random particle and then follows than one for a single refresh cycle and so on</li>
+	<li><strong>lead</strong> – all particles follow the same (single) particle which moves randomly inside the canvas a bit faster than all the other particles</li>
+</ul>

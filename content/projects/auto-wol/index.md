@@ -1,9 +1,21 @@
 ---
-title: QuickDBD
-date: March, 2017
-tags: [".net, angularjs, c#, javascript"]
+title: Auto WOL
+date: 15/01/2014
+url: https://play.google.com/store/apps/details?id=net.cmikavac.autowol
+tags: ["android", "java"]
 ---
 
-Normally I would only put private projects to this section of the site, but I'm quite proud of this one.. :)
+A simple android Wake-on-Lan application which can wake your devices up automatically upon obtaining Wi-Fi connection.
 
-Quick Database Diagrams (<a href="https://www.quickdatabasediagrams.com/">QuickDBD</a>) is a simple online tool to quickly draw database diagrams by typing. It is an internal project we've been working on in <a href="https://dovetail.ie/">Dovetail Technologies Ltd</a> where I am currently working on as a lead dev.
+<strong>Features:</strong>
+<ul>
+	<li>regular WOL</li>
+	<li>automatic WOL upon obtaining Wi-Fi connection</li>
+	<li>quiet-hours (period during which automatic WOL will be suppressed)</li>
+	<li>idle-time (period from last Wi-Fi disconnect during which automatic WOL will be suppresed)</li>
+	<li>auto SSID discovery</li>
+	<li>Auto-WOL notifications</li>
+</ul>
+App is released under GPLv3 on <a title="auto-wol" href="https://github.com/pootzko/auto-wol">github</a>.
+
+Kudos to <a title="Marko Iličić" href="https://www.linkedin.com/profile/view?id=187609680&amp;authType=name&amp;authToken=pbBN&amp;trk=prof-proj-cc-name">Marko Iličić</a> for providing me with Android Dev guidelines. :)

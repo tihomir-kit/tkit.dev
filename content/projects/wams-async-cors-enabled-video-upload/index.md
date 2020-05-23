@@ -1,9 +1,11 @@
 ---
-title: QuickDBD
-date: March, 2017
-tags: [".net, angularjs, c#, javascript"]
+title: WAMS async CORS enabled video upload
+date: February, 2014
+url: https://github.com/pootzko/wams-async-cors-upload
+tags: [".net", "azure", "c#", "javascript", "jquery"]
 ---
 
-Normally I would only put private projects to this section of the site, but I'm quite proud of this one.. :)
+<strong>Windows Azure Media Services async CORS enabled video upload demo</strong> is an ASP.NET MVC application created as a proof-of-concept on how to do async CORS enabled video upload to Azure Media Services.
 
-Quick Database Diagrams (<a href="https://www.quickdatabasediagrams.com/">QuickDBD</a>) is a simple online tool to quickly draw database diagrams by typing. It is an internal project we've been working on in <a href="https://dovetail.ie/">Dovetail Technologies Ltd</a> where I am currently working on as a lead dev.
+WACU was for made for our internal needs at <a title="MonoSoftware Ltd." href="http://www.mono-software.com/">MonoSoftware Ltd</a> but can be downloaded and used freely.
+

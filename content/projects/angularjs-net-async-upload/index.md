@@ -1,9 +1,10 @@
 ---
-title: QuickDBD
-date: March, 2017
-tags: [".net, angularjs, c#, javascript"]
+title: AngularJS .net async upload
+date: March, 2014
+url: https://github.com/pootzko/angular-net-async-upload
+tags: [".net", "angularjs", "c#", "javascript"]
 ---
 
-Normally I would only put private projects to this section of the site, but I'm quite proud of this one.. :)
+<strong>AngularJS .net async upload</strong> is a simple file upload demo app which uses <a title="angular file upload" href="https://github.com/danialfarid/angular-file-upload">angular-file-upload directive</a> to upload files through ASP.NET WebAPI backend.
 
-Quick Database Diagrams (<a href="https://www.quickdatabasediagrams.com/">QuickDBD</a>) is a simple online tool to quickly draw database diagrams by typing. It is an internal project we've been working on in <a href="https://dovetail.ie/">Dovetail Technologies Ltd</a> where I am currently working on as a lead dev.
+This upload demo was for made for our internal needs at <a title="MonoSoftware Ltd." href="http://www.mono-software.com/">MonoSoftware Ltd</a> but can be downloaded and used freely.

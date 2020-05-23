@@ -1,9 +1,8 @@
 ---
-title: QuickDBD
-date: March, 2017
-tags: [".net, angularjs, c#, javascript"]
+title: Druyd
+date: 2010
+url: http://www.druydmusic.com/
+tags: ["php", "wordpress"]
 ---
 
-Normally I would only put private projects to this section of the site, but I'm quite proud of this one.. :)
-
-Quick Database Diagrams (<a href="https://www.quickdatabasediagrams.com/">QuickDBD</a>) is a simple online tool to quickly draw database diagrams by typing. It is an internal project we've been working on in <a href="https://dovetail.ie/">Dovetail Technologies Ltd</a> where I am currently working on as a lead dev.
+Druyd is a Croatian/Australian heavy wood band that performs world music with an unusual acoustic instrumental set-up consisting of didgeridoo, guitar and female vocal.

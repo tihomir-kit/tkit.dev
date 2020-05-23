@@ -1,9 +1,10 @@
 ---
-title: QuickDBD
-date: March, 2017
-tags: [".net, angularjs, c#, javascript"]
+title: Reactify
+date: June, 2014
+url: https://github.com/pootzko/reactify
+tags: ["angularjs", "javascript", "reactjs"]
 ---
 
-Normally I would only put private projects to this section of the site, but I'm quite proud of this one.. :)
+<strong>Reactify</strong> is a simple <a title="AngularJS" href="https://angularjs.org/">AngularJS</a> demo web app which uses <a title="ReactJS" href="http://facebook.github.io/react/">ReactJS</a> to improve the rendering speed of a long item list.
 
-Quick Database Diagrams (<a href="https://www.quickdatabasediagrams.com/">QuickDBD</a>) is a simple online tool to quickly draw database diagrams by typing. It is an internal project we've been working on in <a href="https://dovetail.ie/">Dovetail Technologies Ltd</a> where I am currently working on as a lead dev.
+Reactify was for made for our internal needs at <a title="MonoSoftware Ltd." href="http://www.mono-software.com/">MonoSoftware Ltd</a> but can be downloaded and used freely.
