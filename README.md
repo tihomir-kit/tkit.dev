@@ -2,6 +2,8 @@
 
 https://tkit.dev/
 
+Comments on blog posts under [Issues](https://github.com/pootzko/tkit.dev/issues).
+
 ### List of blog posts I wrote for Dovetail Technologies
 
 - [Invalidating AWS Cloudfront cache using Octopus Deploy](https://www.dovetail.ie/blog/2017/invalidating-aws-cloudfront-cache-using-octopus-deploy/)
@@ -25,6 +27,6 @@ https://tkit.dev/
 - [Creating NodeJS modules with both promise and callback API support using Q](http://mono.software/posts/Creating-NodeJS-modules-with-both-promise-and-callback-API-support-using-Q/)
 - [Sharing sessions between SocketIO and Express using Redis](http://mono.software/posts/Sharing-sessions-between-SocketIO-and-Express-using-Redis/)
 
-### Gatsby Debugging
+### Useful Gatsby links for myself so I don't forget / lose them
 
-[Some weird bug with heading image inclusions](https://stackoverflow.com/a/55755068/413785)
+- Some weird [bug](https://stackoverflow.com/a/55755068/413785) with heading image inclusions.
