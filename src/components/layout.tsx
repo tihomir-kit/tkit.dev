@@ -21,8 +21,9 @@ const Layout = ({ location, title, children }: any) => {
         style={{
           ...scale(-1 / 3),
         }}>
-        Copyleft © {new Date().getFullYear()}, all wrongs reserved. Built with{" "}
-        <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted on <a href="https://www.netlify.com/">Netlify</a>.
+        Copyleft © {new Date().getFullYear()}, <a href="https://github.com/pootzko/tkit.dev">all wrongs reserved</a>.
+        Built with <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted on{" "}
+        <a href="https://www.netlify.com/">Netlify</a>.
       </footer>
     </div>
   );
