@@ -131,6 +131,10 @@ Once you have that, you can embed the plot image in your client-side app. All yo
 
 You might also want to conditionally display any potential errors if there are any. Good UX and all that.
 
+Here's a sample of a plot result:
+
+![Result plot](ad-result-plot.jpg)
+
 ### Conclusion
 
 It took a good few days to put this all together and make it work, but it was fun and the results are fantastic. It also works reasonably fast. With thousands of data points, we are able to render the AD plot within a few seconds and we've been able to utilize this feature to make extra sense of the data we're harvesting.
