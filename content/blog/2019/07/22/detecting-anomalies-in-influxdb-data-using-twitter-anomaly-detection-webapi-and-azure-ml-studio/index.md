@@ -77,13 +77,13 @@ The next node will contain the small [Python script](https://github.com/pootzko/
 
 ![Python script execution](ad-python-script.png)
 
-The script will read the URL from our "CSV" input, create a request and once it obtains the data from InfluxDB, it will convert it to a format that AzureML can work with. That conversion happens using the [pandas library](https://pandas.pydata.org/) which the AzureML Studio can work with.
+The script will read the URL from our "CSV" input, create a request and once it obtains the data from InfluxDB, it will convert it to a format that AzureML can work with. That conversion happens using the [pandas library](https://pandas.pydata.org/) which the AzureML Studio understands.
 
 Note the last line which expects the columns `time` and `value` described in the previous node.
 
 #### 3. Select data columns
 
-This node takes all the formatted data and lets you chose the columns to work with. Since I only use time and a single metric and since I used the `value` alias for that metric, this step was a no-brainer. I simply had to enter these two column names here and save the changes.
+This node takes all the formatted data and lets you chose the columns to pass to the next node. Since I only use timestamps and a single metric and since I used the `value` alias for that metric, this step was a no-brainer. I only had to enter these two column names here and save the changes.
 
 ![Selected data columns](ad-selected-columns.png)
 
@@ -95,46 +95,44 @@ First, you'll have to create a custom module:
 
 ![New module](ad-new-module.jpg)
 
-What goes into the zip file you ask?
+So, what should you put into the zip file?
 
-- The [module definition XML file](https://github.com/pootzko/witad/blob/master/r/twitteranomalycustommodule.xml) - this is where you can set the module name, version, the entry point script and function, and the anomaly detection parameters such as input fields, dropdowns with their predefined values etc..
-- The [entry point R script](https://github.com/pootzko/witad/blob/master/r/azureml_ts_anom_detection.R) - this is the "main" R file that initiates the process of anomaly detection, Tej wrote the initial version of this
-- All the remaining R scripts from the [folder](https://github.com/pootzko/witad/tree/master/r) - these actually come [from Twitter itself](https://github.com/twitter/AnomalyDetection/tree/master/R), and it's important to bundle them as well
+- The [module definition XML file](https://github.com/pootzko/witad/blob/master/r/twitteranomalycustommodule.xml) - this is where you can set the module name, version, the entry point script and function names, and anomaly detection parameters such as input fields, dropdowns with their predefined values etc..
+- The [entry point R script](https://github.com/pootzko/witad/blob/master/r/azureml_ts_anom_detection.R) - this is the "main R file" that initiates the process of anomaly detection, Tej wrote the initial version of this
+- All the remaining R scripts from the [folder](https://github.com/pootzko/witad/tree/master/r) - these actually come [from Twitter itself](https://github.com/twitter/AnomalyDetection/tree/master/R), and it's important to bundle them also
 
-One thing I didn't get right at start was that I had to manually bundle these Twitter files. For some reason I thought the script would install them via something like nuget or npm. A silly mistake in hindsight, but there you have it.
+Now, take all these files, and zip them together directly from a root folder. Don't "wrap them" in another folder and then zip that folder. That didn't work for me. Zip the files themselves only.
 
-Now, take all these files, and zip them all together directly from a root folder. Don't "wrap them" in another folder and then zip that folder. That didn't work for me. Zip files only.
-
-Then simply upload the zip and once that's done, a new item will show up in experiment nodes/items inside the "custom" group. You can then drag it to the experiment and wire it up with the previous node. You will be able to change the params manually and these will be your defaults. But, I specify all `GlobalParameters` params on each request to be explicit.
+Then upload the zip and once that's done, a new item will show up in experiment nodes/items on the left hand side under the "custom" group. You can then drag it to the experiment and wire it up with the previous node. You will be able to change the params manually and these will then act as your defaults. I specify all `GlobalParameters` params for each request to be explicit.
 
 ![Twitter anomaly detection](ad-params.png)
 
 #### 5.1. Web service output 1 (numeric result dataset)
 
-Once the data is crunched, you will get 2 resulting data sets. This is one of them - the numeric result dataset.
+Once the data is crunched, you will get 2 resulting data sets. This is one of them - the numeric result dataset. It contains data points of anomalies only; timestamp + value.
 
 ![Numeric result dataset](ad-web-service-output-1-result-dataset.png)
 
 #### 5.2. Web service output 2 (image result)
 
-This result dataset is the plot (image) that the R script will generate for you. Both of these outputs will be returned as a response to the WebAPI.
+This result dataset is the plot (image) that the R script will generate for you. Both of these outputs will be returned inside the response to your WebAPI.
 
 ![Viewport dataset](ad-web-service-output-2-viewport-dataset.png)
 
 ### Handling returned results
 
-Let's get back to our WebAPI. The raw response that you'll get will look [like this](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionModels.cs#L12). You will probably want to deserialize it and perhaps [adjust](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionService.cs#L10) it slightly to make it easier to use.
+Let's get back to our WebAPI. The raw response that you'll get will look [like this](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionModels.cs#L24). You will probably want to deserialize it and perhaps [adjust](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionService.cs#L10) it slightly to make it easier to use in your application.
 
-Once you have that, you can embed the plot image in your client-side app. All you have to do is create an `img` tag with [base64 embedded image](https://stackoverflow.com/a/8499716/413785). Make sure to add `data:image/png;base64,` before adding the string value from the `model.Plot` property.
+Once you have that, you can embed the plot image in your client-side app. All you have to do is create an `img` tag with [base64 embedded image](https://stackoverflow.com/a/8499716/413785). Make sure to add `data:image/png;base64,` before the string value of the `model.Plot` property.
 
 ```html
 <img src=”data:image/png;base64,{{model.plot}}” />
 ```
 
-You might also want to conditionally display any potential errors if there are any.
+You might also want to conditionally display any potential errors if there are any. Good UX and all that.
 
 ### Conclusion
 
-It took a good few days to put this all together and make it work, but it was a lot of fun and the results are fantastic. It also works reasonably fast. With thousands of data points, we are able to render the AD plot within a few seconds and we've been able to utilize this feature to make extra sense of the data we're harvesting.
+It took a good few days to put this all together and make it work, but it was fun and the results are fantastic. It also works reasonably fast. With thousands of data points, we are able to render the AD plot within a few seconds and we've been able to utilize this feature to make extra sense of the data we're harvesting.
 
 Hopefully all this helps you save some time. If something wasn't clear enough, please leave a comment and I'll try to help and update the post. Thanks for reading!
