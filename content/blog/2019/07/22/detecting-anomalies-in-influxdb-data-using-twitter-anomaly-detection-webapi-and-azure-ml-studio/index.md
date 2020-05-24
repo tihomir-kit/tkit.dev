@@ -89,38 +89,52 @@ This node takes all the formatted data and lets you chose the columns to work wi
 
 #### Twitter anomaly detection
 
-This is the node that will actually be executing the Twitter AD R code and it was a bit tricky to figure out how to make it work.
+This is the node that will be executing the actual anomaly detection R code and it was a bit tricky to figure out how to make it work.
 
-To use the R code, you have to create a custom module:
+First, you'll have to create a custom module:
 
 ![New module](ad-new-module.jpg)
 
 What goes into the zip file you ask?
 
 - The [module definition XML file](https://github.com/pootzko/witad/blob/master/r/twitteranomalycustommodule.xml) - this is where you can set the module name, version, the entry point script and function, and the anomaly detection parameters such as input fields, dropdowns with their predefined values etc..
-- The [entry point R script](https://github.com/pootzko/witad/blob/master/r/azureml_ts_anom_detection.R) - this is the "main" R file that initiates the process of anomaly detection
-- All the other R scripts from the folder - these actually come from Twitter itself
+- The [entry point R script](https://github.com/pootzko/witad/blob/master/r/azureml_ts_anom_detection.R) - this is the "main" R file that initiates the process of anomaly detection, Tej wrote the initial version of this
+- All the remaining R scripts from the [folder](https://github.com/pootzko/witad/tree/master/r) - these actually come from Twitter itself, and it's important to bundle them as well
 
-One thing I didn't get right at start was that I actually had to manually bundle these Twitter files inside the module as well. For some reason I thought they would somehow get magically pulled from the internet and used. A silly mistake in hindsight, but there you have it.
+One thing I didn't get right at start was that I had to manually bundle these Twitter files. For some reason I thought the script would install them via something like nuget or npm. A silly mistake in hindsight, but there you have it.
 
-Now, take all these files, and zip them all together directly from that root folder. Don't "wrap them" in another folder and then zip that folder. That didn't work for me.
+Now, take all these files, and zip them all together directly from a root folder. Don't "wrap them" in another folder and then zip that folder. That didn't work for me. Zip files only.
 
-Once you've uploaded the .zip, a new item will show up in experiment items inside the "custom" group. Once you drag it to the experiment and wire it up with the previous node, you'll be able to change these params during the testing phase. Once you call the whole thing from your WebAPI, `GlobalParameters` params will be used.
+Then simply upload the zip and once that's done, a new item will show up in experiment nodes/items inside the "custom" group. You can then drag it to the experiment and wire it up with the previous node. You will be able to change the params manually and these will be your defaults. But, I specify all `GlobalParameters` params on each request to be explicit.
 
 ![Twitter anomaly detection](ad-params.png)
 
 #### Web service output 1 (numeric result dataset)
 
+Once the data is crunched, you will get 2 resulting data sets. This is one of them - the numeric result dataset.
+
 ![Numeric result dataset](ad-web-service-output-1-result-dataset.png)
 
 #### Web service output 2 (image result)
 
+This result dataset is the plot (image) that the R script will generate for you. Both of these outputs will be returned as a response to the WebAPI.
+
 ![Viewport dataset](ad-web-service-output-2-viewport-dataset.png)
 
+### Handling returned results
 
+Let's get back to our WebAPI. The raw response that you'll get will look [like this](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionModels.cs#L12). You will probably want to deserialize it and perhaps [adjust](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionService.cs#L10) it slightly to make it easier to use.
+
+Once you have that, you can embed the plot image in your client-side app. All you have to do is create an `img` tag with [base64 embedded image](https://stackoverflow.com/a/8499716/413785). Make sure to add `data:image/png;base64,` before adding the string value from the `model.Plot` property.
 
 ```html
-<img ng-src=”data:image/png;base64,{{anomalies.plot}}” />
+<img src=”data:image/png;base64,{{model.plot}}” />
 ```
+
+You might also want to conditionally display any potential errors if there are any.
+
+### Conclusion
+
+It took a good few days to put this all together and make it work, but it was a lot of fun and the results are fantastic. It also works reasonably fast. With thousands of data points, we are able to render the AD plot within a few seconds and we've been able to utilize this feature to make extra sense of the data we're harvesting.
 
 Hopefully all this helps you save some time. If something wasn't clear enough, please leave a comment and I'll try to help and update the post. Thanks for reading!
