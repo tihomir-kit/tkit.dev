@@ -1,7 +1,7 @@
 ---
 title: Mounting a Docker volume from Git Bash
 date: "2020-03-06T00:00:00.000Z"
-description: How to mount a Docker volume inside a container from Git Bash on Windows
+description: How to mount a Docker volume inside a container from Git Bash on Windows.
 featuredImage: /assets/featured/docker.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/6
 tags: ["docker", "windows", "git", "bash"]
