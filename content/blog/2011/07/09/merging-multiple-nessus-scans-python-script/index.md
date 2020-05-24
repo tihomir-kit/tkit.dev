@@ -43,4 +43,4 @@ mainTree.write("nss_report/report.nessus", encoding="utf-8", xml_declaration=Tru
 
 If you have any questions, just drop a comment bellow..
 
-_EDIT: [mastahyeti](http://btoe.ws/) made [some improvements](https://cmikavac.net/2011/07/09/merging-multiple-nessus-scans-python-script/#comment-3214) to this script, you can get it at [his GitHub](https://gist.github.com/2720173)_
+_EDIT: [mastahyeti](http://btoe.ws/) made [some improvements](/2011/07/09/merging-multiple-nessus-scans-python-script/#comment-3214) to this script, you can get it at [his GitHub](https://gist.github.com/2720173)_
