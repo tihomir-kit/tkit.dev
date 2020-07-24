@@ -2,5 +2,32 @@
   "prettier.jsxBracketSameLine": true,
   "prettier.printWidth": 120,
   "prettier.trailingComma": "all",
-  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "tsx"]
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "tsx"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#423e75",
+    "activityBar.activeBorder": "#a75e58",
+    "activityBar.background": "#423e75",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#a75e58",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#2f2c54",
+    "statusBar.border": "#2f2c54",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#423e75",
+    "titleBar.activeBackground": "#2f2c54",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.border": "#2f2c54",
+    "titleBar.inactiveBackground": "#2f2c5499",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#2F2C54"
 }
