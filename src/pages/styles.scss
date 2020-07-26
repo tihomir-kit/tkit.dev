@@ -12,6 +12,30 @@ $extra3: #d01a44;
 
 $harmonizedCodeBackground: #f4f3f5;
 
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .app {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+nav {
+  background-color: $main;
+  padding: 20px;
+}
+
 .gatsby-highlight {
   font-size: 13px;
   margin-bottom: 1.75rem;
