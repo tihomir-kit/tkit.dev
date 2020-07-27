@@ -33,7 +33,6 @@ const navStyle = css`
 
 // TODO: use a type instead of any
 const Layout = ({ location, title, children }: any) => {
-  console.log(appStyle);
   return (
     <div css={appStyle}>
       <nav css={navStyle}>
