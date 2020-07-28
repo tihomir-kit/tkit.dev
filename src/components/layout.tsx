@@ -1,8 +1,7 @@
 import React from "react";
-import { css } from "@emotion/core";
-import { rhythm, scale } from "@/utils";
+import { Global, css } from "@emotion/core";
 
-import { colors } from "../utils/colors";
+import { rhythm, scale, colors, globalStyle } from "@/utils";
 import Logo from "./logo";
 import Footer from "./footer";
 
@@ -29,12 +28,11 @@ const navStyle = css`
   padding: 20px;
 `;
 
-// padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-
 // TODO: use a type instead of any
 const Layout = ({ location, title, children }: any) => {
   return (
     <div css={appStyle}>
+      <Global styles={globalStyle} />
       <nav css={navStyle}>
         <Logo />
         Left nav

@@ -2,10 +2,12 @@ import React from "react";
 import { css } from "@emotion/core";
 import { rhythm, scale } from "@/utils";
 
-const footerStyle = css`
-  ${css({ ...scale(-1 / 3) })};
-  color: blue;
-`;
+const footerStyle = [
+  css({ ...scale(-1 / 3) }),
+  css`
+    color: blue;
+  `,
+];
 
 // TODO: use a type instead of any
 const Footer = ({ location, title, children }: any) => {

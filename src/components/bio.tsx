@@ -1,18 +1,13 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import Image from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
+import { css } from "@emotion/core";
 
 import { rhythm } from "@/utils";
 
-const Bio = () => {
-  const data = useStaticQuery(graphql`
+function getBioData() {
+  // See: https://www.gatsbyjs.org/docs/use-static-query/
+  return useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
@@ -34,27 +29,27 @@ const Bio = () => {
       }
     }
   `);
+}
 
+const bioStyle = css`
+  display: flex;
+  margin-bottom: ${rhythm(2.5)};
+`;
+
+const imgStyle = css`
+  margin-right: ${rhythm(1 / 2)};
+  margin-bottom: 0;
+  min-width: 50;
+  border-radius: 50%;
+`;
+
+const Bio = () => {
+  const data = getBioData();
   const { author, social } = data.site.siteMetadata;
+
   return (
-    <div
-      style={{
-        display: "flex",
-        marginBottom: rhythm(2.5),
-      }}>
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: "100%",
-        }}
-        imgStyle={{
-          borderRadius: "50%",
-        }}
-      />
+    <div css={bioStyle}>
+      <Image fixed={data.avatar.childImageSharp.fixed} alt={author.name} css={imgStyle} />
       <p>
         Written by <strong>{author.name}</strong>, a senior software engineer{" "}
         <a href="https://www.dovetail.ie/">@Dovetail</a>. <br />

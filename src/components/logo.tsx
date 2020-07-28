@@ -1,54 +1,48 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import { Link } from "gatsby";
+import { css } from "@emotion/core";
 
 import { scale, colors } from "@/utils";
 
+const logoStyle = [
+  css({ ...scale(1.5) }),
+  css`
+    margin-top: 0;
+  `,
+];
+
+const linkStyle = css`
+  box-shadow: none;
+  text-decoration: none;
+  color: inherit;
+`;
+
+const tkitStyle = css`
+  font-weight: normal;
+`;
+
+const lodashStyle = css`
+  color: ${colors.accent};
+  padding-left: 4px;
+`;
+
+const devStyle = css`
+  color: ${colors.light};
+  transform: rotate(-90deg);
+  display: inline-block;
+  font-weight: normal;
+  font-size: 18px;
+  padding-left: 20px;
+  margin-left: -14px;
+`;
+
 const Logo = () => {
   return (
-    <h1
-      style={{
-        ...scale(1.5),
-        marginTop: 0,
-      }}>
-      <Link
-        style={{
-          boxShadow: "none",
-          textDecoration: "none",
-          color: "inherit",
-        }}
-        to={"/"}>
-        <span
-          style={{
-            fontWeight: "normal",
-          }}>
-          TKIT
-        </span>
-        <span
-          style={{
-            color: colors.accent,
-            paddingLeft: "4px",
-          }}>
-          _
-        </span>
-        <span
-          style={{
-            color: colors.light,
-            transform: "rotate(-90deg)",
-            display: "inline-block",
-            fontWeight: "normal",
-            fontSize: "18px",
-            paddingLeft: "20px",
-            marginLeft: "-14px",
-          }}>
-          dev
-        </span>
+    <h1 css={logoStyle}>
+      <Link css={linkStyle} to={"/"}>
+        <span css={tkitStyle}>TKIT</span>
+        <span css={lodashStyle}>_</span>
+        <span css={devStyle}>dev</span>
       </Link>
     </h1>
   );

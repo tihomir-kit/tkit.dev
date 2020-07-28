@@ -6,4 +6,5 @@ export const colors = {
   extra1: "#5f0f36",
   extra2: "#9a113b",
   extra3: "#d01a44",
+  harmonizedCodeBackground: "#f4f3f5",
 };

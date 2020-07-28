@@ -2,9 +2,8 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import { Layout, SEO, Bio } from "@/components";
-
 import { rhythm, scale, colors } from "@/utils";
+import { Layout, SEO, Bio } from "@/components";
 
 // TODO: use a type instead of any
 const BlogPostTemplate = ({ data, pageContext, location }: any) => {
