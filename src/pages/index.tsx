@@ -1,10 +1,15 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
+import { css } from "@emotion/core";
 
-import { Layout, SEO, Bio } from "@/components";
-import { rhythm, colors } from "@/utils";
+import { rhythm } from "@/utils";
+import { Layout, SEO, ItemHeading, Bio } from "@/components";
 
 import "./styles.scss";
+
+const excerptStyle = css`
+  margin-bottom: ${rhythm(1.75)};
+`;
 
 // TODO: use a type instead of any
 const BlogIndex = ({ data, location }: any) => {
@@ -16,25 +21,16 @@ const BlogIndex = ({ data, location }: any) => {
       <SEO title="Tihomir Kit - Dev blog" />
       <Bio />
       {posts.map(({ node }: any) => {
-        const title = node.frontmatter.title || node.fields.slug;
         return (
           <article key={node.fields.slug}>
-            <header>
-              <h2
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}>
-                <Link style={{ boxShadow: "none" }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h2>
-              <small style={{ color: colors.light }}>{node.frontmatter.date}</small>
-            </header>
+            <ItemHeading
+              heading={node.frontmatter.title || node.fields.slug}
+              subHeading={node.frontmatter.date}
+              to={node.fields.slug}
+            />
             <section>
               <p
-                style={{
-                  marginBottom: rhythm(1.75),
-                }}
+                css={excerptStyle}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}

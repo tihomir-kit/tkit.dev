@@ -1,9 +1,21 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { css } from "@emotion/core";
 
-import { rhythm, scale, colors } from "@/utils";
-import { Layout, SEO, Bio } from "@/components";
+import { rhythm } from "@/utils";
+import { Layout, SEO, ItemHeading, Bio } from "@/components";
+
+const headingStyle = css`
+  margin-bottom: ${rhythm(3 / 5)};
+`;
+
+const navStyle = css`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+`;
 
 // TODO: use a type instead of any
 const BlogPostTemplate = ({ data, pageContext, location }: any) => {
@@ -19,59 +31,30 @@ const BlogPostTemplate = ({ data, pageContext, location }: any) => {
     return <a href={post.frontmatter.commentsUrl}>Comment on GitHub</a>;
   }
 
-  function featuredImage() {
-    // TODO: Extract to component
-    if (!post.frontmatter.featuredImage) {
-      return "";
-    }
-
-    return <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />;
-  }
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
       <article>
-        <header>
-          <div>{featuredImage()}</div>
-          <h2
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}>
-            {post.frontmatter.title}
-          </h2>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: "block",
-              marginBottom: rhythm(1.5),
-              letterSpacing: rhythm(0.0625),
-              textTransform: "uppercase",
-            }}>
-            <small style={{ color: colors.light }}>{post.frontmatter.date}</small>
-          </p>
-        </header>
+        <div css={headingStyle}>
+          <ItemHeading
+            heading={post.frontmatter.title}
+            subHeading={post.frontmatter.date}
+            featuredImage={post.frontmatter.featuredImage}
+          />
+        </div>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <footer>{commentsLink()}</footer>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
         <footer>
+          {commentsLink()}
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
           <Bio />
         </footer>
       </article>
       <nav>
-        <ul
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            listStyle: "none",
-            padding: 0,
-          }}>
+        <ul css={navStyle}>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">

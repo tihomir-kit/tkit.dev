@@ -30,3 +30,6 @@ Comments on blog posts under [Issues](https://github.com/pootzko/tkit.dev/issues
 ### Useful Gatsby links for myself so I don't forget / lose them
 
 - Some weird [bug](https://stackoverflow.com/a/55755068/413785) with heading image inclusions.
+- Typography
+  - [What](https://github.com/KyleAMathews/typography.js/blob/master/docs/what.md)
+  - [Why](https://github.com/KyleAMathews/typography.js/blob/master/docs/why.md)

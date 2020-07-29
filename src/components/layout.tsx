@@ -1,7 +1,7 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
 
-import { rhythm, scale, colors, globalStyle } from "@/utils";
+import { rhythm, colors, globalStyle } from "@/utils";
 import Logo from "./logo";
 import Footer from "./footer";
 
