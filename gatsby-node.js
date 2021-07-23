@@ -63,6 +63,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   fmImagesToRelative(node);
 };
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+
+    type Frontmatter @infer {
+      featuredImage: File @fileByRelativePath,
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // SEE: https://github.com/gatsbyjs/gatsby/issues/4357#issuecomment-445458658
 exports.onCreateWebpackConfig = function({ actions }) {
   actions.setWebpackConfig({

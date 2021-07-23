@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 import { rhythm } from "@/utils";
 

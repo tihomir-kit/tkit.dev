@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 import { rhythm } from "@/utils";
 import { Layout, SEO, ItemHeading, Bio } from "@/components";
@@ -30,6 +30,8 @@ const BlogPostTemplate = ({ data, pageContext, location }: any) => {
 
     return <a href={post.frontmatter.commentsUrl}>Comment on GitHub</a>;
   }
+
+  console.log(post.frontmatter.featuredImage);
 
   return (
     <Layout location={location} title={siteTitle}>

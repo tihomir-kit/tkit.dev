@@ -1,11 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { css } from "@emotion/core";
+import { css } from "@emotion/react";
 
 import { rhythm } from "@/utils";
 import { Layout, SEO, ItemHeading, Bio } from "@/components";
-
-import "./styles.scss";
 
 const excerptStyle = css`
   margin-bottom: ${rhythm(1.75)};

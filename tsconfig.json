@@ -25,7 +25,8 @@
       {
         "name": "typescript-styled-plugin"
       }
-    ]
+    ],
+    "types": ["@emotion/react/types/css-prop"]
   },
   "include": ["src"]
 }
