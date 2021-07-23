@@ -39,6 +39,8 @@ const typography = new Typography({
   }),
 });
 
+// NOTE: This might be a problem, wait and see
+// https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v2-to-v3/#process-is-not-defined
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== "production") {
   typography.injectStyles();

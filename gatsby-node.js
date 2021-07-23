@@ -70,6 +70,9 @@ exports.onCreateWebpackConfig = function({ actions }) {
       alias: {
         "@": path.resolve(__dirname, "src"),
       },
+      fallback: {
+        fs: false,
+      }
     },
   });
 };
