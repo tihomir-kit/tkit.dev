@@ -7,13 +7,8 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import PostCard from '../components/post-card/post-card';
 import PostDetails from '../components/post-details/post-details';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  PinterestShareButton,
-  RedditShareButton,
-} from 'react-share';
-import { IoLogoFacebook, IoLogoTwitter, IoLogoPinterest, IoLogoReddit } from 'react-icons/io';
+import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
+import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
 import {
   BlogPostDetailsWrapper,
   RelatedPostWrapper,
@@ -75,12 +70,6 @@ const BlogPostTemplate = (props: any) => {
             <TwitterShareButton url={shareUrl} title={title}>
               <IoLogoTwitter />
             </TwitterShareButton>
-            <PinterestShareButton
-              url={shareUrl}
-              media={urljoin(siteUrl, post.frontmatter.featuredImage.publicURL)}
-            >
-              <IoLogoPinterest />
-            </PinterestShareButton>
             <RedditShareButton url={shareUrl} title={`${post.frontmatter.title}`}>
               <IoLogoReddit />
             </RedditShareButton>

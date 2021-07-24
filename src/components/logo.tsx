@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "gatsby";
-import { css } from "@emotion/react";
+import React from 'react';
+import { Link } from 'gatsby';
+import { css } from '@emotion/react';
 
-import { scale, colors } from "@/utils";
+import { scale, colors } from '@/utils';
 
 const logoStyle = [
   css({ ...scale(1.5) }),
@@ -39,7 +39,7 @@ const devStyle = css`
 const Logo = () => {
   return (
     <h1 css={logoStyle}>
-      <Link css={linkStyle} to={"/"}>
+      <Link css={linkStyle} to={'/'}>
         <span css={tkitStyle}>TKIT</span>
         <span css={lodashStyle}>_</span>
         <span css={devStyle}>dev</span>

@@ -39,10 +39,7 @@ const MenuItems = [
   },
 ];
 
-const Navbar: React.FunctionComponent<NavbarProps> = ({
-  className,
-  ...props
-}) => {
+const Navbar: React.FunctionComponent<NavbarProps> = ({ className, ...props }) => {
   const [state, setState] = useState({
     toggle: false,
     search: '',
@@ -77,11 +74,7 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
         <MenuWrapper>
           <Menu items={MenuItems} />
         </MenuWrapper>
-        <NavSearchButton
-          type="button"
-          aria-label="search"
-          onClick={toggleHandle}
-        >
+        <NavSearchButton type="button" aria-label="search" onClick={toggleHandle}>
           <IoIosSearch size="23px" />
         </NavSearchButton>
       </NavbarWrapper>
@@ -89,11 +82,7 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
       <NavSearchWrapper className={state.toggle === true ? 'expand' : ''}>
         <NavSearchFromWrapper>
           <SearchContainer />
-          <SearchCloseButton
-            type="submit"
-            aria-label="close"
-            onClick={toggleHandle}
-          >
+          <SearchCloseButton type="submit" aria-label="close" onClick={toggleHandle}>
             <IoIosClose />
           </SearchCloseButton>
         </NavSearchFromWrapper>

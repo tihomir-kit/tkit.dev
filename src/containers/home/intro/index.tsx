@@ -2,19 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import SocialProfile from '../../../components/social-profile/social-profile';
-import {
-  IntroWrapper,
-  IntroImage,
-  IntroTitle,
-  Desciption,
-  IntroInfo,
-} from './style';
-import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoGithub,
-} from 'react-icons/io';
+import { IntroWrapper, IntroImage, IntroTitle, Desciption, IntroInfo } from './style';
+import { IoLogoFacebook, IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io';
 
 type IntroProps = {};
 

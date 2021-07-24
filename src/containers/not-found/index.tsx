@@ -2,13 +2,7 @@ import * as React from 'react';
 import Image from 'gatsby-image';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import { IoMdArrowRoundBack } from 'react-icons/io';
-import {
-  NotFoundWrapper,
-  NotFoundContent,
-  NotFoundImage,
-  Goback,
-  Icon,
-} from './style';
+import { NotFoundWrapper, NotFoundContent, NotFoundImage, Goback, Icon } from './style';
 
 interface NotFoundProps {}
 
@@ -36,8 +30,8 @@ const NotFound: React.FunctionComponent<NotFoundProps> = () => {
       <NotFoundContent>
         <h1>This Page Was Lost</h1>
         <p>
-          The Page You are looking for isn’t available. Try to search again or
-          use the Go Back button below.
+          The Page You are looking for isn’t available. Try to search again or use the Go Back
+          button below.
         </p>
         <Goback>
           <Link to="/">

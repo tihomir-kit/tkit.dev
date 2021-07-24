@@ -63,9 +63,7 @@ const Input: React.FC<InputProps> = ({
 
   // Label Field
   const labelField = label && <label htmlFor={htmlFor}>{label}</label>;
-  const notificationMessage = notification && (
-    <div className="notification">{notification}</div>
-  );
+  const notificationMessage = notification && <div className="notification">{notification}</div>;
 
   // Set Input element based on type prop
   switch (type) {
@@ -114,10 +112,7 @@ const Input: React.FC<InputProps> = ({
   }
 
   return (
-    <InputWrapper
-      className={`${addAllClasses.join(' ')}`}
-      style={containerStyle}
-    >
+    <InputWrapper className={`${addAllClasses.join(' ')}`} style={containerStyle}>
       {labelField || secondaryComponent ? (
         <div>
           {labelField} {secondaryComponent}

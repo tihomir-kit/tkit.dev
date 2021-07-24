@@ -13,11 +13,7 @@ type MenuItemsProps = {
   external?: boolean;
 };
 
-const Menu: React.FunctionComponent<MenuProps> = ({
-  items,
-  className,
-  ...props
-}) => {
+const Menu: React.FunctionComponent<MenuProps> = ({ items, className, ...props }) => {
   // Add all classs to an array
   const addAllClasses = ['menu'];
 

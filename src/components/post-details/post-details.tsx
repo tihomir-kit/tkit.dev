@@ -85,10 +85,7 @@ const PostDetails: React.FunctionComponent<PostDetailsProps> = ({
         ) : (
           ''
         )}
-        <PostDescription
-          dangerouslySetInnerHTML={{ __html: description }}
-          className="post_des"
-        />
+        <PostDescription dangerouslySetInnerHTML={{ __html: description }} className="post_des" />
         {tags == null ? null : (
           <PostTags>
             {tags.map((tag, index) => (

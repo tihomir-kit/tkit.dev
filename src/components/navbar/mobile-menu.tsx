@@ -18,11 +18,7 @@ type MobileMenuProps = {
   logo: string;
 };
 
-const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({
-  items,
-  logo,
-  ...props
-}) => {
+const MobileMenu: React.FunctionComponent<MobileMenuProps> = ({ items, logo, ...props }) => {
   const { state, dispatch }: any = useContext(DrawerContext);
 
   // Toggle drawer

@@ -21,13 +21,7 @@ type DrawerProviderProps = {
   children: any;
 };
 
-export const DrawerProvider: React.FunctionComponent<DrawerProviderProps> = ({
-  children,
-}) => {
+export const DrawerProvider: React.FunctionComponent<DrawerProviderProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <DrawerContext.Provider value={{ state, dispatch }}>
-      {children}
-    </DrawerContext.Provider>
-  );
+  return <DrawerContext.Provider value={{ state, dispatch }}>{children}</DrawerContext.Provider>;
 };

@@ -5,9 +5,7 @@ import Posts from './posts';
 
 type PersonalBlogProps = {};
 
-const PersonalBlog: React.FunctionComponent<PersonalBlogProps> = ({
-  ...props
-}) => {
+const PersonalBlog: React.FunctionComponent<PersonalBlogProps> = ({ ...props }) => {
   return (
     <PersonalBlogWrapper {...props}>
       <Intro />

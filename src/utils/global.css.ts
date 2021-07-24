@@ -1,6 +1,6 @@
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 
-import { colors } from "./colors";
+import { colors } from './colors';
 
 // NOTE: This file is intended for 3rd party library overrides
 

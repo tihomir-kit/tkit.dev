@@ -2,19 +2,8 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import SocialProfile from '../../components/social-profile/social-profile';
-import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoLinkedin,
-} from 'react-icons/io';
-import {
-  AboutWrapper,
-  AboutImage,
-  AboutPageTitle,
-  AboutDetails,
-  SocialProfiles,
-} from './style';
+import { IoLogoFacebook, IoLogoTwitter, IoLogoInstagram, IoLogoLinkedin } from 'react-icons/io';
+import { AboutWrapper, AboutImage, AboutPageTitle, AboutDetails, SocialProfiles } from './style';
 
 const SocialLinks = [
   {
@@ -65,9 +54,8 @@ const About: React.FunctionComponent<AboutProps> = () => {
       <AboutPageTitle>
         <h2>About StoryHub</h2>
         <p>
-          StoryHub is a beautiful Gatsby Blog theme designed to showcase your
-          work in style. Perfect for designers, artists, photographers and
-          developers to use for their portfolio website.
+          StoryHub is a beautiful Gatsby Blog theme designed to showcase your work in style. Perfect
+          for designers, artists, photographers and developers to use for their portfolio website.
         </p>
       </AboutPageTitle>
 
@@ -78,16 +66,14 @@ const About: React.FunctionComponent<AboutProps> = () => {
       <AboutDetails>
         <h2>Hey there, what’s up?</h2>
         <p>
-          RedQ Team is a creative agency specializing in building scalable,
-          high-performance web & mobile application. Our main concern is
-          creating more value into the application so that can help our
-          customers to grow their business.
+          RedQ Team is a creative agency specializing in building scalable, high-performance web &
+          mobile application. Our main concern is creating more value into the application so that
+          can help our customers to grow their business.
         </p>
         <p>
-          RedQ Team is a creative agency specializing in building scalable,
-          high-performance web & mobile application. Our main concern is
-          creating more value into the application so that can help our
-          customers to grow their business.
+          RedQ Team is a creative agency specializing in building scalable, high-performance web &
+          mobile application. Our main concern is creating more value into the application so that
+          can help our customers to grow their business.
         </p>
 
         <SocialProfiles>

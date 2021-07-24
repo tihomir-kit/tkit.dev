@@ -48,22 +48,14 @@ const Drawer: React.FunctionComponent<DrawerProps> = ({
         {...props}
       >
         {closeButton && (
-          <div
-            className="drawer__close"
-            onClick={toggleHandler}
-            style={closeButtonStyle}
-          >
+          <div className="drawer__close" onClick={toggleHandler} style={closeButtonStyle}>
             {closeButton}
           </div>
         )}
 
         {children}
       </RcDrawer>
-      <div
-        className="drawer__handler"
-        style={{ display: 'inline-block' }}
-        onClick={toggleHandler}
-      >
+      <div className="drawer__handler" style={{ display: 'inline-block' }} onClick={toggleHandler}>
         {drawerHandler}
       </div>
     </Fragment>
