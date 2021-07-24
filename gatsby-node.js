@@ -63,6 +63,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   fmImagesToRelative(node);
 };
 
+// DO NOT UPGRADE gatsby-remark-relative-images
+// SEE: https://stackoverflow.com/a/63714936/413785
+// Potential solution: https://stackoverflow.com/a/58398170/413785 (but it's messed up, didn't work the first time)
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
@@ -74,6 +77,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       featuredImage: File @fileByRelativePath,
     }
   `;
+
   createTypes(typeDefs);
 };
 
