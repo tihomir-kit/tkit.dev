@@ -1,18 +1,23 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Navbar from '../components/navbar/navbar';
+import ResetCss from '../components/reset-css';
+import SEO from '../components/seo';
+import NotFound from '../containers/not-found';
+import Footer from '../components/footer/footer';
 
-import { Layout, SEO } from "@/components";
-
-// TODO: use a type instead of any
-const NotFoundPage = ({ data, location }: any) => {
-  const siteTitle = data.site.siteMetadata.title;
-
+const NotFoundPage = (props: any) => {
   return (
-    <Layout location={location} title={siteTitle}>
+    <>
+      <ResetCss />
+      <Navbar />
       <SEO title="404: Not Found" />
-      <h1>Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Layout>
+      <NotFound />
+      <Footer>
+        Copyright &copy; {new Date().getFullYear()}
+        <a href="https://redq.io/"> RedQ, Inc.</a>
+      </Footer>
+    </>
   );
 };
 

@@ -1,78 +1,129 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import { css } from "@emotion/react";
+import React from 'react';
+import { graphql, Link } from 'gatsby';
+import _ from 'lodash';
+import urljoin from 'url-join';
+import { DiscussionEmbed } from 'disqus-react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import PostCard from '../components/post-card/post-card';
+import PostDetails from '../components/post-details/post-details';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  PinterestShareButton,
+  RedditShareButton,
+} from 'react-share';
+import {
+  IoLogoFacebook,
+  IoLogoTwitter,
+  IoLogoPinterest,
+  IoLogoReddit,
+} from 'react-icons/io';
+import {
+  BlogPostDetailsWrapper,
+  RelatedPostWrapper,
+  RelatedPostItems,
+  RelatedPostTitle,
+  RelatedPostItem,
+  BlogPostFooter,
+  PostShare,
+  PostTags,
+  BlogPostComment,
+} from './templates.style';
 
-import { rhythm } from "@/utils";
-import { Layout, SEO, ItemHeading, Bio } from "@/components";
+const BlogPostTemplate = (props: any) => {
+  const post = props.data.markdownRemark;
+  const { edges } = props.data.allMarkdownRemark;
+  const title = post.frontmatter.title;
+  const slug = post.fields.slug;
+  const siteUrl = props.data.site.siteMetadata.siteUrl;
+  const shareUrl = urljoin(siteUrl, slug);
 
-const headingStyle = css`
-  margin-bottom: ${rhythm(3 / 5)};
-`;
-
-const navStyle = css`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0;
-`;
-
-// TODO: use a type instead of any
-const BlogPostTemplate = ({ data, pageContext, location }: any) => {
-  const post = data.markdownRemark;
-  const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = pageContext;
-
-  function commentsLink() {
-    if (!post.frontmatter.commentsUrl) {
-      return "";
-    }
-
-    return <a href={post.frontmatter.commentsUrl}>Comment on GitHub</a>;
-  }
-
-  console.log(post.frontmatter.featuredImage);
-
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: slug, title },
+  };
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
-      <article>
-        <div css={headingStyle}>
-          <ItemHeading
-            heading={post.frontmatter.title}
-            subHeading={post.frontmatter.date}
-            featuredImage={post.frontmatter.featuredImage}
-          />
-        </div>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <footer>
-          {commentsLink()}
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-          <Bio />
-        </footer>
-      </article>
-      <nav>
-        <ul css={navStyle}>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+    <Layout>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <BlogPostDetailsWrapper>
+        <PostDetails
+          title={post.frontmatter.title}
+          date={post.frontmatter.date}
+          preview={
+            post.frontmatter.cover == null
+              ? null
+              : post.frontmatter.cover.childImageSharp.fluid
+          }
+          description={post.html}
+          imagePosition="left"
+        />
+
+        <BlogPostFooter
+          className={post.frontmatter.cover == null ? 'center' : ''}
+        >
+          {post.frontmatter.tags == null ? null : (
+            <PostTags className="post_tags">
+              {post.frontmatter.tags.map((tag: string, index: number) => (
+                <Link key={index} to={`/tags/${_.kebabCase(tag)}/`}>
+                  {`#${tag}`}
+                </Link>
+              ))}
+            </PostTags>
+          )}
+          <PostShare>
+            <span>Share This:</span>
+            <FacebookShareButton url={shareUrl} quote={post.excerpt}>
+              <IoLogoFacebook />
+            </FacebookShareButton>
+            <TwitterShareButton url={shareUrl} title={title}>
+              <IoLogoTwitter />
+            </TwitterShareButton>
+            <PinterestShareButton
+              url={shareUrl}
+              media={urljoin(siteUrl, post.frontmatter.cover.publicURL)}
+            >
+              <IoLogoPinterest />
+            </PinterestShareButton>
+            <RedditShareButton
+              url={shareUrl}
+              title={`${post.frontmatter.title}`}
+            >
+              <IoLogoReddit />
+            </RedditShareButton>
+          </PostShare>
+        </BlogPostFooter>
+        <BlogPostComment
+          className={post.frontmatter.cover == null ? 'center' : ''}
+        >
+          <DiscussionEmbed {...disqusConfig} />
+        </BlogPostComment>
+      </BlogPostDetailsWrapper>
+
+      {edges.length !== 0 && (
+        <RelatedPostWrapper>
+          <RelatedPostTitle>Related Posts</RelatedPostTitle>
+          <RelatedPostItems>
+            {edges.map(({ node }: any) => (
+              <RelatedPostItem key={node.fields.slug}>
+                <PostCard
+                  title={node.frontmatter.title || node.fields.slug}
+                  url={node.fields.slug}
+                  image={
+                    node.frontmatter.cover == null
+                      ? null
+                      : node.frontmatter.cover.childImageSharp.fluid
+                  }
+                  tags={node.frontmatter.tags}
+                />
+              </RelatedPostItem>
+            ))}
+          </RelatedPostItems>
+        </RelatedPostWrapper>
+      )}
     </Layout>
   );
 };
@@ -80,25 +131,57 @@ const BlogPostTemplate = ({ data, pageContext, location }: any) => {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug($slug: String!, $tag: [String!]) {
     site {
       siteMetadata {
-        title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD MMM, YYYY")
         description
-        commentsUrl
-        featuredImage {
+        tags
+        cover {
+          publicURL
           childImageSharp {
-            fluid(maxWidth: 780) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 1170, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    }
+    allMarkdownRemark(
+      limit: 3
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: {
+        frontmatter: { tags: { in: $tag } }
+        fields: { slug: { ne: $slug } }
+      }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tags
+            cover {
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 480, maxHeight: 285, quality: 90) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
             }
           }
         }

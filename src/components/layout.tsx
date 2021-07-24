@@ -1,47 +1,42 @@
-import React from "react";
-import { Global, css } from "@emotion/react";
+import React from 'react';
+import Sticky from 'react-stickynode';
+import { ThemeProvider } from 'styled-components';
+import ScrollToTop from 'react-scroll-up';
+import Navbar from './navbar/navbar';
+import Footer from './footer/footer';
+import ScrollUpButton from './scroll-up-button/scroll-up-button';
+import ResetCss from './reset-css';
+import { theme } from '../theme';
 
-import { rhythm, colors, globalStyle } from "@/utils";
-import Logo from "./logo";
-import Footer from "./footer";
+type LayoutProps = {
+  children: React.ReactNode;
+};
 
-const appStyle = css`
-  max-width: ${rhythm(34)};
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: auto 1fr auto;
-  }
-`;
-
-const mainStyle = css`
-  flex: 1;
-  padding: 20px;
-`;
-
-const navStyle = css`
-  background-color: ${colors.main};
-  padding: 20px;
-`;
-
-// TODO: use a type instead of any
-const Layout = ({ location, title, children }: any) => {
+const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
-    <div css={appStyle}>
-      <Global styles={globalStyle} />
-      <nav css={navStyle}>
-        <Logo />
-        Left nav
-      </nav>
-      <main css={mainStyle}>
+    <ThemeProvider theme={theme}>
+      <>
+        <ResetCss />
+        <Sticky top={0} innerZ={9999} activeClass="nav-sticky">
+          <Navbar />
+        </Sticky>
+
         {children}
-        <Footer />
-      </main>
-    </div>
+
+        <Footer>
+          Copyright &copy; {new Date().getFullYear()}
+          <a href="https://redq.io/"> RedQ, Inc.</a>
+        </Footer>
+        <ScrollToTop
+          showUnder={300}
+          duration={700}
+          easing="easeInOutCubic"
+          style={{ bottom: 30, right: 20 }}
+        >
+          <ScrollUpButton />
+        </ScrollToTop>
+      </>
+    </ThemeProvider>
   );
 };
 

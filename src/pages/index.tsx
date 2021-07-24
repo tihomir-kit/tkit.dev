@@ -1,68 +1,31 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { css } from "@emotion/react";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import PersonalBlog from '../containers/home';
+import SEO from '../components/seo';
 
-import { rhythm } from "@/utils";
-import { Layout, SEO, ItemHeading, Bio } from "@/components";
-
-const excerptStyle = css`
-  margin-bottom: ${rhythm(1.75)};
-`;
-
-// TODO: use a type instead of any
-const BlogIndex = ({ data, location }: any) => {
-  const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
+const HomePage = (props: any) => {
+  const { data } = props;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="Tihomir Kit - Dev blog" />
-      <Bio />
-      {posts.map(({ node }: any) => {
-        return (
-          <article key={node.fields.slug}>
-            <ItemHeading
-              heading={node.frontmatter.title || node.fields.slug}
-              subHeading={node.frontmatter.date}
-              to={node.fields.slug}
-            />
-            <section>
-              <p
-                css={excerptStyle}
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        );
-      })}
+    <Layout>
+      <SEO
+        title="Personal Blog Lite"
+        description={data.site.siteMetadata.description}
+      />
+      <PersonalBlog />
     </Layout>
   );
 };
 
-export default BlogIndex;
+export default HomePage;
 
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
+        description
       }
     }
   }
