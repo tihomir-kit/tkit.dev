@@ -1,6 +1,13 @@
+# List files to not format using Prettier
+
 .cache
+.vscode/*
 package.json
 package-lock.json
 public
+
+tsconfig.*
+tslint.json
+.eslintrc.json
 
 *.md

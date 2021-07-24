@@ -1,4 +1,6 @@
 {
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
   "prettier.jsxBracketSameLine": true,
   "prettier.printWidth": 120,
   "prettier.trailingComma": "all",

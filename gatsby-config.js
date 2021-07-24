@@ -1,5 +1,9 @@
 const path = require("path");
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "TKIT_dev",
@@ -61,7 +65,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "UA-11297782-1",
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
       },
     },
     "gatsby-plugin-feed",
