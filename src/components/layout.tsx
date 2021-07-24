@@ -23,10 +23,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
 
         {children}
 
-        <Footer>
-          Copyright &copy; {new Date().getFullYear()}
-          <a href="https://redq.io/"> RedQ, Inc.</a>
-        </Footer>
+        <Footer />
         <ScrollToTop
           showUnder={300}
           duration={700}

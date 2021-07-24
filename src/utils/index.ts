@@ -1,3 +1,3 @@
-export * from "./typography";
-export * from "./colors";
-export * from "./global.css";
+//export * from "./typography";
+export * from './colors';
+export * from './global.css';

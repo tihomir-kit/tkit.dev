@@ -12,11 +12,16 @@ module.exports = {
     description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {
-      twitter: "pootzko",
       github: "pootzko",
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        minify: false, // Breaks styles if not set to false
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -39,13 +44,14 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 780,
+              maxWidth: 590,
+              linkImagesToOriginal: true,
             },
           },
           {
-            resolve: "gatsby-remark-responsive-iframe",
+            resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: "margin-bottom: 1.0725rem", // TODO: maybe resolve this through typography file
+              wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
           {
@@ -54,6 +60,7 @@ module.exports = {
               showLineNumbers: true,
             },
           },
+          "gatsby-remark-mermaid",
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-smartypants",
         ],
@@ -81,12 +88,13 @@ module.exports = {
       },
     },
     "gatsby-plugin-react-helmet",
-    {
-      resolve: "gatsby-plugin-typography",
-      options: {
-        pathToConfigModule: "src/utils/typography",
-      },
-    },
+    "gatsby-plugin-lodash",
+    // { // TODO: REMOVE
+    //   resolve: "gatsby-plugin-typography",
+    //   options: {
+    //     pathToConfigModule: "src/utils/typography",
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-alias-imports",
       options: {
@@ -110,16 +118,27 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // "gatsby-plugin-offline",
+    "gatsby-plugin-offline",
+    // { // TODO: Remove
+    //   resolve: `gatsby-plugin-emotion`,
+    //   options: {
+    //     // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
+    //     // The values for each key in this example are the defaults the plugin uses.
+    //     sourceMap: true,
+    //     autoLabel: "dev-only",
+    //     labelFormat: `[local]`,
+    //     cssPropOptimization: true,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-emotion`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
-        // The values for each key in this example are the defaults the plugin uses.
-        sourceMap: true,
-        autoLabel: "dev-only",
-        labelFormat: `[local]`,
-        cssPropOptimization: true,
+        google: {
+          families: [
+            'Poppins:300,400,500,600,700',
+            'Fira Sans:100,300,400,500,600,700',
+          ],
+        },
       },
     },
   ],
