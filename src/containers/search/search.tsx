@@ -28,7 +28,7 @@ function Search() {
               title
               description
               tags
-              cover {
+              featuredImage {
                 childImageSharp {
                   fluid(maxWidth: 62, maxHeight: 62, quality: 90) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -95,18 +95,10 @@ function Search() {
         />
       </SearchForm>
       <SearchResult>
-        {queryResults.length == 0 && searchQuery !== '' ? (
-          <NoResult>No result found</NoResult>
-        ) : (
-          ''
-        )}
+        {queryResults.length == 0 && searchQuery !== '' ? <NoResult>No result found</NoResult> : ''}
 
         {queryResults.length !== 0 && (
-          <Scrollbars
-            autoHeight={true}
-            autoHeightMax={505}
-            className="search-scrollbar"
-          >
+          <Scrollbars autoHeight={true} autoHeightMax={505} className="search-scrollbar">
             {queryResults.map((item: any) => {
               return (
                 <PostList
@@ -114,7 +106,7 @@ function Search() {
                   title={item.title}
                   url={item.slug}
                   image={
-                    item.cover == null ? null : item.cover.childImageSharp.fluid
+                    item.featuredImage == null ? null : item.featuredImage.childImageSharp.fluid
                   }
                   date={item.date}
                   tags={item.tags}

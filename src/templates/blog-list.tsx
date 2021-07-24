@@ -12,8 +12,7 @@ const BlogList = (props: any) => {
   const { currentPage, numPages } = props.pageContext;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
-  const prevPage =
-    currentPage - 1 === 1 ? '/page/1' : `/page/${(currentPage - 1).toString()}`;
+  const prevPage = currentPage - 1 === 1 ? '/page/1' : `/page/${(currentPage - 1).toString()}`;
   const nextPage = `/page/${(currentPage + 1).toString()}`;
   const PrevLink = !isFirst && prevPage;
   const NextLink = !isLast && nextPage;
@@ -29,9 +28,9 @@ const BlogList = (props: any) => {
               key={node.fields.slug}
               title={node.frontmatter.title || node.fields.slug}
               image={
-                node.frontmatter.cover == null
+                node.frontmatter.featuredImage == null
                   ? null
-                  : node.frontmatter.cover.childImageSharp.fluid
+                  : node.frontmatter.featuredImage.childImageSharp.fluid
               }
               url={node.fields.slug}
               description={node.frontmatter.description || node.excerpt}
@@ -55,7 +54,7 @@ const BlogList = (props: any) => {
 export default BlogList;
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
+  query ($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -80,7 +79,7 @@ export const pageQuery = graphql`
             title
             description
             tags
-            cover {
+            featuredImage {
               childImageSharp {
                 fluid(maxWidth: 170, maxHeight: 170, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG

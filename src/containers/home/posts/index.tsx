@@ -22,10 +22,7 @@ const Posts: React.FunctionComponent<PostsProps> = () => {
           }
         }
       }
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 5
-      ) {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 5) {
         totalCount
         edges {
           node {
@@ -38,7 +35,7 @@ const Posts: React.FunctionComponent<PostsProps> = () => {
               title
               description
               tags
-              cover {
+              featuredImage {
                 childImageSharp {
                   fluid(maxWidth: 325, maxHeight: 325, quality: 90) {
                     ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -66,9 +63,9 @@ const Posts: React.FunctionComponent<PostsProps> = () => {
             key={node.fields.slug}
             title={title}
             image={
-              node.frontmatter.cover == null
+              node.frontmatter.featuredImage == null
                 ? null
-                : node.frontmatter.cover.childImageSharp.fluid
+                : node.frontmatter.featuredImage.childImageSharp.fluid
             }
             url={node.fields.slug}
             description={node.frontmatter.description || node.excerpt}
@@ -79,11 +76,7 @@ const Posts: React.FunctionComponent<PostsProps> = () => {
       })}
 
       {TotalPage >> 1 ? (
-        <Pagination
-          nextLink="/page/2"
-          currentPage={CurrentPage}
-          totalPage={TotalPage}
-        />
+        <Pagination nextLink="/page/2" currentPage={CurrentPage} totalPage={TotalPage} />
       ) : (
         ''
       )}

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import _ from 'lodash';
 import urljoin from 'url-join';
-import { DiscussionEmbed } from 'disqus-react';
+// import { DiscussionEmbed } from 'disqus-react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import PostCard from '../components/post-card/post-card';
@@ -13,12 +13,7 @@ import {
   PinterestShareButton,
   RedditShareButton,
 } from 'react-share';
-import {
-  IoLogoFacebook,
-  IoLogoTwitter,
-  IoLogoPinterest,
-  IoLogoReddit,
-} from 'react-icons/io';
+import { IoLogoFacebook, IoLogoTwitter, IoLogoPinterest, IoLogoReddit } from 'react-icons/io';
 import {
   BlogPostDetailsWrapper,
   RelatedPostWrapper,
@@ -39,10 +34,10 @@ const BlogPostTemplate = (props: any) => {
   const siteUrl = props.data.site.siteMetadata.siteUrl;
   const shareUrl = urljoin(siteUrl, slug);
 
-  const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
-    config: { identifier: slug, title },
-  };
+  // const disqusConfig = {
+  //   shortname: process.env.GATSBY_DISQUS_NAME,
+  //   config: { identifier: slug, title },
+  // };
   return (
     <Layout>
       <SEO
@@ -54,17 +49,15 @@ const BlogPostTemplate = (props: any) => {
           title={post.frontmatter.title}
           date={post.frontmatter.date}
           preview={
-            post.frontmatter.cover == null
+            post.frontmatter.featuredImage == null
               ? null
-              : post.frontmatter.cover.childImageSharp.fluid
+              : post.frontmatter.featuredImage.childImageSharp.fluid
           }
           description={post.html}
           imagePosition="left"
         />
 
-        <BlogPostFooter
-          className={post.frontmatter.cover == null ? 'center' : ''}
-        >
+        <BlogPostFooter className={post.frontmatter.featuredImage == null ? 'center' : ''}>
           {post.frontmatter.tags == null ? null : (
             <PostTags className="post_tags">
               {post.frontmatter.tags.map((tag: string, index: number) => (
@@ -84,22 +77,17 @@ const BlogPostTemplate = (props: any) => {
             </TwitterShareButton>
             <PinterestShareButton
               url={shareUrl}
-              media={urljoin(siteUrl, post.frontmatter.cover.publicURL)}
+              media={urljoin(siteUrl, post.frontmatter.featuredImage.publicURL)}
             >
               <IoLogoPinterest />
             </PinterestShareButton>
-            <RedditShareButton
-              url={shareUrl}
-              title={`${post.frontmatter.title}`}
-            >
+            <RedditShareButton url={shareUrl} title={`${post.frontmatter.title}`}>
               <IoLogoReddit />
             </RedditShareButton>
           </PostShare>
         </BlogPostFooter>
-        <BlogPostComment
-          className={post.frontmatter.cover == null ? 'center' : ''}
-        >
-          <DiscussionEmbed {...disqusConfig} />
+        <BlogPostComment className={post.frontmatter.featuredImage == null ? 'center' : ''}>
+          {/* <DiscussionEmbed {...disqusConfig} /> */}
         </BlogPostComment>
       </BlogPostDetailsWrapper>
 
@@ -113,9 +101,9 @@ const BlogPostTemplate = (props: any) => {
                   title={node.frontmatter.title || node.fields.slug}
                   url={node.fields.slug}
                   image={
-                    node.frontmatter.cover == null
+                    node.frontmatter.featuredImage == null
                       ? null
-                      : node.frontmatter.cover.childImageSharp.fluid
+                      : node.frontmatter.featuredImage.childImageSharp.fluid
                   }
                   tags={node.frontmatter.tags}
                 />
@@ -149,7 +137,7 @@ export const pageQuery = graphql`
         date(formatString: "DD MMM, YYYY")
         description
         tags
-        cover {
+        featuredImage {
           publicURL
           childImageSharp {
             fluid(maxWidth: 1170, quality: 90) {
@@ -162,10 +150,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: { tags: { in: $tag } }
-        fields: { slug: { ne: $slug } }
-      }
+      filter: { frontmatter: { tags: { in: $tag } }, fields: { slug: { ne: $slug } } }
     ) {
       edges {
         node {
@@ -175,7 +160,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
-            cover {
+            featuredImage {
               publicURL
               childImageSharp {
                 fluid(maxWidth: 480, maxHeight: 285, quality: 90) {

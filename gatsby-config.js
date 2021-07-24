@@ -7,9 +7,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: "TKIT_dev",
-    author: {
-      name: "Tihomir Kit",
-    },
+    author: "Tihomir Kit",
+    about: "Not sure where this will end up TODO",
     description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {
