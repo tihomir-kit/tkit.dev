@@ -12,13 +12,13 @@ If you are reading this, you probably already tried forwarding a port to 255.255
 
 So, what you should do is choose one unused IP address in your subnet and make it appear like it's a broadcast address, and later do the port forwarding to that IP. How to do that? Telnet into your router, and assign a hardware (MAC) address of FF:FF:FF:FF:FF:FF (when translated to IP, that MAC address makes 255.255.255.255) to the chosen IP address. This is the basic idea behind this tutorial and a way to trick the router into doing the port forwarding to a (fake) broadcast address. So, do the following:
 
-```sh
+```bash
 telnet <router_ip_address>
 ```
 
 enter your superadmin username and password and execute the following two commands:
 
-```sh
+```bash
 :ip arpadd intf=LocalNetwork ip=192.168.1.xxx hwaddr=FF:FF:FF:FF:FF:FF
 :saveall
 ```

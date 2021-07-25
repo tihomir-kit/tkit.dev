@@ -4,7 +4,7 @@ date: "2015-09-07T00:00:00.000Z"
 description: How to invalidate cached AngularJS templates with BundleConfig.cs in .Net?
 featuredImage: /assets/featured/angular-cogs.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/34
-tags: [".net", "angularjs", "cache", "invalidation"]
+tags: ["dotnet", "angularjs", "cache", "invalidation"]
 ---
 
 You most probably had the problem with old Angular templates not clearing themselves up from the browser cache in production which can cause various problems. If you're using gulp, you can use something like [gulp-angular-templatecache](https://github.com/miickel/gulp-angular-templatecache) to tackle this problem (which would also be a preferred way of doing this) but if you're using .net's `BundleConfig.cs` to bundle your scripts, you'll have to add a bit of code to your app.

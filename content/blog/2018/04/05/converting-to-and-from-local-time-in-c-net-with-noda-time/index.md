@@ -4,8 +4,8 @@ date: "2018-04-05T00:00:00.000Z"
 description: How to handle timezone conversions between utc and local time in C# / .Net using Noda Time library?
 featuredImage: /assets/featured/noda-time.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/5
-tags: ["nodatime", "time", "c#", ".net", "timezone", "handling", "conversion"]
-seoKeywords: ["nodatime", "noda", "time", "c#", ".net", "timezone", "handling", "code", "sample", "demo", "tutorial", "utc", "simple", "easy", "conversion"]
+tags: ["nodatime", "time", "csharp", "dotnet", "timezone", "handling", "conversion"]
+seoKeywords: ["nodatime", "noda", "time", "csharp", "dotnet", "timezone", "handling", "code", "sample", "demo", "tutorial", "utc", "simple", "easy", "conversion"]
 ---
 
 Working with DateTime in .Net [can be quirky](https://blog.nodatime.org/2011/08/what-wrong-with-datetime-anyway.html). Even more, default .Net libraries follow MS standards and use [their own set of timezones](https://stackoverflow.com/a/7908482/413785) instead of the widely accepted [TZDB (IANA)](https://en.wikipedia.org/wiki/Tz_database) standard (which you should probably be using instead – because standards are good for you). Without going into too much detail, you will probably do yourself a favour if you go straight to [Noda Time](https://nodatime.org/) library for all your timezone conversion needs. Noda Time is a very powerful library for handling all things date and time and it’s made by none other than Jon Skeet himself. To make things easy and precise for all of us, he keeps track of all the changes that happen to the [TZDB list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (yes, countries still keep changing these things around) and makes sure the library is up to date.

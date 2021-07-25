@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: post.node.fields.slug,
         previous,
         next,
-        tag: post.node.frontmatter.tags,
+        tags: post.node.frontmatter.tags,
       },
     });
   });
@@ -111,7 +111,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === "MarkdownRemark") {
     const value = createFilePath({ node, getNode });
-    // TODO: Debug this value, see if code can be reduced
+    // TODO: Debug this value, see if code can be reduced / simplified
     createNodeField({
       name: "slug",
       node,

@@ -4,7 +4,7 @@ date: "2020-07-14T00:00:00.000Z"
 description: My early attempt on functional programming in F# - solving one of the F# Koans exercises.
 featuredImage: /assets/featured/fsharp.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/48
-tags: ["f#", "koans", "functional", "programming", "exercise"]
+tags: ["fsharp", "koans", "functional", "programming", "exercise"]
 ---
 
 I'm currently in the process of learning functional programming and it feels like being back in my teens

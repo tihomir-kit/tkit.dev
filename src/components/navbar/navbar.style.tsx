@@ -25,19 +25,14 @@ export const NavbarWrapper = styled.div`
   }
 `;
 
-export const Logo = styled.div`
+export const LogoWrapper = styled.div`
   margin-right: 50px;
   flex-shrink: 0;
   @media (max-width: 990px) {
     margin: 0 25px;
   }
   @media (max-width: 575px) {
-    max-width: 90px;
-  }
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    max-width: 130px;
   }
 `;
 
@@ -244,7 +239,7 @@ export const DrawerHead = styled.div`
 `;
 
 export const DrawerLogo = styled.div`
-  max-width: 110px;
+  max-width: 160px;
   padding-left: 30px;
   img {
     max-width: 100%;

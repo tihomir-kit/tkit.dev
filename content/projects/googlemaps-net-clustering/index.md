@@ -2,7 +2,7 @@
 title: GoogleMaps.Net.Clustering
 date: January, 2016
 url: https://github.com/pootzko/GoogleMaps.Net.Clustering
-tags: [".net", "c#"]
+tags: ["dotnet", "csharp"]
 ---
 
 <a href="https://github.com/pootzko/GoogleMaps.Net.Clustering">C# library</a> for clustering map points. This library is very suitable for WebAPI (and similar-type) projects that don't depend on ASP.Net MVC.

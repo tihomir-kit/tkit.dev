@@ -228,16 +228,24 @@ export const BlogPostFooter = styled.div`
 `;
 
 export const BlogPostComment = styled.div`
-  margin: 0 0 0 auto;
-  width: 58%;
+  margin: 0 auto;
+  width: 870px;
   max-width: 100%;
-  padding-top: 80px;
+  padding-top: 60px;
+  text-align: center;
+  justify-content: space-between;
   @media (max-width: 990px) {
-    padding-top: 60px;
-    width: 100%;
+    padding-top: 40px;
   }
-  &.center {
-    margin: 0 auto;
+  a {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: ${themeGet('primary', '#D10068')};
+    @media (max-width: 990px) {
+      font-size: 13px;
+      margin-right: 25px;
+    }
   }
 `;
 

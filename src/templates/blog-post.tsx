@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import _ from 'lodash';
 import urljoin from 'url-join';
-// import { DiscussionEmbed } from 'disqus-react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import PostCard from '../components/post-card/post-card';
 import PostDetails from '../components/post-details/post-details';
 import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
 import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
+import { FaRegComment } from 'react-icons/fa';
 import {
   BlogPostDetailsWrapper,
   RelatedPostWrapper,
@@ -29,10 +29,6 @@ const BlogPostTemplate = (props: any) => {
   const siteUrl = props.data.site.siteMetadata.siteUrl;
   const shareUrl = urljoin(siteUrl, slug);
 
-  // const disqusConfig = {
-  //   shortname: process.env.GATSBY_DISQUS_NAME,
-  //   config: { identifier: slug, title },
-  // };
   return (
     <Layout>
       <SEO
@@ -75,8 +71,12 @@ const BlogPostTemplate = (props: any) => {
           </PostShare>
         </BlogPostFooter>
         <BlogPostComment>
-          {/* <DiscussionEmbed {...disqusConfig} /> */}
-          comments hereeee TODO:
+          {post.frontmatter.commentsUrl == null ? null : (
+            <a href={post.frontmatter.commentsUrl} target="_blank">
+              Comment on GitHub &nbsp;
+              <FaRegComment />
+            </a>
+          )}
         </BlogPostComment>
       </BlogPostDetailsWrapper>
 
@@ -126,6 +126,7 @@ export const pageQuery = graphql`
         date(formatString: "DD MMM, YYYY")
         description
         tags
+        commentsUrl
         featuredImage {
           publicURL
           childImageSharp {

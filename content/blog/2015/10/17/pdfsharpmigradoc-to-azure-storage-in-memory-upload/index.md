@@ -4,7 +4,7 @@ date: "2015-10-17T00:00:00.000Z"
 description: This blog post explains how to create a PDF in-memory and upload it straight to Azure Storage.
 featuredImage: /assets/featured/microsoft-azure.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/31
-tags: [".net", "azure", "cloud", "migradoc", "pdfsharp", "upload"]
+tags: ["dotnet", "azure", "cloud", "migradoc", "pdfsharp", "upload"]
 ---
 
 From my (somewhat limited) experience [PdfSharp / MigraDoc](http://www.pdfsharp.net/) seems like a pretty fine and powerful library for creating .pdf documents, but it's [documentation](http://www.pdfsharp.net/wiki/PDFsharpSamples.ashx) - not so much. It's [a bit all over the place](http://pdfsharp.com/PDFsharp/) and with multiple different NuGet versions/builds and outdated StackOverflow code samples not really helping the situation.

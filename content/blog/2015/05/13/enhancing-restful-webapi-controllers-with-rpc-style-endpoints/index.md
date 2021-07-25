@@ -4,7 +4,7 @@ date: "2015-05-13T00:00:00.000Z"
 description: How to add extra endpoints to WebAPI controllers besides the standard ones that don't have explicit routes?
 featuredImage: /assets/featured/dot-net-vs.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/36
-tags: [".net", "c#", "rest", "rpc", "webapi"]
+tags: ["dotnet", "csharp", "rest", "rpc", "webapi"]
 ---
 
 During the setup stage of the new project I'm working on, the decision was made to try and use [RESTful](http://en.wikipedia.org/wiki/Representational_state_transfer) WebAPI controllers that would support [RPC](http://en.wikipedia.org/wiki/Remote_procedure_call) style endpoints as well. I did a bit of research and found a [nice post](http://carolynvanslyck.com/blog/2013/01/webapi-mixed-rest-rpc-routing/) from Carolyn Van Slyck that explains how this can be achieved by creating a few different routing rules in the `WebApiConfig` file. I wasn't however fully satisfied with this approach so I tried to do it in a different way.

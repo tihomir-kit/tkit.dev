@@ -4,7 +4,7 @@ date: "2017-10-22T00:00:00.000Z"
 description: How to filter prefetched (nested / child) entities in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/15
-tags: [".net", "c#", "database", "llblgen", "orm"]
+tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 
 In this post, we'll cover how to filter nested entities when fetching either a single entity or a collection of entities. How is this different from the second filtering example from the [previous post](/2017/10/22/filtering-entity-collections-with-llblgen-pro-orm/)? Well, in the previous post we demonstrated _how to filter main entities BY fields_ of related tables. This post explains _how to filter nested entities_, or how to choose _which nested entities_ to prefetch.

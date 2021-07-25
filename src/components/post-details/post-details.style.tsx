@@ -59,7 +59,7 @@ export const PostTitle = styled.h1`
 export const PostDate = styled.span`
   display: block;
   font-size: ${themeGet('fontSizes.3', '15')}px;
-  color: ${themeGet('textColor', '#292929')};
+  color: ${themeGet('lightTextColor', '#757575')};
   font-weight: 400;
   text-transform: uppercase;
   @media (max-width: 990px) {

@@ -134,8 +134,8 @@ const ResetCSS = createGlobalStyle`
           padding-bottom: 25px;
         }
         @media (min-width: 1200px) {
-          padding-top: 20px;
-          padding-bottom: 20px;
+          padding-top: 14px; // Was 20px
+          padding-bottom: 14px; // Was 20px
         }
       }
     }

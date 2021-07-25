@@ -4,7 +4,7 @@ date: "2015-10-18T00:00:00.000Z"
 description: This article explains how to stream private Azure Storage blobs through .Net WebAPI for usage in AngularJS apps.
 featuredImage: /assets/featured/dot-net-vs.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/30
-tags: [".net", "angularjs", "azure", "cloud", "storage", "webapi"]
+tags: ["dotnet", "angularjs", "azure", "cloud", "storage", "webapi"]
 ---
 
 _UPDATE: Since this blog article was written, there is now a better way to handle this - [Shared Access Signatures (SAS)](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview)_.

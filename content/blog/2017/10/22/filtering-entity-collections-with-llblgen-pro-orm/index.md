@@ -4,7 +4,7 @@ date: "2017-10-22T00:00:00.000Z"
 description: How to do basic entity filtering in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/16
-tags: [".net", "c#", "database", "llblgen", "orm"]
+tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 
 In the [previous post](/2017/10/22/fetching-nested-entities-with-llblgen-pro-orm/), we covered the topic of fetching nested entities (prefetching) and in this one we'll go over filtering entity collections. When talking about databases, filtering is one of the most commonly used operations. In LLBLGen, filtering means using [predicate buckets](https://www.llblgen.com/documentation/5.3/LLBLGen%20Pro%20RTF/Using%20the%20generated%20code/Filtering%20and%20Sorting/gencode_filteringbasics.htm).

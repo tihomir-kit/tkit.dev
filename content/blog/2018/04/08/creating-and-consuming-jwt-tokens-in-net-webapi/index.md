@@ -4,8 +4,8 @@ date: "2018-04-08T00:00:00.000Z"
 description: How to create and consume (read) JWT tokens in .Net WebAPI?
 featuredImage: /assets/featured/jwt.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/3
-tags: [".net", "c#", "identity", "jwt", "owin", "security", "token"]
-seoKeywords: [".net", "c#", "jwt", "owin", "security", "token", "bearer", "tutorial", "guide", "identity", "user"]
+tags: ["dotnet", "csharp", "identity", "jwt", "owin", "security", "token"]
+seoKeywords: ["dotnet", "csharp", "jwt", "owin", "security", "token", "bearer", "tutorial", "guide", "identity", "user"]
 ---
 
 In this post I'll explain how to create and consume the [JWT tokens](https://jwt.io/) in .Net WebAPI. I'm using this in an OWIN-based WebAPI project under .Net v4.6.1. If you're using .Net Core instead - the token generation will probably be the same, but the way of consuming it might differ slightly because of differences between the classic and Core middleware API's. I used the official Microsoft [Microsoft.Owin.Security.Jwt](https://www.nuget.org/packages/Microsoft.Owin.Security.Jwt/) NuGet package. One important thing to note is that this is an alternative approach to using the default .Net bearer token.

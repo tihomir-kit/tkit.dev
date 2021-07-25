@@ -4,7 +4,7 @@ date: "2015-09-27T00:00:00.000Z"
 description: How to implement a centralized place in your AngularJS app to handle all the .Net WebAPI exceptions and bad HTTP status codes that the server might return to the browser.
 featuredImage: /assets/featured/angular-cogs.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/32
-tags: [".net", "angularjs", "exceptions", "webapi"]
+tags: ["dotnet", "angularjs", "exceptions", "webapi"]
 ---
 
 It's good to return [meaningful HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) upon server exceptions. Whether it be invalid model state, conflict upon trying to create/update an object in the database, unauthorized access or something else it adds additional value and sends a message - one that's different from generic 400's or 500's. These messages can then be used to take certain kinds of actions on the client side based on what happened.

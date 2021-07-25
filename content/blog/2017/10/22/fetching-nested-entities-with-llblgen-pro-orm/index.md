@@ -4,7 +4,7 @@ date: "2017-10-22T00:00:00.000Z"
 description: How to fetch (prefetch) nested entities in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/17
-tags: [".net", "c#", "database", "llblgen", "orm"]
+tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 
 In this post, I'll quickly explain how to fetch "nested" (related) entities with [LLBLGen Pro ORM framework](https://www.llblgen.com/). In LLBLGen this operation is called [prefetching](https://www.llblgen.com/documentation/5.3/LLBLGen%20Pro%20RTF/Using%20the%20generated%20code/Adapter/gencode_prefetchpaths_adapter.htm). By adding prefetch paths, we're telling LLBLGen which related entities we want it to fetch from the database together with our main entity. These prefetched entities will be easily accessible as properties (and/or) sub-properties of the main object.

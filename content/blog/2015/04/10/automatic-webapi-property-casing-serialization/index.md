@@ -4,7 +4,7 @@ date: "2015-04-10T00:00:00.000Z"
 description: How to change JSON property serialization in .Net WebAPI to lowerCamelCase?
 featuredImage: /assets/featured/dot-net-vs.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/37
-tags: [".net", "c#", "javascript", "json", "serialization", "webapi"]
+tags: ["dotnet", "csharp", "javascript", "json", "serialization", "webapi"]
 ---
 
 If you work a lot with WebAPI's and JavaScript and would like to follow the convention of `lowerCamelCasing` your JSON and `UpperCamelCasing` your .net model properties, you can do that by using Newtonsoft.Json `CamelCasePropertyNamesContractResolver`. This works for both directions "WebAPI -> client" and "client -> WebAPI" so that's cool as well. You should simply set this up in your Global.asax and you're good to go.

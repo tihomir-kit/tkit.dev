@@ -4,7 +4,7 @@ date: "2019-07-22T00:00:00.000Z"
 description: In this article we look at how to implement anomaly detection in your InfluxDB time-series data in Azure ML Studio without overloading your WebAPI service.
 featuredImage: local-anomaly.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/46
-tags: [".net", "anomaly detection", "asp.net", "azure", "c#", "influxdb", "machine learning", "twitter", "webapi"]
+tags: ["dotnet", "anomaly detection", "asp.net", "azure", "csharp", "influxdb", "machine learning", "twitter", "webapi"]
 ---
 
 First of all, a massive shout out to [Tej Redkar's](https://www.linkedin.com/in/tejaswiredkar/) and his [Operationalizing Twitter’s Anomaly Detection in AzureML](https://www.linkedin.com/pulse/operationalizing-twitters-anomaly-detection-azureml-tejaswi-redkar/) post which was huge help in figuring out how to make this all work.

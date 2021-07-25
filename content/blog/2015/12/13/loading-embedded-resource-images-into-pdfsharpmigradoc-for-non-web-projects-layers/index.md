@@ -4,7 +4,7 @@ date: "2015-12-13T00:00:00.000Z"
 description: How to add a solution resource image file into PdfSharp/MigraDoc?
 featuredImage: /assets/featured/dot-net-hex.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/22
-tags: [".net", "azure", "migradoc", "pdfsharp"]
+tags: ["dotnet", "azure", "migradoc", "pdfsharp"]
 ---
 
 There are some cases (for example on Azure) when you can't really rely on ASP's Web-layer file resources or "server paths" and file management libraries to access your static resource files. For example if you have a business layer which doesn't really have a direct access to another layer's files but you need to generate a PDF using [PdfSharp/MigraDoc](http://www.pdfsharp.net/) inside that layer.

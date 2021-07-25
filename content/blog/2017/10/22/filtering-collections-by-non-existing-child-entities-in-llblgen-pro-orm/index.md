@@ -4,7 +4,7 @@ date: "2017-10-22T00:00:00.000Z"
 description: How to filter record collections by non-existing child entities with LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/11
-tags: [".net", "c#", "database", "llblgen", "orm"]
+tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 
 This is an interesting one. Let's take a very standard scenario as an example. Say we have a one-to-many relation (customer-order) between two tables (diagram made using [QuickDBD](https://www.quickdatabasediagrams.com/)):

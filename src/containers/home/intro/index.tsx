@@ -3,30 +3,32 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
 import SocialProfile from '../../../components/social-profile/social-profile';
 import { IntroWrapper, IntroImage, IntroTitle, Desciption, IntroInfo } from './style';
-import { IoLogoFacebook, IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io';
+import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
+import { RiStackOverflowFill } from 'react-icons/ri';
+import { SiHackerrank } from 'react-icons/si';
 
 type IntroProps = {};
 
 const SocialLinks = [
   {
-    icon: <IoLogoFacebook />,
-    url: '#',
-    tooltip: 'Facebook',
-  },
-  {
-    icon: <IoLogoInstagram />,
-    url: '#',
-    tooltip: 'Instagram',
-  },
-  {
-    icon: <IoLogoTwitter />,
-    url: '#',
-    tooltip: 'Twitter',
+    icon: <IoLogoLinkedin />,
+    url: 'https://www.linkedin.com/in/tihomirkit',
+    tooltip: 'LinkedIn',
   },
   {
     icon: <IoLogoGithub />,
-    url: '#',
+    url: 'https://github.com/tihomir-kit', // TODO: Extract to configuration
     tooltip: 'Github',
+  },
+  {
+    icon: <RiStackOverflowFill />,
+    url: 'https://stackoverflow.com/users/story/413785',
+    tooltip: 'StackOverflow',
+  },
+  {
+    icon: <SiHackerrank />,
+    url: 'https://www.hackerrank.com/tihomir_kit',
+    tooltip: 'HackerRank',
   },
 ];
 

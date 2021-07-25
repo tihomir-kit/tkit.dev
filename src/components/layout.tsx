@@ -28,7 +28,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
           showUnder={300}
           duration={700}
           easing="easeInOutCubic"
-          style={{ bottom: 30, right: 20 }}
+          style={{ bottom: 30, right: 30 }}
         >
           <ScrollUpButton />
         </ScrollToTop>

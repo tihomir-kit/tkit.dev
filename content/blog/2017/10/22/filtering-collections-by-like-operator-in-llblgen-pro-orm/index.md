@@ -4,7 +4,7 @@ date: "2017-10-22T00:00:00.000Z"
 description: How to filter record collections by the LIKE operator in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/13
-tags: [".net", "c#", "database", "llblgen", "orm"]
+tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 
 This will be a simple one. It's another useful way of filtering entity collections in LLBLGen Pro. If you don't know anything about filtering, predicate expressions or buckets in LLBLGen, check out some of the [other posts](/2017/10/23/llblgen-pro-basics/) from the series.

@@ -4,8 +4,8 @@ date: "2020-03-07T00:00:00.000Z"
 description: How to access a development (localhost) instance of a .Net Core WebAPI from a Docker container?
 featuredImage: /assets/featured/docker.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/7
-tags: [".net", "core", "webapi", "docker", "networking"]
-seoKeywords: [".net", "core", "webapi", "docker", "networking"]
+tags: ["dotnet", "core", "webapi", "docker", "networking"]
+seoKeywords: ["dotnet", "core", "webapi", "docker", "networking"]
 ---
 
 In days of .Net Framework, I used to run .Net web apps using IIS. Create a new website in IIS, point it to the web project folder, set the app pool, add an entry to `hosts` file and you're good. Others could also access it over the local network.

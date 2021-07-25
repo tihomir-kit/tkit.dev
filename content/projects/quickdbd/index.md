@@ -2,7 +2,7 @@
 title: QuickDBD
 date: March, 2017
 url: https://www.quickdatabasediagrams.com/
-tags: [".net", "angularjs", "c#", "javascript"]
+tags: ["dotnet", "angularjs", "csharp", "javascript"]
 ---
 
 Normally I would only put private projects to this section of the site, but I'm quite proud of this one.. :)

@@ -4,8 +4,8 @@ date: "2018-12-13T00:00:00.000Z"
 description: How to use tuples as the main input argument of an extension method in C#?
 featuredImage: /assets/featured/dot-net-hex.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/2
-tags: [".net", "c#"]
-seoKeywords: ["c#", "extension", "methods", "tuple", "lightweight", "code", "declutter"]
+tags: ["dotnet", "csharp"]
+seoKeywords: ["csharp", "extension", "methods", "tuple", "lightweight", "code", "declutter"]
 ---
 
 Tuples allow us to package more than one value as the return type of a method. This is very handy when we don’t want to create an additional data transfer object just to return an extra piece of data together with the main value/object we want to return.

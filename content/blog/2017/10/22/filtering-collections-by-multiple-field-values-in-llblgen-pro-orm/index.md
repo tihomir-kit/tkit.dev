@@ -4,7 +4,7 @@ date: "2017-10-22T00:00:00.000Z"
 description: How to filter record collections by multiple field values at the same time in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/12
-tags: [".net", "c#", "database", "llblgen", "orm"]
+tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 
 Sometimes we need to fetch a very specific subset of records from the database. For example when we already have a list of specific Id’s of records that we need to fetch. That’s what this post will cover.

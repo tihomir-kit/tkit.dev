@@ -9,8 +9,12 @@ const Footer: React.FunctionComponent<FooterProps> = ({ ...props }) => {
       {' '}
       Copyleft © {new Date().getFullYear()},{' '}
       <a href="https://github.com/pootzko/tkit.dev">all wrongs reserved</a>. Built with{' '}
-      <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted on{' '}
-      <a href="https://www.netlify.com/">Netlify</a>.
+      <a href="https://www.gatsbyjs.org">Gatsby</a>, hosted on{' '}
+      <a href="https://www.netlify.com/">Netlify</a> and themed with{' '}
+      <a href="https://themeforest.net/item/storyhub-react-gatsby-blog-template/23897134/">
+        StoryHub
+      </a>
+      .
     </FooterWrapper>
   );
 };

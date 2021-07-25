@@ -4,7 +4,7 @@ date: "2017-10-23T00:00:00.000Z"
 description: A list of useful to know things about how to use LLBLGen Pro ORM
 featuredImage: /assets/featured/database.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/14
-tags: [".net", "c#", "database", "llblgen", "orm"]
+tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 
 Here's a list of blog posts I've written so far about how to do certain things in LLBLGen Pro ORM:

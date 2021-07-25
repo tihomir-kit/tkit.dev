@@ -2,7 +2,7 @@
 title: Azure CORS Rule Manager
 date: January, 2014
 url: https://github.com/pootzko/azure-cors-rule-manager
-tags: [".net", "azure", "c#"]
+tags: ["dotnet", "azure", "csharp"]
 ---
 
 ACRM is a simple web application to help you manage Azure Storage Cross-Origin Resource Sharing rules (CORS rule management is not possible through the Azure web interface at the moment).

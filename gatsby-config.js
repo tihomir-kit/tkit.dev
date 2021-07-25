@@ -7,8 +7,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: "TKIT_dev",
-    author: "Tihomir Kit",
-    about: "Breakfast procuring no end happiness allowance assurance frank. Met simplicity nor difficulty unreserved who. Entreaties mr conviction dissimilar me astonished estimating cultivated.",
+    author: "Tihomir",
+    about: "I'm a software craftsman with special interest in software architecture, functional programming, .Net, C#, F#, TypeScript and React. I like books and obligatory last sentence punchlines. Stay curious. 🖖",
     description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {
@@ -55,6 +55,13 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`,
+            },
+          },
+          {
             resolve: "gatsby-remark-prismjs",
             options: {
               showLineNumbers: true,
@@ -89,12 +96,6 @@ module.exports = {
     },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
-    // { // TODO: REMOVE
-    //   resolve: "gatsby-plugin-typography",
-    //   options: {
-    //     pathToConfigModule: "src/utils/typography",
-    //   },
-    // },
     {
       resolve: "gatsby-plugin-alias-imports",
       options: {
@@ -119,17 +120,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     "gatsby-plugin-offline",
-    // { // TODO: Remove
-    //   resolve: `gatsby-plugin-emotion`,
-    //   options: {
-    //     // Accepts the following options, all of which are defined by `@emotion/babel-plugin` plugin.
-    //     // The values for each key in this example are the defaults the plugin uses.
-    //     sourceMap: true,
-    //     autoLabel: "dev-only",
-    //     labelFormat: `[local]`,
-    //     cssPropOptimization: true,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {

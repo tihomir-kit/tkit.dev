@@ -2,10 +2,10 @@ import * as React from 'react';
 import { SocialProfileWrapper, SocialProfileItem, Tooltip } from './social-profile.style';
 
 type SocialProfileProps = {
-  items: Socialitem[];
+  items: SocialItem[];
 };
 
-type Socialitem = {
+type SocialItem = {
   url: string;
   icon: React.ReactChild;
   tooltip: string;

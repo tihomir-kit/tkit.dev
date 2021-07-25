@@ -14,7 +14,7 @@ The first thing was to prefix the whole command with `MSYS_NO_PATHCONV=1`, and I
 
 Finally, my `docker run` invocation looks like this:
 
-```sh
+```bash
 MSYS_NO_PATHCONV=1 \
   docker run \
     --rm -v $(pwd):/local \
