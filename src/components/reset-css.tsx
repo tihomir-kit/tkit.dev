@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 const ResetCSS = createGlobalStyle`
   html {
@@ -63,7 +63,7 @@ const ResetCSS = createGlobalStyle`
     line-height: 2;
     margin: 0 0 1.7em 0;
   }
-  
+
   input, textarea, select, button{font-family: 'Fira Sans',sans-serif;}
 
   ul,ol {
@@ -90,7 +90,8 @@ const ResetCSS = createGlobalStyle`
   }
 
   pre[class*="language-"] {
-    padding: 1.5em;
+    /* padding: 1.5em; */
+    padding: 1em;
     margin: 2em 0;
     overflow: auto;
   }
@@ -138,8 +139,8 @@ const ResetCSS = createGlobalStyle`
         }
       }
     }
-    
+
   }
 
-`
-export default ResetCSS
+`;
+export default ResetCSS;

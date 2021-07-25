@@ -89,7 +89,6 @@ module ``about the stock example`` =
         let result, _ = getMaxDailyDiff stockData
 
         AssertEquality "2012-03-13" result
-
 ```
 
 Being a complete F# newbie, I'd like you to share your solution or opinion in the comments.

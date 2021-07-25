@@ -1,31 +1,33 @@
-import { css } from '@emotion/react';
+// TODO: Delete
 
-import { colors } from './colors';
+// import { css } from '@emotion/react';
 
-// NOTE: This file is intended for 3rd party library overrides
+// import { colors } from './colors';
 
-export const globalStyle = css`
-  .gatsby-highlight {
-    font-size: 13px;
-    margin-bottom: 1.75rem;
+// // NOTE: This file is intended for 3rd party library overrides
 
-    pre {
-      background: ${colors.harmonizedCodeBackground};
-    }
+// export const globalStyle = css`
+//   .gatsby-highlight {
+//     font-size: 13px;
+//     margin-bottom: 1.75rem;
 
-    .line-numbers-rows {
-      color: $light;
-    }
-  }
+//     pre {
+//       background: ${colors.harmonizedCodeBackground};
+//     }
 
-  .language-text {
-    background: ${colors.harmonizedCodeBackground};
-  }
+//     .line-numbers-rows {
+//       color: $light;
+//     }
+//   }
 
-  .line-numbers {
-    .line-numbers-rows {
-      border: none;
-      padding: 13px 14px;
-    }
-  }
-`;
+//   .language-text {
+//     background: ${colors.harmonizedCodeBackground};
+//   }
+
+//   .line-numbers {
+//     .line-numbers-rows {
+//       border: none;
+//       padding: 13px 14px;
+//     }
+//   }
+// `;
