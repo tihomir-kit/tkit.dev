@@ -215,8 +215,8 @@ export const TagName = styled.h1`
   }
 `;
 export const BlogPostFooter = styled.div`
-  margin: 0 0 0 auto;
-  width: 58%;
+  margin: 0 auto;
+  width: 870px;
   max-width: 100%;
   padding-top: 60px;
   display: flex;
@@ -224,10 +224,6 @@ export const BlogPostFooter = styled.div`
   justify-content: space-between;
   @media (max-width: 990px) {
     padding-top: 40px;
-    width: 100%;
-  }
-  &.center {
-    margin: 0 auto;
   }
 `;
 

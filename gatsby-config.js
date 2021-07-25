@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: "TKIT_dev",
     author: "Tihomir Kit",
-    about: "Not sure where this will end up TODO",
+    about: "Breakfast procuring no end happiness allowance assurance frank. Met simplicity nor difficulty unreserved who. Entreaties mr conviction dissimilar me astonished estimating cultivated.",
     description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {

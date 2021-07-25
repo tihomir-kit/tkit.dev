@@ -49,10 +49,9 @@ const BlogPostTemplate = (props: any) => {
               : post.frontmatter.featuredImage.childImageSharp.fluid
           }
           description={post.html}
-          imagePosition="left"
         />
 
-        <BlogPostFooter className={post.frontmatter.featuredImage == null ? 'center' : ''}>
+        <BlogPostFooter>
           {post.frontmatter.tags == null ? null : (
             <PostTags className="post_tags">
               {post.frontmatter.tags.map((tag: string, index: number) => (
@@ -75,8 +74,9 @@ const BlogPostTemplate = (props: any) => {
             </RedditShareButton>
           </PostShare>
         </BlogPostFooter>
-        <BlogPostComment className={post.frontmatter.featuredImage == null ? 'center' : ''}>
+        <BlogPostComment>
           {/* <DiscussionEmbed {...disqusConfig} /> */}
+          comments hereeee TODO:
         </BlogPostComment>
       </BlogPostDetailsWrapper>
 
@@ -152,7 +152,7 @@ export const pageQuery = graphql`
             featuredImage {
               publicURL
               childImageSharp {
-                fluid(maxWidth: 480, maxHeight: 285, quality: 90) {
+                fluid(maxWidth: 370, maxHeight: 220, quality: 90) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
