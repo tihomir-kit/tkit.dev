@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Image from 'gatsby-image';
-import SocialProfile from '../../../components/social-profile/social-profile';
-import { IntroWrapper, IntroImage, IntroTitle, Desciption, IntroInfo } from './style';
+import SocialProfile from '@/components/social-profile/social-profile';
+import { IntroWrapper, IntroImage, IntroTitle, Description, IntroInfo } from './style';
 import { IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
 import { RiStackOverflowFill } from 'react-icons/ri';
 import { SiHackerrank } from 'react-icons/si';
@@ -63,7 +63,7 @@ const Intro: React.FunctionComponent<IntroProps> = () => {
         <IntroTitle>
           Hey! I’m <b>{author}</b>
         </IntroTitle>
-        <Desciption>{about}</Desciption>
+        <Description>{about}</Description>
         <SocialProfile items={SocialLinks} />
       </IntroInfo>
     </IntroWrapper>

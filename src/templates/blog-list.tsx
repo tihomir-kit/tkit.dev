@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
-import PostCardMinimal from '../components/post-card-minimal/post-card-minimal';
-import Pagination from '../components/pagination/pagination';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import PostCardMinimal from '@/components/post-card-minimal/post-card-minimal';
+import Pagination from '@/components/pagination/pagination';
+import Layout from '@/components/layout';
+import SEO from '@/components/seo';
 import { BlogPostsWrapper } from './templates.style';
 
 const BlogList = (props: any) => {

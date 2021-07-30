@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PostCard from '../components/post-card/post-card';
-import SEO from '../components/seo';
+import Layout from '@/components/layout';
+import PostCard from '@/components/post-card/post-card';
+import SEO from '@/components/seo';
 import { TagPostsWrapper, TagPageHeading, TagName } from './templates.style';
 
 const Tags = ({ pageContext, data }: any) => {

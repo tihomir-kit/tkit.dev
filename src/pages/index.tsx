@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import PersonalBlog from '../containers/home/index';
-import SEO from '../components/seo';
+import Layout from '@/components/layout';
+import PersonalBlog from '@/containers/home/index';
+import SEO from '@/components/seo';
 
 const HomePage = (props: any) => {
   const { data } = props;

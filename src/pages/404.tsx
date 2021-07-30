@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Navbar from '../components/navbar/navbar';
-import ResetCss from '../components/reset-css';
-import SEO from '../components/seo';
+import Navbar from '@/components/navbar/navbar';
+import ResetCss from '@/components/reset-css';
+import SEO from '@/components/seo';
 import NotFound from '../containers/not-found';
-import Footer from '../components/footer/footer';
+import Footer from '@/components/footer/footer';
 
 const NotFoundPage = (props: any) => {
   return (

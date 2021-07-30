@@ -73,7 +73,7 @@ export const IntroTitle = styled.h1`
   }
 `;
 
-export const Desciption = styled.p`
+export const Description = styled.p`
   color: ${themeGet('colors.textColor', '#292929')};
   font-size: ${themeGet('fontSizes.3', '15')}px;
   line-height: ${themeGet('lineHeights.text', '2')};

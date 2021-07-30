@@ -6,7 +6,7 @@ import Navbar from './navbar/navbar';
 import Footer from './footer/footer';
 import ScrollUpButton from './scroll-up-button/scroll-up-button';
 import ResetCss from './reset-css';
-import { theme } from '../theme';
+import { theme } from '@/theme';
 
 type LayoutProps = {
   children: React.ReactNode;

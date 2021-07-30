@@ -140,8 +140,8 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-// SEE: https://github.com/gatsbyjs/gatsby/issues/4357#issuecomment-445458658
-exports.onCreateWebpackConfig = function({ actions }) {
+exports.onCreateWebpackConfig = ({ actions, getConfig, stage }) => {
+  // SEE: https://github.com/gatsbyjs/gatsby/issues/4357#issuecomment-445458658
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -152,11 +152,8 @@ exports.onCreateWebpackConfig = function({ actions }) {
       }
     },
   });
-};
 
-// TODO: Merge with the above?
-// for React-Hot-Loader: react-🔥-dom patch is not detected
-exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  // for React-Hot-Loader: react-🔥-dom patch is not detected
   const config = getConfig();
   if (stage.startsWith('develop') && config.resolve) {
     config.resolve.alias = {

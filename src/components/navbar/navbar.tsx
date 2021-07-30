@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { IoIosSearch, IoIosClose } from 'react-icons/io';
-import { DrawerProvider } from '../drawer/drawer-context';
+import { DrawerProvider } from '@/components/drawer/drawer-context';
 import Menu from './menu';
 import MobileMenu from './mobile-menu';
-import SearchContainer from '../../containers/search/search';
-import Logo from '../logo/logo';
+import SearchContainer from '@/containers/search/search';
+import Logo from '@/components/logo/logo';
 import HeaderWrapper, {
   NavbarWrapper,
   LogoWrapper,
