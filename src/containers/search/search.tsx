@@ -4,13 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { rebuildIndex } from './search-index-builder-function';
 import PostList from '@/components/post-list/post-list';
-import {
-  SearchWrapper,
-  SearchForm,
-  SearchResult,
-  NoResult,
-  SearchResultContainer,
-} from './search.style';
+import { SearchWrapper, SearchForm, SearchResult, NoResult } from './search.style';
 
 function Search() {
   const [state, dispatch] = useReducer(SearchReducer, initialState);
