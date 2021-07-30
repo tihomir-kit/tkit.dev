@@ -2,7 +2,7 @@
 title: Downloading / Streaming Azure Storage private container blobs to AngularJS through .Net WebAPI
 date: "2015-10-18T00:00:00.000Z"
 description: This article explains how to stream private Azure Storage blobs through .Net WebAPI for usage in AngularJS apps.
-featuredImage: /assets/featured/dot-net-vs.png
+featuredImage: /assets/featured/dot-net.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/30
 tags: ["dotnet", "angularjs", "azure", "cloud", "storage", "webapi"]
 ---

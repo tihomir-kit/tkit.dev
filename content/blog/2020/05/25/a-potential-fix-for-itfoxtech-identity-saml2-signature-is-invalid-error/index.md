@@ -2,7 +2,7 @@
 title: A potential fix for ITfoxtech.Identity.Saml2 "Signature is invalid" error
 date: "2020-05-25T00:00:00.000Z"
 description: This article will cover one of the potential reasons why you're getting the invalid signature error when you're trying to authenticate against and IDP.
-featuredImage: /assets/featured/dot-net-hex.jpg
+featuredImage: /assets/featured/dot-net.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/47
 tags: ["saml2", "signature", "mini orange", "itfoxtech", "algorithm", "hashing"]
 ---

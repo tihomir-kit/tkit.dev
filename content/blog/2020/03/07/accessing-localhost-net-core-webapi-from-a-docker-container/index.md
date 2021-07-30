@@ -2,7 +2,7 @@
 title: Accessing localhost .Net Core WebAPI from a Docker container
 date: "2020-03-07T00:00:00.000Z"
 description: How to access a development (localhost) instance of a .Net Core WebAPI from a Docker container?
-featuredImage: /assets/featured/docker.jpg
+featuredImage: /assets/featured/docker.png
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/7
 tags: ["dotnet", "core", "webapi", "docker", "networking"]
 seoKeywords: ["dotnet", "core", "webapi", "docker", "networking"]

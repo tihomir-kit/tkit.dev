@@ -2,7 +2,7 @@
 title: Loading embedded resource images into PdfSharp/MigraDoc for non-web projects layers
 date: "2015-12-13T00:00:00.000Z"
 description: How to add a solution resource image file into PdfSharp/MigraDoc?
-featuredImage: /assets/featured/dot-net-hex.jpg
+featuredImage: /assets/featured/dot-net.jpg
 commentsUrl: https://github.com/pootzko/tkit.dev/issues/22
 tags: ["dotnet", "azure", "migradoc", "pdfsharp"]
 ---
