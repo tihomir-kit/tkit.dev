@@ -3,11 +3,11 @@ title: Returning value from fragment into parent activity on Android
 date: "2014-02-20T00:00:00.000Z"
 description: How to pass a value from a fragment back into the parent activity that initialized it in the first place?
 featuredImage: /assets/featured/android.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/40
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/40
 tags: ["activities", "android", "callbacks", "design patterns", "fragments", "java"]
 ---
 
-This post will show you how to return a value set in a dialog fragment back to the parent activity it was called from. Code sample provided here is from the [Auto-WOL app](https://play.google.com/store/apps/details?id=net.cmikavac.autowol) I made not so long ago, so if you need the bigger picture, feel free to check [TimePickerFragment](https://github.com/pootzko/auto-wol/blob/master/src/net/cmikavac/autowol/partials/TimePickerFragment.java) and [DeviceActivity](https://github.com/pootzko/auto-wol/blob/master/src/net/cmikavac/autowol/DeviceActivity.java) classes over at GitHub. This example uses `TimePickerDialog`. It also keeps track of the layoutId (where the layout it is bound to acts as a button in the UI) because in my app I have multiple buttons which can invoke the same TimePickerFragment so I needed to know which button invoked the dialog fragment because upon selecting the time the button caption gets updated.
+This post will show you how to return a value set in a dialog fragment back to the parent activity it was called from. Code sample provided here is from the [Auto-WOL app](https://play.google.com/store/apps/details?id=net.cmikavac.autowol) I made not so long ago, so if you need the bigger picture, feel free to check [TimePickerFragment](https://github.com/tihomir-kit/auto-wol/blob/master/src/net/cmikavac/autowol/partials/TimePickerFragment.java) and [DeviceActivity](https://github.com/tihomir-kit/auto-wol/blob/master/src/net/cmikavac/autowol/DeviceActivity.java) classes over at GitHub. This example uses `TimePickerDialog`. It also keeps track of the layoutId (where the layout it is bound to acts as a button in the UI) because in my app I have multiple buttons which can invoke the same TimePickerFragment so I needed to know which button invoked the dialog fragment because upon selecting the time the button caption gets updated.
 
 ![Auto-WOL fragment activity](auto-wol-fragment-activity.png)
 

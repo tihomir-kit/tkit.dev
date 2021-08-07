@@ -3,7 +3,7 @@ title: Invalidating AngularJS template cache with .Net BundleConfig.cs
 date: "2015-09-07T00:00:00.000Z"
 description: How to invalidate cached AngularJS templates with BundleConfig.cs in .Net?
 featuredImage: /assets/featured/angular-cogs.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/34
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/34
 tags: ["dotnet", "angularjs", "cache", "invalidation"]
 ---
 

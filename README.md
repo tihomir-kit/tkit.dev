@@ -2,7 +2,7 @@
 
 https://tkit.dev/
 
-Comments on blog posts under [Issues](https://github.com/pootzko/tkit.dev/issues).
+Comments on blog posts under [Issues](https://github.com/tihomir-kit/tkit.dev/issues).
 
 ### List of blog posts I wrote for Dovetail Technologies
 

@@ -1,7 +1,7 @@
 ---
 title: Reactify
 date: June, 2014
-url: https://github.com/pootzko/reactify
+url: https://github.com/tihomir-kit/reactify
 tags: ["angularjs", "javascript", "reactjs"]
 ---
 

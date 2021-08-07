@@ -2,7 +2,7 @@
 title: Thomson SpeedTouch 780WL – port forwarding to broadcast address
 date: "2010-01-24T00:00:00.000Z"
 description: How to set up port forwarding on Thomson SpeedTouch 780WL router.
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/23
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/23
 tags: ["broadcast", "networking", "port forwarding", "speedtouch 780", "wake-on-lan", "wol"]
 ---
 

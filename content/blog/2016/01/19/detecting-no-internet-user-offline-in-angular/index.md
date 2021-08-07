@@ -3,7 +3,7 @@ title: Detecting no-Internet / user-offline in Angular
 date: "2016-01-19T00:00:00.000Z"
 description: How to detect that the user lost the internet connection in AngularJS?
 featuredImage: /assets/featured/angular-cogs.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/28
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/28
 tags: ["angularjs", "http", "interceptor", "offline", "detection"]
 ---
 

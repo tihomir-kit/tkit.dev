@@ -3,7 +3,7 @@ title: Filtering collections by multiple field values in LLBLGen Pro ORM
 date: "2017-10-22T00:00:00.000Z"
 description: How to filter record collections by multiple field values at the same time in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/12
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/12
 tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 

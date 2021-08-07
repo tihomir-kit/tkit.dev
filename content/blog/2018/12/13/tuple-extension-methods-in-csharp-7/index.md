@@ -3,7 +3,7 @@ title: Tuple extension methods in C#7
 date: "2018-12-13T00:00:00.000Z"
 description: How to use tuples as the main input argument of an extension method in C#?
 featuredImage: /assets/featured/dot-net.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/2
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/2
 tags: ["dotnet", "csharp"]
 seoKeywords: ["csharp", "extension", "methods", "tuple", "lightweight", "code", "declutter"]
 ---

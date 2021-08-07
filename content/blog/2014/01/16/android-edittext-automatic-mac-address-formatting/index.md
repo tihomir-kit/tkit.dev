@@ -3,7 +3,7 @@ title: Android EditText automatic MAC address formatting
 date: "2014-01-16T00:00:00.000Z"
 description: How to apply automatic MAC address formatting to EditText and prevent invalid input?
 featuredImage: /assets/featured/android.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/41
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/41
 tags: ["android", "automatic", "edittext", "formatting", "java", "mac"]
 ---
 

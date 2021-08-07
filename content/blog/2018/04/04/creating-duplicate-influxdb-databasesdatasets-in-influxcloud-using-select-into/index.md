@@ -3,7 +3,7 @@ title: Creating duplicate InfluxDB databases/datasets in InfluxCloud using SELEC
 date: "2018-04-04T00:00:00.000Z"
 description: How to duplicate data in InfluxDB using the SELECT INTO syntax?
 featuredImage: /assets/featured/influxdb.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/9
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/9
 tags: ["backup", "cloud", "copy", "database", "duplicate", "influxdata", "influxdb", "restore"]
 seoKeywords: ["backup", "cloud", "copy", "database", "duplicate", "influxdata", "influxdb", "restore"]
 ---
@@ -30,7 +30,7 @@ A few details that are not so great about the vanilla SELECT INTO approach:
 What this means:
 
 1. Probably not a big deal if you just want to mess with the data, but keep it in mind.
-2. You’ll have to break your data down into smaller datasets to copy over (for example into one day data chunks using a **WHERE time** … clause). You’ll probably need an SDK library (such as [InfluxData.Net](https://github.com/pootzko/InfluxData.Net)) to automate the process.
+2. You’ll have to break your data down into smaller datasets to copy over (for example into one day data chunks using a **WHERE time** … clause). You’ll probably need an SDK library (such as [InfluxData.Net](https://github.com/tihomir-kit/InfluxData.Net)) to automate the process.
 3. You’ll have to ditch the wildcard SELECT from the vanilla example and manually select (and explicitly cast) all the columns that you want to copy over to the new DB. This will make the process slightly more complicated but at this point you’re probably automating everything through a small script / migration app anyway so it shouldn’t be too much additional work.
 
 So, here’s a proof-of-concept code sample that explicitly selects columns to copy over, forces casting to INT data type (or keeps the data type intact), selects specific source and target measurements (tables) and selects only a single day worth of data. You will have to iterate through 1-2 loops to inject your desired source and target table names and time ranges to cover all the data that you’ve got in your DB.

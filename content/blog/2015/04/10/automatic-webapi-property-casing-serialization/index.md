@@ -3,7 +3,7 @@ title: Automatic WebAPI property casing serialization
 date: "2015-04-10T00:00:00.000Z"
 description: How to change JSON property serialization in .Net WebAPI to lowerCamelCase?
 featuredImage: /assets/featured/dot-net.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/37
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/37
 tags: ["dotnet", "csharp", "javascript", "json", "serialization", "webapi"]
 ---
 

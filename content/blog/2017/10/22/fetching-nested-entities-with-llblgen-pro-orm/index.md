@@ -3,7 +3,7 @@ title: Fetching nested entities with LLBLGen Pro ORM
 date: "2017-10-22T00:00:00.000Z"
 description: How to fetch (prefetch) nested entities in LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/17
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/17
 tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 

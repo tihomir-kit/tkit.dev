@@ -3,7 +3,7 @@ title: Handling .Net's model state with ValidationFilter attribute
 date: "2015-09-27T00:00:00.000Z"
 description: In this article we explore creation of a C# method attribute to process your model objects and throw and return a 422 HTTP status code if the model validation fails. DRY.
 featuredImage: /assets/featured/dot-net.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/33
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/33
 tags: ["dotnet", "design patterns", "model", "validation", "webapi"]
 ---
 

@@ -3,7 +3,7 @@ title: Automate SQL column encryption using PowerShell
 date: "2021-08-05T00:00:00.000Z"
 description: How to automate the process of adding or removing encryption from multiple SQL columns at the same time?
 featuredImage: /assets/featured/database.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/49
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/52
 tags: ["sql", "automation", "powershell", "encryption"]
 ---
 

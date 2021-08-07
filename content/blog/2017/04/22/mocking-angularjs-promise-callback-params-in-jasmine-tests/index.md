@@ -3,7 +3,7 @@ title: Mocking AngularJS promise callback params in Jasmine tests
 date: "2017-04-22T00:00:00.000Z"
 description: How to mock promises in AngularJS Jasmine unit tests?
 featuredImage: /assets/featured/jasmine-js.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/18
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/18
 tags: ["angularjs", "callbacks", "jasmine", "javascript", "params", "promises", "unit testing"]
 ---
 

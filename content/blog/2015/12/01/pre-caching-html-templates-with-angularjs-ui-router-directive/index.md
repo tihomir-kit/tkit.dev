@@ -3,7 +3,7 @@ title: Pre-caching HTML templates with AngularJS ui-router directive
 date: "2016-01-12T00:00:00.000Z"
 description: How to pre-cache HTML templates in AngularJS to make them accessible even if the app goes offline?
 featuredImage: /assets/featured/angular-cogs.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/29
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/29
 tags: ["angularjs", "caching", "html", "template", "ui-router"]
 ---
 

@@ -3,7 +3,7 @@ title: TP-Link WR703N OpenWrt post installation tips
 date: "2012-06-03T00:00:00.000Z"
 description: What are some things you could do to your WR703N after installing OpenWrt on it to enhance its capabilities?
 featuredImage: /assets/featured/tplink.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/43
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/43
 tags: ["bash", "configuration", "dyndns", "extroot", "ip", "linux", "networking", "openwrt", "reflashing", "ssh", "tp-link", "wr703n"]
 ---
 

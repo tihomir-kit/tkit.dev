@@ -3,7 +3,7 @@ title: How to flash TP-Link WR703N with OpenWrt?
 date: "2012-06-03T00:00:00.000Z"
 description: A few simple steps to instale OpenWrt Linux distribution on your TP-Link WR703N router.
 featuredImage: /assets/featured/tplink.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/44
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/44
 tags: ["flashing", "linux", "openwrt", "tp-link", "wr703n"]
 ---
 

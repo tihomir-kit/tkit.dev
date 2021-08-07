@@ -40,7 +40,7 @@
     }
   },
   "overrides": [
-    // SEE: https://github.com/pootzko/docuflow/tree/master/DocuFlow.WebApp#eslint-no-unused-vars-bug
+    // SEE: https://github.com/tihomir-kit/docuflow/tree/master/DocuFlow.WebApp#eslint-no-unused-vars-bug
     {
       "files": ["*.ts", "*.tsx"],
       "rules": {

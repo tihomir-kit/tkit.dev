@@ -1,7 +1,7 @@
 ---
 title: Autokana
 date: 2012
-url: https://github.com/pootzko/autokana
+url: https://github.com/tihomir-kit/autokana
 tags: ["javascript", "jquery"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: WAMS async CORS enabled video upload
 date: February, 2014
-url: https://github.com/pootzko/wams-async-cors-upload
+url: https://github.com/tihomir-kit/wams-async-cors-upload
 tags: ["dotnet", "azure", "csharp", "javascript", "jquery"]
 ---
 

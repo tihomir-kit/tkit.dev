@@ -3,7 +3,7 @@ title: Multi-character Google Maps cluster marker labels
 date: "2016-01-22T00:00:00.000Z"
 description: How to override Google Maps cluster markers to allow multiple characters per label instead of only a single one?
 featuredImage: /assets/featured/google-maps-clusters.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/27
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/27
 tags: ["api", "cluster", "css", "google", "html", "javascript", "maps"]
 ---
 
@@ -139,7 +139,7 @@ function clearClusterMarkers() {
 }
 ```
 
-And this is the CSS that's needed to make it all work (you can find the cluster icons [here](https://github.com/pootzko/other/tree/master/gmc-icons)):
+And this is the CSS that's needed to make it all work (you can find the cluster icons [here](https://github.com/tihomir-kit/other/tree/master/gmc-icons)):
 
 ```scss
 // gmc-cluster.scss

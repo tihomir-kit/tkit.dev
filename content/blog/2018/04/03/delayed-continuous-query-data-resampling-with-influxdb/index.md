@@ -3,7 +3,7 @@ title: Delayed continuous query data resampling with InfluxDB
 date: "2018-04-03T00:00:00.000Z"
 description: How to delay InfluxDB continuous query data resampling?
 featuredImage: /assets/featured/influxdb.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/10
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/10
 tags: ["database", "influxdb", "automation"]
 seoKeywords: ["database", "influxdb", "automation", "resampling"]
 ---

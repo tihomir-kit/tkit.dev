@@ -3,7 +3,7 @@ title: Merging multiple Nessus scans
 date: "2011-07-09T00:00:00.000Z"
 description: How to combine multiple Nessus scan XML files into a single one for further analysis with a simply Python script?
 featuredImage: /assets/featured/python.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/45
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/45
 tags: ["nessus", "python", "reports", "security"]
 ---
 

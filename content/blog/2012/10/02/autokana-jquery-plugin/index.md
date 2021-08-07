@@ -3,13 +3,13 @@ title: autokana – jQuery plugin
 date: "2012-10-02T00:00:00.000Z"
 description: Roumaji-to-latin auto-correct converter jQuery plugin.
 featuredImage: /assets/featured/autokana.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/42
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/42
 tags: ["auto-correct", "free", "hiragana", "japanese", "javascript", "jquery", "katakana", "open source", "plugin"]
 ---
 
 Autokana is a jQuery plugin that automatically converts latin (roumaji) to kana (hiragana / katakana) using the auto-correct principle (keep in mind that it's not suitable for converting copy / pasted but only typed-in text).
 
-You can download the plugin (including a simple usage example) from [GitHub](https://github.com/pootzko/autokana) and use it for free.
+You can download the plugin (including a simple usage example) from [GitHub](https://github.com/tihomir-kit/autokana) and use it for free.
 
 To use it, you will have to add the following somewhere at the beginning of your body tag:
 

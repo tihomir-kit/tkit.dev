@@ -3,7 +3,7 @@ title: F# Koans - The Stock Example
 date: "2020-07-14T00:00:00.000Z"
 description: My early attempt on functional programming in F# - solving one of the F# Koans exercises.
 featuredImage: /assets/featured/fsharp.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/48
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/48
 tags: ["fsharp", "koans", "functional", "programming", "exercise"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: AngularJS .net async upload
 date: March, 2014
-url: https://github.com/pootzko/angular-net-async-upload
+url: https://github.com/tihomir-kit/angular-net-async-upload
 tags: ["dotnet", "angularjs", "csharp", "javascript"]
 ---
 

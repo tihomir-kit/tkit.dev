@@ -3,7 +3,7 @@ title: Filtering collections by non-existing child entities in LLBLGen Pro ORM
 date: "2017-10-22T00:00:00.000Z"
 description: How to filter record collections by non-existing child entities with LLBLGen Pro ORM?
 featuredImage: /assets/featured/database.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/11
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/11
 tags: ["dotnet", "csharp", "database", "llblgen", "orm"]
 ---
 

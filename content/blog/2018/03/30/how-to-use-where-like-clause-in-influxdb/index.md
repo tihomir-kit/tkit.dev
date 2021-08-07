@@ -3,7 +3,7 @@ title: How to use WHERE LIKE clause in InfluxDB?
 date: "2018-03-30T00:00:00.000Z"
 description: How to write a SQL WHERE LIKE equivalent in InfluxDB?
 featuredImage: /assets/featured/influxdb.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/4
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/4
 tags: ["database", "influxdb"]
 seoKeywords: ["database", "influxdb"]
 ---

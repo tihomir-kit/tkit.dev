@@ -16,6 +16,6 @@ A simple android Wake-on-Lan application which can wake your devices up automati
 	<li>auto SSID discovery</li>
 	<li>Auto-WOL notifications</li>
 </ul>
-App is released under GPLv3 on <a title="auto-wol" href="https://github.com/pootzko/auto-wol">github</a>.
+App is released under GPLv3 on <a title="auto-wol" href="https://github.com/tihomir-kit/auto-wol">github</a>.
 
 Kudos to <a title="Marko Iličić" href="https://www.linkedin.com/profile/view?id=187609680&amp;authType=name&amp;authToken=pbBN&amp;trk=prof-proj-cc-name">Marko Iličić</a> for providing me with Android Dev guidelines. :)

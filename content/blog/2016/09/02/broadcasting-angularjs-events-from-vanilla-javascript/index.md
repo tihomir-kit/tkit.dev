@@ -3,7 +3,7 @@ title: Broadcasting AngularJS events from vanilla JavaScript
 date: "2016-09-02T00:00:00.000Z"
 description: How to broadcast an AngularJS event to get back from vanilla JavaScript into AngularJS lifecycle.
 featuredImage: /assets/featured/angular-cogs.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/25
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/25
 tags: ["angularjs", "javascript", "events"]
 ---
 

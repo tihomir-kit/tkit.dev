@@ -3,7 +3,7 @@ title: Detecting anomalies in InfluxDB data using Twitter Anomaly Detection, Web
 date: "2019-07-22T00:00:00.000Z"
 description: In this article we look at how to implement anomaly detection in your InfluxDB time-series data in Azure ML Studio without overloading your WebAPI service.
 featuredImage: local-anomaly.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/46
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/46
 tags: ["dotnet", "anomaly detection", "asp.net", "azure", "csharp", "influxdb", "machine learning", "twitter", "webapi"]
 ---
 
@@ -13,7 +13,7 @@ First I looked at what kind of anomaly detection libraries even existed and [Tw
 
 After spending some time on it, I finally got it all working. So, why this post then? I feel like certain details could have been explained in more detail to save up a little more time. I suppose Tej assumed people would be more familiar with certain things or he simply didn't deem every detail important enough to mention it. I will try to go into a little more detail and hopefully between his article and my article, you'll be covered. I also refactored [his R TAD integration](https://github.com/dynamicdeploy/analytics-machinelearning/blob/master/Anomaly%20Detection/R/azureml_ts_anom_detection.R) and made it a little more readable and clear. I also added [InfluxDB](https://www.influxdata.com/) to the mix because that's where we store our time-series data.
 
-I uploaded all the critical pieces of code I used to [GitHub](https://github.com/pootzko/witad). I know it's not the whole .Net solution, but we're probably not using completely the same application architecture. You should be able to take what's there and reuse it in your application to get the desired end result.
+I uploaded all the critical pieces of code I used to [GitHub](https://github.com/tihomir-kit/witad). I know it's not the whole .Net solution, but we're probably not using completely the same application architecture. You should be able to take what's there and reuse it in your application to get the desired end result.
 
 ### General workflow
 
@@ -45,7 +45,7 @@ The first node of the experiment is the _Manual data entry_. You can use it for 
 
 ![Manual data entry](ad-manual-data.png)
 
-InfluxDB allows you to send the SQL-like query through URL params. This is what the whole URL looks like in my case ([I build the URL's in WebAPI](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionProvider.cs#L25), depending on the time range and metrics I want to detect anomalies on).
+InfluxDB allows you to send the SQL-like query through URL params. This is what the whole URL looks like in my case ([I build the URL's in WebAPI](https://github.com/tihomir-kit/witad/blob/master/cs/AnomalyDetectionProvider.cs#L25), depending on the time range and metrics I want to detect anomalies on).
 
 ```
 https://MY.INFLUX.SERVER:8086/query?u=USERNAME&amp;p=PASSWORD&amp;db=DBNAME&amp;q=select%20time%2C%20Temp%20as%20value%20from%20%22sensor.series%22%20where%20%28SensorId%20%3D%20%270001%27%29%20and%20%28time%20%3E%3D%20%272018-11-01%2000%3A00%3A00%27%20and%20time%20%3C%20%272018-12-01%2000%3A00%3A00%27%29
@@ -63,17 +63,17 @@ Note how I used the fields `time` and `Temp` but I aliased `Temp` as `value`. Th
 
 This one is similar to the _Manual data entry_ except it will actually accept a dynamically created InfluxDB URL from the WebAPI and use it to drive the following steps. This node is the entry point of your WebAPI REST requests against this service.
 
-Please see the [code sample](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionProvider.cs#L3) on how to make these requests. Once you've implemented all the nodes, you'll be able to expose this experiment as a web service from inside the Studio, and this is when you'll get the service URL and the API key (in the code sample - these are `AppSettings.AnomaliesServiceUrl` and `AppSettings.AnomaliesAPIKey`, respectively).
+Please see the [code sample](https://github.com/tihomir-kit/witad/blob/master/cs/AnomalyDetectionProvider.cs#L3) on how to make these requests. Once you've implemented all the nodes, you'll be able to expose this experiment as a web service from inside the Studio, and this is when you'll get the service URL and the API key (in the code sample - these are `AppSettings.AnomaliesServiceUrl` and `AppSettings.AnomaliesAPIKey`, respectively).
 
 Also, note the `InfluxDataUrl` value in this screenshot:
 
 ![Web service data input](ad-web-service-input.png)
 
-We'll be sending this through the WebAPI request body, and [here](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionRequestBody.cs) you can see the whole payload object structure in C#. The `Inputs` property contains only a single sub-property (`InfluxDataUrl`) which basically contains our CSV-formatted plaintext InfluxDB request URL. The `GlobalParameters` property are all the variables that _Twitter Anomaly Detection_ can work with. That is how you can dictate how the AD algorithm will work straight from your WebAPI.
+We'll be sending this through the WebAPI request body, and [here](https://github.com/tihomir-kit/witad/blob/master/cs/AnomalyDetectionRequestBody.cs) you can see the whole payload object structure in C#. The `Inputs` property contains only a single sub-property (`InfluxDataUrl`) which basically contains our CSV-formatted plaintext InfluxDB request URL. The `GlobalParameters` property are all the variables that _Twitter Anomaly Detection_ can work with. That is how you can dictate how the AD algorithm will work straight from your WebAPI.
 
 #### 2. REST request using Python
 
-The next node will contain the small [Python script](https://github.com/pootzko/witad/blob/master/py/fetch_influxdb_data.py) which will be used to fetch the data from the InfluxDB server.
+The next node will contain the small [Python script](https://github.com/tihomir-kit/witad/blob/master/py/fetch_influxdb_data.py) which will be used to fetch the data from the InfluxDB server.
 
 ![Python script execution](ad-python-script.png)
 
@@ -97,9 +97,9 @@ First, you'll have to create a custom module:
 
 So, what should you put into the zip file?
 
-- The [module definition XML file](https://github.com/pootzko/witad/blob/master/r/twitteranomalycustommodule.xml) - this is where you can set the module name, version, the entry point script and function names, and anomaly detection parameters such as input fields, dropdowns with their predefined values etc..
-- The [entry point R script](https://github.com/pootzko/witad/blob/master/r/azureml_ts_anom_detection.R) - this is the "main R file" that initiates the process of anomaly detection, Tej wrote the initial version of this
-- All the remaining R scripts from the [folder](https://github.com/pootzko/witad/tree/master/r) - these actually come [from Twitter itself](https://github.com/twitter/AnomalyDetection/tree/master/R), and it's important to bundle them also
+- The [module definition XML file](https://github.com/tihomir-kit/witad/blob/master/r/twitteranomalycustommodule.xml) - this is where you can set the module name, version, the entry point script and function names, and anomaly detection parameters such as input fields, dropdowns with their predefined values etc..
+- The [entry point R script](https://github.com/tihomir-kit/witad/blob/master/r/azureml_ts_anom_detection.R) - this is the "main R file" that initiates the process of anomaly detection, Tej wrote the initial version of this
+- All the remaining R scripts from the [folder](https://github.com/tihomir-kit/witad/tree/master/r) - these actually come [from Twitter itself](https://github.com/twitter/AnomalyDetection/tree/master/R), and it's important to bundle them also
 
 Now, take all these files, and zip them together directly from a root folder. Don't "wrap them" in another folder and then zip that folder. That didn't work for me. Zip the files themselves only.
 
@@ -121,7 +121,7 @@ This result dataset is the plot (image) that the R script will generate for you.
 
 ### Handling returned results
 
-Let's get back to our WebAPI. The raw response that you'll get will look [like this](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionModels.cs#L24). You will probably want to deserialize it and perhaps [adjust](https://github.com/pootzko/witad/blob/master/cs/AnomalyDetectionService.cs#L10) it slightly to make it easier to use in your application.
+Let's get back to our WebAPI. The raw response that you'll get will look [like this](https://github.com/tihomir-kit/witad/blob/master/cs/AnomalyDetectionModels.cs#L24). You will probably want to deserialize it and perhaps [adjust](https://github.com/tihomir-kit/witad/blob/master/cs/AnomalyDetectionService.cs#L10) it slightly to make it easier to use in your application.
 
 Once you have that, you can embed the plot image in your client-side app. All you have to do is create an `img` tag with [base64 embedded image](https://stackoverflow.com/a/8499716/413785). Make sure to add `data:image/png;base64,` before the string value of the `model.Plot` property.
 

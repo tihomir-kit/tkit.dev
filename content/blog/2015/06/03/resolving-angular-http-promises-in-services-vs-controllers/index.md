@@ -3,7 +3,7 @@ title: Resolving AngularJS $http promises in services vs. controllers
 date: "2015-06-03T00:00:00.000Z"
 description: Should you be resolving AngularJS $http promises in services or controllers? Which one is better?
 featuredImage: /assets/featured/angular-cogs.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/35
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/35
 tags: ["angularjs", "design patterns", "javascript", "promises"]
 ---
 

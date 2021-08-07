@@ -3,7 +3,7 @@ title: TF300T Easter brick resurrection
 date: "2015-04-05T00:00:00.000Z"
 description: Is there a way to fix almost-bricked TF300T?
 featuredImage: /assets/featured/android-lollipop.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/38
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/38
 tags: ["adb", "android", "brick", "cwm", "cyanogenmod", "fastboot", "flashing", "recovery", "rom", "tablet", "tf300t", "twrp"]
 ---
 

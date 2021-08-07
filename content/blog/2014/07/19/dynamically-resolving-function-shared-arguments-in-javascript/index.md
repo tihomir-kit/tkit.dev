@@ -3,7 +3,7 @@ title: Dynamically resolving function shared arguments in JavaScript
 date: "2014-07-19T00:00:00.000Z"
 description: How to dynamically pass an arbitrary amount of function arguments to a JS function if we don't know in advance how many we'll have to pass?
 featuredImage: /assets/featured/javascript.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/39
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/39
 tags: ["callbacks", "design patterns", "javascript", "dynamic programming"]
 ---
 

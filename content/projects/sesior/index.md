@@ -1,7 +1,7 @@
 ---
 title: SESIOR
 date: July, 2014
-url: https://github.com/pootzko/sesior
+url: https://github.com/tihomir-kit/sesior
 tags: ["express", "javascript", "nodejs", "redis", "socketio"]
 ---
 

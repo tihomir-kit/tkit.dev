@@ -1,7 +1,7 @@
 ---
 title: Azure CORS Rule Manager
 date: January, 2014
-url: https://github.com/pootzko/azure-cors-rule-manager
+url: https://github.com/tihomir-kit/azure-cors-rule-manager
 tags: ["dotnet", "azure", "csharp"]
 ---
 

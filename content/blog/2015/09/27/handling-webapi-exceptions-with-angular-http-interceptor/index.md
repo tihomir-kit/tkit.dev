@@ -3,7 +3,7 @@ title: Handling WebAPI exceptions with Angular http interceptor
 date: "2015-09-27T00:00:00.000Z"
 description: How to implement a centralized place in your AngularJS app to handle all the .Net WebAPI exceptions and bad HTTP status codes that the server might return to the browser.
 featuredImage: /assets/featured/angular-cogs.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/32
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/32
 tags: ["dotnet", "angularjs", "exceptions", "webapi"]
 ---
 

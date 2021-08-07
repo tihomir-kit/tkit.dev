@@ -3,7 +3,7 @@ title: Converting to and from local time in C#/.Net with Noda Time
 date: "2018-04-05T00:00:00.000Z"
 description: How to handle timezone conversions between utc and local time in C# / .Net using Noda Time library?
 featuredImage: /assets/featured/noda-time.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/5
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/5
 tags: ["nodatime", "time", "csharp", "dotnet", "timezone", "handling", "conversion"]
 seoKeywords: ["nodatime", "noda", "time", "csharp", "dotnet", "timezone", "handling", "code", "sample", "demo", "tutorial", "utc", "simple", "easy", "conversion"]
 ---

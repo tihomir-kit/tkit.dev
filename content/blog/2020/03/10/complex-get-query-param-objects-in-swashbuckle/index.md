@@ -3,7 +3,7 @@ title: Complex GET query param objects in Swashbuckle
 date: "2020-03-10T00:00:00.000Z"
 description: How to bind complex objects as GET query params in Swashbuckle / Swagger in .Net Core?
 featuredImage: /assets/featured/openapi.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/8
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/8
 tags: ["dotnet", "core", "webapi", "swashbuckle", "openapi"]
 seoKeywords: ["dotnet", "core", "webapi", "swagger", "swashbuckle", "openapi", "documentation"]
 ---

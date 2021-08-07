@@ -3,7 +3,7 @@ title: Filtering and removing multiple elements from a list in Python
 date: "2011-07-07T00:00:00.000Z"
 description: How to remove multiple elements from a list in Python and not break the list while doing so?
 featuredImage: /assets/featured/python.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/24
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/24
 tags: ["elements", "list", "python", "removal", "mutation"]
 ---
 

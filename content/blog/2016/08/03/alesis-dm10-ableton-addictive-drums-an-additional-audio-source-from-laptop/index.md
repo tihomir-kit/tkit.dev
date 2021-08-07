@@ -3,7 +3,7 @@ title: Alesis DM10, Ableton, Addictive Drums + an additional audio source from l
 date: "2016-08-03T00:00:00.000Z"
 description: How to set up Alesis DM10 drum kit to work with Addictive Drums and be able to listen a back track at the same time?
 featuredImage: /assets/featured/drums.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/26
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/26
 tags: ["ableton", "addictive", "audio", "drums", "interface", "komplete", "youtube"]
 ---
 

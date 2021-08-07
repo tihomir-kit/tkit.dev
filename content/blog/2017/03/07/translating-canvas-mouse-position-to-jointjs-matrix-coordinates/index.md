@@ -3,7 +3,7 @@ title: Translating canvas mouse position to JointJS matrix coordinates
 date: "2017-03-07T00:00:00.000Z"
 description: How to convert the JointJS mouse position to the canvas matrix coordinates?
 featuredImage: /assets/featured/javascript.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/19
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/19
 tags: ["angularjs", "javascript", "jointjs", "matrix", "translation", "vector"]
 ---
 

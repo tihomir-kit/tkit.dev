@@ -3,7 +3,7 @@ title: PdfSharp / MigraDoc to Azure Storage in-memory upload
 date: "2015-10-17T00:00:00.000Z"
 description: This blog post explains how to create a PDF in-memory and upload it straight to Azure Storage.
 featuredImage: /assets/featured/microsoft-azure.png
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/31
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/31
 tags: ["dotnet", "azure", "cloud", "migradoc", "pdfsharp", "upload"]
 ---
 

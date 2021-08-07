@@ -3,7 +3,7 @@ title: How to generate an IP range list in Python?
 date: "2011-09-11T00:00:00.000Z"
 description: A simple method to generate an IP range from two string IP's in Python.
 featuredImage: /assets/featured/python.jpg
-commentsUrl: https://github.com/pootzko/tkit.dev/issues/21
+commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/21
 tags: ["generator", "ip", "list", "python"]
 ---
 
