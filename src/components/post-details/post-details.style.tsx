@@ -180,11 +180,22 @@ export const PostDescription = styled.div`
     line-height: 2;
   }
 
+  // Custom added
+  ul ul {
+    margin-bottom: 0;
+  }
+
+  // Custom added
+  li:first-of-type {
+    margin-top: 0.45rem;
+  }
+
   li {
     margin-bottom: 0.45rem;
 
     p {
-      margin-bottom: 1em;
+      // margin-bottom: 1em;
+      margin-bottom: 0; // Custom changed
     }
   }
 
