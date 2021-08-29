@@ -138,7 +138,7 @@ And this is a more detailed overview of how we currently typically structure our
 
 ## Vertical Slice
 
-We use SPA's on the client-side. There we already started grouping code by features a long time ago because it's just much more convenient. Module routing, service code, controllers, templates, components most often all get grouped together inside a dedicated folder. VueJS and React even go as far to encourage putting controllers, templates and styles into a single file.
+We use SPA's on client-side. There, we already started grouping code by features a long time ago because it's just much more convenient. Module routing, service code, controllers, templates, components most often all get grouped together inside a dedicated folder. VueJS and React even go as far to encourage putting controllers, templates and styles into a single file.
 
 Vertical slice architecture that Jimmy Bogard describes is in a way similar to that.
 
