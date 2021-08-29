@@ -124,6 +124,15 @@ On the client-side we started grouping things by feature already
 - Result<T>, Unit
 - Can still do common / shared stuff if it's really shared
 
+cross-cutting
+- transactions
+- auth
+- validation
+- caching
+- logging
+- tracing
+https://www.c-sharpcorner.com/blogs/cross-cutting-concepts-in-a-multilayer-application
+
 CQRS
 - Broken rule with returned ID
 LLBLGen switch from specific repositories to shared prefetch / bucket extension methods
