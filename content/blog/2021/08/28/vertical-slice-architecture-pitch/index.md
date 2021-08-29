@@ -110,72 +110,148 @@ And this is a more detailed overview of how we currently typically structure our
   - Bloated [god object](https://en.wikipedia.org/wiki/God_object) models
   - Bloated repository methods
     - [Multi-level fetching](https://entityframework.net/include-multiple-levels) bloat ([prefetching](https://www.llblgen.com/Documentation/5.3/LLBLGen%20Pro%20RTF/Using%20the%20generated%20code/Adapter/gencode_prefetchpaths_adapter.htm) in LLBLGen)
-    - Filtering becomes too complex
+    - Filtering becomes too complex / too smart
     - Many filtering options have to become "optional"
   - Changes in one feature can have undesired effects and break other features which re-use the same shared abstraction
 
 ### Authorization / Model validation scattered between 2 layers
 
-- Necessary to remember when to use attribute Authorization / Validation and when to use the more complex approach in the business layer
-- Controller attributes not easily testable
-- Not always testable
+- Harder to reason about - at least 2 places (a controller and a service) need to be checked to get the full picture and to be sure what the rules are
+- These rules are arguably part of the business logic and have no place being in controllers
+- If multiple applications rely on the same business layer, this could greatly degrade maintainability
+  - Part of the functionality could get lost because it's in controllers
+  - Other applications will have to somehow still apply the rules
+  - Rules and rule application could easily get out of sync
+- Harder unit testing
+  - Controllers are not typically being unit tested
+  - Attribute behavior is weird to unit test
+  - Since rules are not applied in the same place, how do you even test it as a "unit"?
 
-## aaaaaaaaaaaaa
+### Exception based code flow
 
-- "Expected" exceptions are unpredictable side-effects that break code execution flow and are harder to follow, reason about and test
-- Domain logic scattered - logic that shouldn't be reused gets abstracted away??
-
-
-
-On the client-side we started grouping things by feature already
-
-
+- Basically GOTO statements on steroids
+- Harder to predict, follow and test
+- An implicit way of dealing with code flow through side-effects
+- [Exceptions](https://medium.com/codex/the-error-of-exceptions-3aed074c40dc) obfuscate possible outcomes of invoking a method - how do we know what will be thrown?
+- Exceptions should stay exceptions, not become rules
 
 ## Vertical Slice
 
-![Vertical SLice](vertical-slice.png)
+We use SPA's on the client-side. There we already started grouping code by features a long time ago because it's just much more convenient. Module routing, service code, controllers, templates, components most often all get grouped together inside a dedicated folder. VueJS and React even go as far to encourage putting controllers, templates and styles into a single file.
 
+Vertical slice architecture that Jimmy Bogard describes is in a way similar to that.
 
+![Vertical Slice](vertical-slice.png)
 
+### New, shiny stuff
 
-## Benefits
+- [CQRS](https://www.martinfowler.com/bliki/CQRS.html) - Command Query Responsibility Segregation
+- [MediatR](https://github.com/jbogard/MediatR) - Decoupling of in-process sending of messages from handling messages
+- [Result type](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/results) - Replaces exception-based code flow
 
-- Expandable with domain logic
-- Microservices
-- Event sourcing
-- Can use different ORMS or swap them with ease, gradually
-- No bloated god models, no leaks
-- Auth / model validation in a single spot, easier to test
-- 2 files touch
-- Result<T>, Unit
-- Can still do common / shared stuff if it's really shared
+## CQRS
 
-cross-cutting
-- transactions
-- auth
-- validation
-- caching
-- logging
-- tracing
-https://www.c-sharpcorner.com/blogs/cross-cutting-concepts-in-a-multilayer-application
+![CQRS](cqrs.jpg)
 
-CQRS
-- Broken rule with returned ID
-LLBLGen switch from specific repositories to shared prefetch / bucket extension methods
-Can be simplified even further (to remove controllers)
-Use swagger / TS-gen to speed things up
-Give some code sample of a typical query
-Give some code sample of a typical command
+- Queries read but don't mutate data
+- Commands create / mutate but don't return data
+  - I actually broke this rule to allow returning of the Id of newly created entities, but nothing more
+- SEE: [CQS vs. CQRS](https://stackoverflow.com/questions/34255490/difference-between-cqrs-vs-cqs)
+- Behavior pipelines handle cross-cutting concerns
+  - Authentication
+  - Authorization
+  - Validation
+  - Transactions
+  - Caching
+  - Logging
 
-don't reuse app code, reuse infrastructure code
+## Solutions to previous N-Tier issues
 
+### Reduced number of files required per feature
 
+A feature implemented using this approach typically requires only 2 files to be touched / created:
 
-https://stackoverflow.com/questions/34255490/difference-between-cqrs-vs-cqs
-https://1.bp.blogspot.com/-IGCP7Sk0VPc/T4PPLwGrwvI/AAAAAAAACTE/KkkrIJk9X-Q/s400/cqsr_pattern.png
-https://miro.medium.com/max/1338/1*_3fNTp9Jz59yao-YusKcGQ.png
-https://i.stack.imgur.com/yZmDz.png
+- A controller action entry for routing purposes / message dispatching
+- A command / query handler file which contains:
+  - Query / Command model class
+  - Custom validator method (optional)
+  - Custom authorization method (optional)
+  - Query / Command handler class
+    - ORM code
+    - Business logic
+    - Entity-to-Model mapping
+  - Query return model (for queries only)
 
-https://duckduckgo.com/?q=why+exceptions+are+bad&t=braveed&ia=web
-https://stackoverflow.com/questions/1736146/why-is-exception-handling-bad
-https://medium.com/codex/the-error-of-exceptions-3aed074c40dc
+Instead of using specific repositories:
+
+- Handlers inject generic repositories
+- Each handler writes its own ORM logic
+- For common ORM code, better to write very specific prefetch / bucket builder extension methods ([pure functions](https://en.wikipedia.org/wiki/Pure_function))
+  - Avoid for trivial cases
+  - Avoid for low re-used cases
+  - "User profile" prefetch is an example of a good candidate
+    - AspNetUser + UserDetail + AspNetUserRoles + AspNetRoles
+  - (TODO: replace with a piece of code later)
+
+Note how we no longer need all the service / repository interface files.
+
+For complex, heavy domain logic that will see heavy reuse, it's ok to use a separate `.Domain` project and to use use pure, [rich domain models](https://en.wikipedia.org/wiki/Domain-driven_design). These can then be shared by handlers. In many cases, this is not really necessary however as the logic is often simple enough to stay self-contained inside a handler.
+
+### Clear separation of concerns
+
+Each feature is in a way isolated and self-contained.
+
+- Each feature has it's own view model
+- No more bloated god object models
+- No more bloated repository methods
+- Changing one feature no longer affects other features
+
+### Authorization / Model validation in one place
+
+- Easier to reason about
+- No need to worry that part of the implementation will be overlooked
+- Can be easily tested
+
+### `Result<T>` based code flow
+
+- Explicit code flow
+- More predictable
+- Less side-effects
+- SEE: [Railway oriented programming](https://fsharpforfunandprofit.com/posts/recipe-part2/)
+
+## Typical structure of the project
+
+TBA
+
+## Typical handler
+
+TBA
+
+## Downsides
+
+- Sometimes a little more typing (new model each time)
+- New paradigm, teams needs to be trained a bit
+- Might potentially be a bit harder for Junior developers
+  - Not the default .Net documentation architecture
+  - Not the default Visual Studio .Net scaffold
+  - Less code samples online
+- Potentially more files overall
+
+## Other
+
+- Suitable for [event sourcing](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+- Suitable for microservices
+- Multiple ORMS can be used easily at the same time if needed
+- If there's a need to swap out an ORM (most often there is not), it can easily be done gradually
+- Routing can be simplified even further by removing most of the controllers and using
+  - [Carter](https://github.com/CarterCommunity/Carter)
+  - [ApiEndpoints](https://github.com/ardalis/ApiEndpoints)
+- Feature code sharing - avoid, infrastructure code - reuse
+
+## Additional resources
+
+- [Microservices.Net](https://devmentors.io/courses/microservices-net) ~ DevMentors
+- [Get value out of your monad](https://www.youtube.com/watch?v=F9bznonKc64) ~ Mark Seemann
+- [Functional design patterns](https://www.youtube.com/watch?v=srQt1NAHYC0) ~ Scott Wlaschin
+- [Domain Modeling Made Functional](https://www.youtube.com/watch?v=1pSH8kElmM4) ~ Scott Wlaschin
+- [The Functional Programmer's Toolkit](https://www.youtube.com/watch?v=Nrp_LZ-XGsY) ~ Scott Wlaschin
