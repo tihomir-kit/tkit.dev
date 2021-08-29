@@ -92,6 +92,7 @@ And this is a more detailed overview of how we currently typically structure our
 - Files not close together in the project structure, but instead scattered
 - Wastes time
 - Adds to cognitive load
+- Annoying
 - List of files that typically require touching / creation to add a new feature:
   - Controller
   - Service interface
