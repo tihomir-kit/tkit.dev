@@ -238,7 +238,7 @@ TBA
 
 ## Downsides
 
-- More models
+- More models (one per handler) which will look similar and which might appear redundant
 - More files
 - New paradigm, teams needs to be trained a bit
 - Might potentially be a bit harder for Junior developers
@@ -255,7 +255,7 @@ TBA
 - Routing can be simplified even further by removing most of the controllers and using
   - [Carter](https://github.com/CarterCommunity/Carter)
   - [ApiEndpoints](https://github.com/ardalis/ApiEndpoints)
-- Feature code sharing - avoid, infrastructure code - reuse
+- Feature code reuse - avoid, infrastructure code - reuse
 
 ## Additional resources
 
