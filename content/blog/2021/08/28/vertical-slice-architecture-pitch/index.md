@@ -238,7 +238,10 @@ TBA
 
 ## Downsides
 
-- More models (one per handler) which will look similar and which might appear redundant
+- More models (one per handler)
+  - Get/create/update will have their own, separate models
+  - This is a tradeoff towards clearer separation of concerns and bloat mitigation
+  - More mapping code (unless [AutoMapper](https://automapper.org/) is used) as a result of more models
 - More files
 - New paradigm, teams needs to be trained a bit
 - Might potentially be a bit harder for Junior developers
