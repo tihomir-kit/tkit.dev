@@ -227,9 +227,9 @@ Each feature is in a way isolated and self-contained.
 
 ### `Result<T>` based code flow
 
-- Explicit code flow
-- More predictable
-- Less side-effects
+- Explicit code flow (exceptions are implicit)
+- More predictable (expected return from a method, rather than an unexpected exception throw)
+- Less [side-effects](https://www.yld.io/blog/the-not-so-scary-guide-to-functional-programming/)
 - SEE: [Railway oriented programming](https://fsharpforfunandprofit.com/posts/recipe-part2/)
 
 ## Typical handler
