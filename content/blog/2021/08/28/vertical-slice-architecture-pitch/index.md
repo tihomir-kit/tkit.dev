@@ -133,10 +133,10 @@ And here is an overview of how we currently structure our projects:
 ### Exception based code flow
 
 - Basically GOTO statements on steroids
-- Hard to predict and follow and sometimes a little more inconvenient to test
-- An implicit way of dealing with code flow through side-effects
-- [Exceptions](https://medium.com/codex/the-error-of-exceptions-3aed074c40dc) obfuscate possible outcomes of invoking a method - how do we know what will be thrown?
-- Exceptions should stay exceptions, not become rules
+- Hard to predict and follow and sometimes a little more inconvenient to unit test
+- An implicit way of dealing with code flow through [side-effects](https://www.yld.io/blog/the-not-so-scary-guide-to-functional-programming/)
+- [Exceptions](https://medium.com/codex/the-error-of-exceptions-3aed074c40dc)  obfuscate possible outcomes of invoking a method - how do we know what will be thrown?
+- Exceptions should stay exceptions that occur under unexpected circumstances, not become rules for handling code flow
 
 ## Vertical Slice
 
@@ -227,9 +227,9 @@ Each feature is in a way isolated and self-contained.
 
 ### `Result<T>` based code flow
 
-- Explicit code flow (exceptions are implicit)
-- More predictable (expected return from a method, rather than an unexpected exception throw)
-- Less [side-effects](https://www.yld.io/blog/the-not-so-scary-guide-to-functional-programming/)
+- Explicit code flow
+- More predictable - the return type is known (compared to an unexpected exception throw) and the invoking side knows it needs to handle it
+- Less side-effects
 - SEE: [Railway oriented programming](https://fsharpforfunandprofit.com/posts/recipe-part2/)
 
 ## Typical handler
