@@ -232,9 +232,237 @@ Each feature is in a way isolated and self-contained.
 - Less side-effects
 - SEE: [Railway oriented programming](https://fsharpforfunandprofit.com/posts/recipe-part2/)
 
-## Typical handler
+## Typical handlers
 
-TBA
+### Basic get item query
+
+```cs
+public class GetProduct
+{
+    public class Query : IRequest<Result<Model>>, IOwnerAuthorizedRequest
+    {
+        public int Id { get; set; }
+
+        public Query(int id)
+        {
+            Id = id;
+        }
+    }
+
+    public class OwnerAuthorizer : OwnerRequestAuthorizer<Command>
+    {
+        private readonly IRepository<ProductEntity> _productRepository;
+
+        public OwnerAuthorizer(IAppContext appContext, IRepository<ProductEntity> productRepository) : base(appContext)
+        {
+            _productRepository = productRepository;
+        }
+
+        protected override async Task<int?> GetResourceOwnerIdAsync(Command request)
+        {
+            var entity = await _productRepository.GetEntityAsync(request.Id);
+
+            return entity?.CreatedById;
+        }
+    }
+
+    public class Handler : IRequestHandler<Query, Result<Model>>
+    {
+        private readonly IRepository<ProductEntity> _productRepository;
+
+        public Handler(IRepository<ProductEntity> productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
+        public async Task<Result<Model>> Handle(Query query, CancellationToken cancellationToken)
+        {
+            var bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(ProductFields.Id == query.Id);
+
+            var entity = (await _productRepository.GetEntitiesAsync(bucket)).FirstOrDefault();
+
+            return ToModel(entity);
+        }
+
+        private static Result<Model> ToModel(ProductEntity entity)
+        {
+            if (entity == null)
+            {
+                return new NotFoundError();
+            }
+
+            var model = new Model
+            {
+                Id = entity.Id,
+                Name = entity.Name
+            };
+
+            return model;
+        }
+    }
+
+    public class Model
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+    }
+}
+```
+
+### Basic filter items query (for grid)
+
+```cs
+public class FilterProducts
+{
+    public class Query : GridFilter, IRequest<Result<GridCollection<Model>>>, IAuthenticatedRequest
+    {
+    }
+
+    public class Handler : IRequestHandler<Query, Result<GridCollection<Model>>>
+    {
+        private readonly IAppContext _appContext;
+        private readonly IRepository<ProductEntity> _productRepository;
+
+        public Handler(IAppContext appContext, IRepository<ProductEntity> productRepository)
+        {
+            _appContext = appContext;
+            _productRepository = productRepository;
+        }
+
+        public async Task<Result<GridCollection<Model>>> Handle(Query query, CancellationToken cancellationToken)
+        {
+            var parameters = query.ToParameters();
+            var bucket = new RelationPredicateBucket();
+            bucket.PredicateExpression.Add(ProductFields.CreatedById == _appContext.Identity.User.Id);
+
+            var grid = await _productRepository.FetchGridEntitiesAsync(parameters, bucket);
+
+            return grid.ReMap(ToModel);
+        }
+
+        private static Model ToModel(ProductEntity entity)
+        {
+            if (entity == null)
+            {
+                return null;
+            }
+
+            var model = new Model
+            {
+                Id = entity.Id,
+                Name = entity.Name
+            };
+
+            return model;
+        }
+    }
+
+    public class Model
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+    }
+}
+```
+
+### Basic create item query
+
+```cs
+public class CreateProduct
+{
+    public class Command : IRequest<Result<int>>, IAuthenticatedRequest
+    {
+        [Required]
+        public string Name { get; set; }
+    }
+
+    public class Handler : IRequestHandler<Command, Result<int>>
+    {
+        private readonly IAppContext _appContext;
+        private readonly IRepository<ProductEntity> _productRepository;
+
+        public Handler(IAppContext appContext, IRepository<ProductEntity> productRepository)
+        {
+            _appContext = appContext;
+            _productRepository = productRepository;
+        }
+
+        public async Task<Result<int>> Handle(Command command, CancellationToken cancellationToken)
+        {
+            var entity = new ProductEntity
+            {
+                CreatedById = _appContext.Identity.User.Id,
+                UpdatedById = _appContext.Identity.User.Id,
+                Name = command.Name
+            };
+
+            await _productRepository.SaveEntityAsync(entity, true);
+
+            return entity.Id;
+        }
+    }
+}
+```
+
+### Basic update item query
+
+```cs
+public class UpdateProduct
+{
+    public class Command : MediatR.IRequest<Result<Unit>>, IOwnerAuthorizedRequest
+    {
+        public int Id { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+    }
+
+    public class OwnerAuthorizer : OwnerRequestAuthorizer<Command>
+    {
+        private readonly IRepository<ProductEntity> _productRepository;
+
+        public OwnerAuthorizer(IAppContext appContext, IRepository<ProductEntity> productRepository) : base(appContext)
+        {
+            _productRepository = productRepository;
+        }
+
+        protected override async Task<int?> GetResourceOwnerIdAsync(Command request)
+        {
+            var entity = await _productRepository.GetEntityAsync(request.Id);
+
+            return entity?.CreatedById;
+        }
+    }
+
+    public class Handler : MediatR.IRequestHandler<Command, Result<Unit>>
+    {
+        private readonly IAppContext _appContext;
+        private readonly IRepository<ProductEntity> _productRepository;
+
+        public Handler(IAppContext appContext, IRepository<ProductEntity> productRepository)
+        {
+            _appContext = appContext;
+            _productRepository = productRepository;
+        }
+
+        public async Task<Result<Unit>> Handle(Command command, CancellationToken cancellationToken)
+        {
+            var entity = await _productRepository.GetEntityAsync(command.Id);
+
+            entity.UpdatedAt = DateTime.UtcNow;
+            entity.UpdatedById = _appContext.Identity.User.Id;
+            entity.Name = command.Name;
+
+            await _productRepository.SaveEntityAsync(entity);
+
+            return Result.Ok();
+        }
+    }
+}
+```
 
 ## Downsides
 
