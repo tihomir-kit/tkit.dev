@@ -22,7 +22,7 @@ const SocialLinks = [
   },
   {
     icon: <RiStackOverflowFill />,
-    url: 'https://stackoverflow.com/users/story/413785?view=Cv',
+    url: 'https://stackoverflow.com/users/413785/tkit',
     tooltip: 'StackOverflow',
   },
   {
