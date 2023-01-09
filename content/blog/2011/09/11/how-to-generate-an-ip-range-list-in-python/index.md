@@ -23,7 +23,7 @@ def ipRange(start_ip, end_ip):
       if temp[i] == 256:
         temp[i] = 0
         temp[i-1] += 1
-      ip_range.append(".".join(map(str, temp)))
+    ip_range.append(".".join(map(str, temp)))
 
   return ip_range
 
