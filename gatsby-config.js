@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: "TKIT_dev",
     author: "Tihomir",
-    about: "I'm a software craftsman with special interest in software architecture, functional programming, .Net, C#, F#, TypeScript and React. I like books and obligatory last sentence punchlines. Stay curious. 🖖",
+    about: "I'm a software engineer with special interest in software architecture, functional programming, .Net, C#, F#, TypeScript and React. Stay curious. 🖖",
     description: "to understand what recursion is, you must first understand recursion",
     siteUrl: "https://tkit.dev/",
     social: {
