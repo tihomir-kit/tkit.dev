@@ -4,7 +4,7 @@ date: "2023-11-30T00:00:00.000Z"
 description: How to automatically customise bash, register custom scripts and download some commonly used, but missing tools in your PwnBox instance?
 featuredImage: /assets/featured/hackthebox.png
 commentsUrl: https://github.com/tihomir-kit/tkit.dev/issues/54
-tags: ["hackthebox", "security", "parrot-os", "vm", "pwnbox", "bash"]
+tags: ["hackthebox", "security", "parrot-os", "vm", "pwnbox", "bash", "automation"]
 ---
 
 [PwnBox](https://help.hackthebox.com/en/articles/5185608-introduction-to-pwnbox) works fantastic. However, one of the things that one might want to do is to customise it a little and persist these tweaks. Now, each reboot gives us a fresh box, and most of the system gets reset back to defaults. But, HTB exposed a `user_init` file which can be used to execute custom bash on startup. Its purpose is to make customisation programmable, flexible and automatable.
